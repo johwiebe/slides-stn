@@ -1,0 +1,619 @@
+\documentclass[slides]{beamer}
+
+\input{preamble.tex}
+%\setsansfont[BoldFont={Fira Sans}, ItalicFont={Fira Sans Light Italic}]{Fira Sans Light}
+\title[Data-driven optimization \& degradation]{Data-driven optimization of processes with degrading equipment \vspace{-10pt}}
+
+\author[J. Wiebe]{Johannes Wiebe\inst{1}}
+\institute[Imperial College London]{Supervisors: Ruth Misener\inst{1}, Ines
+    Cecilio\inst{2}\\[\baselineskip]
+    \inst{1} Department of Computing, Imperial College London, London, UK \and
+    \inst{2} Schlumberger Research Cambridge, Cambridge, UK
+London
+}
+\date{\displaydate{date}}
+
+\begin{document}
+
+\tikzexternaldisable
+\begin{frame}[noframenumbering,plain]
+  \begin{tikzpicture}[overlay, remember picture]
+  \node[anchor=north west, %anchor is upper left corner of the graphic
+      xshift=7pt, %shifting around
+      yshift=-6pt]
+     at (current page.north west) %left upper corner of the page
+     {\includegraphics[width=0.29\textwidth]{Imperial_1_Pantone_solid.eps}};
+  \end{tikzpicture}
+  \begin{tikzpicture}[overlay, remember picture]
+  \node[anchor=north east, %anchor is upper left corner of the graphic
+      xshift=-170pt, %shifting around
+      yshift=-4pt]
+     at (current page.north east) %left upper corner of the page
+     {\includegraphics[width=0.23\textwidth]{COG_logo}};
+  \end{tikzpicture}
+  \begin{tikzpicture}[overlay, remember picture]
+  \node[anchor=north east, %anchor is upper left corner of the graphic
+      xshift=-88pt, %shifting around
+      yshift=-10pt]
+     at (current page.north east) %left upper corner of the page
+     {\includegraphics[width=0.23\textwidth]{logo_hipeds_v3.pdf}};
+  \end{tikzpicture}
+  \begin{tikzpicture}[overlay, remember picture]
+  \node[anchor=north east, %anchor is upper left corner of the graphic
+  xshift=-4pt, %shifting around
+  yshift=-10pt]
+  at (current page.north east) %left upper corner of the page
+  {\includegraphics[width=0.23\textwidth]{Schlumberger}};
+  \end{tikzpicture}
+    \maketitle
+\end{frame}
+
+
+\section{First things first}
+\begin{frame}{Starting point: Process level MI(N)LP model}
+    \vspace{-10pt}
+    \begin{equation*}
+    \begin{aligned}
+        & \underset{\bm{x},\bm{m}\visible<2->{, {\color{icOrange}\bm{h}}}}{\text{min}}
+    && \text{cost}(\bm{x}, \bm{m}\visible<2->{,{\color{icOrange}\bm{h}}})\\
+    & \text{s.t.}
+    && \text{process model}(\bm{x}, \bm{m}\visible<2->{,{\color{icOrange}\bm{h}}})
+    &&& \text{(eg. balance equations)}\\
+    &
+    && \text{maintenance model}(\bm{x}, \bm{m} \visible<2->{,{\color{icOrange}\bm{h}}})
+    &&& \text{(eg. types of maint.)}\\
+    \visible<2->{&
+    && {\color{icOrange}\text{health model}(\bm{x}, \bm{m}, \bm{h})},
+    &&& \text{(eq. prognosis model)}}
+    \end{aligned}
+    \end{equation*}
+    where $\bm{x}$ are process variables, $\bm{m}$ are maintenance
+    variables\visible<2->{, and {\color{icOrange}$\bm{h}$ are health related variables}.}
+    \vspace{5pt}
+\visible<3->{
+    \begin{exampleblock}{Idea}
+        Combine process level \textbf{MI(N)LP scheduling \& planning} with more sophisticated (stochastic) \textbf{degradation modelling} and \textbf{robust optimization}.
+    \end{exampleblock}
+}
+\end{frame}
+
+\tikzexternalenable
+\begin{frame}{What is degradation modelling?}
+\only<1>{
+    \centering
+    \tikzsetnextfilename{deg-sig}
+    \input{deg-sig.tex}
+}
+
+\only<2-3>{
+    The degradation signal $s^{meas}(t)$ is often modelled by a stochastic process:
+    \begin{equation*}
+        S(t) = \{S_t : t \in T\},
+    \end{equation*}
+    where $S_t$ is a random variable.
+\visible<3>{
+\begin{block}{Often used: L\'evy type processes}
+    \begin{itemize}
+        \item Independent increments: $S_{t_2} - S_{t_1}, ..., S_{t_n} - S_{t_{n-1}}$ are independent for any $0 < t_1 < t_2 < ... < t_n < \infty$
+        \item Stationary increments: $S_t - S_s$ and $S_{t-s}$ have the same distribution for any $s<t$
+        \item Continuity in probability: $\lim_{h \rightarrow 0} P(|{S_{t+h} - S_t}| > \epsilon) = 0$ for any $\epsilon > 0$, $t \geq 0$.
+    \end{itemize}
+\end{block}
+}
+}
+\only<4>{
+    \centering
+    %\includegraphics{tikz/deg-sig2.pdf}
+    \tikzsetnextfilename{deg-sig2}
+    \input{deg-sig2.tex}
+    % \IfFileExists{tikz/deg-sig2.pdf}{\includegraphics{tikz/deg-sig2.pdf}}{\tikzsetnextfilename{deg-sig2} \input{deg-sig2.tex}}
+}
+\end{frame}
+\section{Second things second}
+
+\begin{frame}{A health model based on L\'evy processes}
+\begin{alertblock}{Assumption}
+    The health of each unit $j$ can be described by a L\'evy process $S_j(t)$ with increments $S_{j,t} - S_{j,t-\Delta t} = D_j \sim \mathcal{D}_j(\boldsymbol{\Theta}, \only<2>{{\color{red}\boldsymbol{x}}, } \Delta t)$.
+\end{alertblock}
+\visible<2>{
+    \vspace{-10pt}
+    \begin{equation*}
+    \begin{aligned}
+    & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
+    && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
+    & \text{s.t.}
+    && \text{process model}(\bm{x}, \bm{m},\bm{h})
+    &&& \\
+    &
+    && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
+    &&& \\
+    &
+    && S_{j,t} \leq s_{j}^{max}
+    &&& \forall t, j \in J\\
+    &
+    && S_{j,t} =
+    \begin{cases}
+    S_{j,t-1} +  D_{j}, & \text{if } m_{j,t} = 0\\
+    s_{j}^{0}, & \text{otherwise}
+    \end{cases}
+    &&& \forall t, j \in J\\
+    \end{aligned}
+    \end{equation*}
+    where $m_{j,t} = 1$ if maintenance is performed on unit $j$ at time $t$.
+}
+\end{frame}
+
+\begin{frame}{Accounting for effects of process variables}
+\begin{alertblock}{Assumption [Liao \& Tian 2013]}
+    All relevant operating variables are piecewise constant -- i.e. the process has a set of discrete operating modes $k \in K$.
+\end{alertblock}
+%\begin{block}{A health model based on L\'evy processes}
+    \vspace{-15pt}
+    \begin{equation*}
+    \begin{aligned}
+    & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
+    && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
+    & \text{s.t.}
+    && \text{process model}(\bm{x}, \bm{m},\bm{h})
+    &&& \\
+    &
+    && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
+    &&& \\
+    &
+    && S_{j,t} \leq s_{j}^{max}
+    &&& \forall t, j \in J\\
+    &
+    && S_{j,t} =
+    \begin{cases}
+        S_{j,t-1} + \visible<2>{\sum\limits_{k \in
+        \mathcal{K}}{x_{j,k,t}\cdot}}
+        D_{j\visible<2>{,k}}, & \text{if } m_{j,t} = 0\\
+    s_{j}^{0}, & \text{otherwise}
+    \end{cases}
+    &&& \forall t, j \in J\\
+    \end{aligned}
+    \end{equation*}
+    where $x_{j,k,t} = 1$ if unit $j$ operates in mode $k$ at time $t$.
+% \end{block}
+\end{frame}
+
+\begin{frame}{Deriving a robust counterpart [Lappas \& Gounaris 2016]}
+\begin{block}{Random variables can be replaced by uncertain parameters}
+    Replace $D_{j,k}$ by an uncertain parameter $\tilde{d}_{j,k}$ bounded by a set $\mathcal{U}$:
+    \vspace{-10pt}
+    \begin{equation*}
+    \begin{aligned}
+    &
+    && s_{j,t} \leq s_{j}^{max}
+    &&& \forall t, j \in J\\
+    &
+    && s_{j,t} =
+    \begin{cases}
+    s_{j,t-1} + \sum_{k \in \mathcal{K}}{x_{j,k,t}\cdot \tilde{d}_{j,k}}, & \text{if } m_{j,t} = 0\\
+    s_{j}^{0}, & \text{otherwise}
+    \end{cases}
+    &&& \forall \tilde{d}_{j,k} \in \mathcal{U}, t, j \in J\\
+    \end{aligned}
+    \end{equation*}
+    \vspace{-5pt}
+    Reformulate:
+    \vspace{-5pt}
+    \begin{equation*}
+    \begin{aligned}
+    & m_{j,t} s_{j}^{0} \leq s_{j,t} \leq s_{j}^{max} + m_{j,t} \cdot (s_{j}^{0} - s_{j,max})
+    && \forall t, j \in J, \tilde{d}_{j,k} \in \mathcal{U}\\
+    & s_{j,t} \geq s_{j,t-\Delta t} + \sum_{k}{x_{j,k,t}\tilde{d}_{j,k}} + m_{j,t} \cdot (s_{j}^{0} - s_{j}^{max})
+    && \forall t, j \in J, \tilde{d}_{j,k} \in \mathcal{U}\\
+    & s_{j,t} \leq s_{j,t-\Delta t} + \sum_{k}{x_{j,k,t}\tilde{d}_{j,k}}
+    && \forall t, j \in J, \tilde{d}_{j,k} \in \mathcal{U},\\
+    \end{aligned}
+    \end{equation*}
+Replace $s_{j,t}$ by linear decision rule $s_{j,t} = [s_{j,t}]_{0} + \sum_{k}{[s_{j,t}]_{k}\tilde{d}_{j,k}}$.
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}{How do we choose $\mathcal{U}$?}
+\begin{columns}
+    \begin{column}{0.56\textwidth}
+        %\begin{block}{Determine $\mathcal{U}$ from distributions $\mathcal{D}_{j,k}$}
+                Assume a simple box uncertainty set:
+            \begin{equation*}
+                \begin{aligned}
+            &\mathcal{U} = \{\tilde{d}_{j,k}|&&\bar{d}_{j,k}(1-\epsilon_{j,k})\\
+            &
+            &&\leq \tilde{d}_{j,k}\\
+            &
+            &&\leq \bar{d}_{j,k}(1+\epsilon_{j,k})\}
+            \end{aligned}
+            \end{equation*}
+            Choose $\epsilon_{j,k}$ from distribution $\mathcal{D}_{j,k}$:
+            \begin{equation*}
+            \epsilon_{j,k}= 1 - F^{-1}(\alpha)/\bar{d}_{j,k}
+            \end{equation*}
+            Size of $\mathcal{U}$ depends on a single parameter $\alpha$!
+        %\end{block}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+        \tikzsetnextfilename{alpha}
+        \input{alpha.tex}
+    \end{column}
+\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Case study: State-Task-Network [Biondi et al 2017]}
+\only<1>{
+    \begin{center}
+        \includegraphics[width=0.9\linewidth]{stn.eps} \\
+    \end{center}
+}
+\only<1>{
+    Objective function:
+    \begin{align}
+    &\text{cost} = &&\sum_{j \in J} c_j^{maint}\left(s_j^{fin}/s_j^{max} + \sum_{t \in T} m_{j,t}\right)
+    + c_s^{storage}\left(q_s^{fin} + \sum_{t \in T_p} q_{s,t}\right) \nonumber\\
+    &
+    &&+ U\left(\sum_{s \in S} \phi^d_s + \sum_{t \in T_S} \phi^Q_{s,t}\right) \nonumber
+    \end{align}
+}
+\only<2>{
+    %\vspace{-10pt}
+    Scheduling horizon:
+    \begin{align}
+    &\sum_{k \in K_j}\sum_{i\in I_j}\sum_{t'=t-p_{i,j,k}+1}^t w_{i,j,k,t'} + \sum_{t'=t-\tau_j+1}^t m_{j,t'} \leq 1
+    && \forall J, t \in T_S\\
+    & v^{min}_{i,j}w_{i,j,k,t} \leq b_{i,j,k,t} \leq v^{max}_{i,j}w_{i,j,k,t}
+    && \forall J, i \in I_j, k \in K_j, t \in T_S\\
+    \begin{split}
+    q_{s,t} = q_{s,t-1} + \sum_{i \in \bar{I}_s} \bar{\rho}_{i,s}\sum_{j \in J_i}\sum_{k \in K_j} b_{i,j,k,t-p_{i,j,k}}\\
+    - \sum_{i \in I_s}\rho_{i,s}\sum_{j\in J_i}\sum_{k\in K_j}b_{i,j,k,t}
+    \end{split}
+    && \forall s, t \in T_S\\ \label{eq:slack1}
+    & 0 \leq q_{s,t} - \phi^q_{s,t}\leq c_s
+    && \forall s, t \in T_S\\
+    \end{align}
+}
+\only<3>{
+    \begin{center}
+        Scheduling horizon:
+        \includegraphics[width=\linewidth]{example-scheduling.png}
+    \end{center}
+    \begin{center}
+        Planning horizon:
+        \includegraphics[width=\linewidth]{example-planning.png}
+    \end{center}
+}
+\only<4>{
+    \centering
+    \input{biondi-p-vs-alpha-R1avg.tex}
+}
+\only<5>{
+    \centering
+    \input{biondi-cost-vs-alpha-R1avg.tex}
+}
+\end{frame}
+
+
+\begin{frame}{What is left to do?}
+\begin{block}{What should the value of $\alpha$ be?}
+    There is a trade-off between cost $c$ and probability of failure $p^f_j$ that is governed by $\alpha$ (the size of the uncertainty set $\mathcal{U}$).
+\end{block}
+\begin{block}{How can we save time?} Integrated MILP model can be very big - e.g 22500 variables (2400 discrete) and 12700 constraints. Obtaining a good solution over a long time horizon takes a long time ($\approx 2$ hours for a reasonable instance of the STN)
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Optimizing $\alpha$}
+\begin{block}{Choosing $\alpha$ is its own optimization problem}
+     We optimize $\alpha$ by solving
+    \begin{equation*}
+    \min_{\alpha} c^*(\alpha) + \sum_{j} p^f_{j}(\alpha)\cdot c_{j}^f
+    \end{equation*}
+    \begin{itemize}
+        \item $c^*(\alpha)$ is the objective value of a MILP solution for a given $\alpha$.
+        \item $p^f_j(\alpha)$ is the corresponding probability of failure (of unit $j$) evaluated by Monte-Carlo simulation.
+        \item $c_j^f$ is the cost of an unexpected failure.
+    \end{itemize}
+Since evaluating $c^*$ and $p^f_j$ is expensive, we propose using Bayesian optimization (good for black box optimization with expensive function evaluations).
+\end{block}
+\end{frame}
+
+\begin{frame}{Saving time}
+\only<1>{
+\begin{block}{An equivalent deterministic problem}
+    Assume that $\tilde{d}_{j,k}$ only appears in health model constraints and that $\tilde{d}_{j,k} \geq 0, \forall \tilde{d}_{j,kt} \in \mathcal{U}$. Then we can prove that a solution to
+    \begin{equation*}
+    \label{eq:bigD}
+    \begin{aligned}
+    &\min_{\bm{x}, \bm{m}}
+    && \text{cost}(\bm{x}, \bm{m})
+    &&&\\
+    & \text{s.t}
+    && \text{process, maint. model}(\bm{x}, \bm{m})
+    &&&\\
+    &
+    && m_{j,t} s_j^0 \leq s_{j,t},
+    &&& \forall t\\
+    &
+    && s_{j,t} \leq s_j^{max} + m_{j,t}(s_j^0 - s_j^{max}),
+    &&& \forall t\\
+    &
+    && s_{j,t} \geq s_{j,t-1} + \sum_{k}x_{j,k,t}d_{j,k}^{max} + m_{j,t}(s_j^0-s_j^{max}),
+    &&& \forall t\\
+    &
+    && s_{j,t} \leq s_{j,t-1} + \sum_{k}x_{j,k,t}d_{j,k}^{max},
+    &&& \forall t
+    \end{aligned}
+    \end{equation*}
+    with $d_{j,k}^{max} = \max_{\mathcal{U}} \tilde{d}_{j,k}$ is also feasible in the robust problem.
+\end{block}
+}
+\only<2>{
+\input{biondi-det-vs-rob.tex}
+}
+
+\end{frame}
+\begin{frame}{Avoiding rolling horizon}
+\only<1>{
+\begin{block}{Estimating $p^f_j$ from data}
+    Instead of solving over long time horizon using rolling horizon we can estimate an upper bound $\bar{p}^f_j$ on the probability of failure $p^f_j$ from data.
+\end{block}
+
+\begin{block}{Frequency approach}
+    \begin{enumerate}
+        \item Estimate the distribution of the frequencies of occurrence $N_{k}$ of the operating modes from data.
+        \item Randomly select $n_{k}$ frequencies from this distribution.
+        \item Arrange the selected number of operating modes in a random order.
+        \item Insert maintenance at the latest possible points in time.
+        \item Calculate $p_j^f$ for the generated sequence.
+        \item Repeat steps 2 through 5 $N_{mc}$ times and set $\bar{p}^f_j = \max{p^f_j}$
+    \end{enumerate}
+\end{block}
+}
+\only<2>{
+    \begin{block}{Markov-chain approach}
+            \begin{enumerate}
+             \item Model sequence of operating modes as Markov chain and estimate transition probabilities
+            \begin{equation*}
+            \pi_{k,k^*} = P(X_{n}=k^*|X_{n-1}=k)
+            \end{equation*}
+            from data.
+
+                \item Randomly draw $N_{mc}$ sequences of operating modes from Markov chain (inserting maintenance at latest point).
+                \item Evaluate $p^f_j$ for each
+                \item $\bar{p}^f_j = \max p^f_j$
+            \end{enumerate}
+    \end{block}
+}
+\end{frame}
+
+\begin{frame}{Estimating frequencies and transition probabilities}
+\begin{block}{Covariate dependencies}
+Frequencies and transition probabilities depend on product demand $\boldsymbol{p}$.
+\end{block}
+\only<1>{
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \includegraphics[width=\linewidth]{flat.eps}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \includegraphics[width=\linewidth]{3d.eps}
+        \end{column}
+    \end{columns}
+}
+\only<2>{
+    \begin{block}{Logistic regression [Paton et al 2014]}
+        Predict the probability $\eta_{n_{k}}$ that mode $k$ occurs $n_k$ times using logistic regression:
+        \begin{equation*}
+        \eta_{n_{k}}(\boldsymbol{p}(t)) = P(N_{k} = n_{k}, \boldsymbol{p}) = \frac{\exp(\boldsymbol{\beta}_{n_k}\boldsymbol{p})}{\sum_{n'_{k}}\exp(\boldsymbol{\beta}_{n'_{k}}\boldsymbol{p})}
+        \end{equation*}
+        Similarly predict transition probabilities based on demand:
+        \begin{equation*}
+        \pi_{k,k^*}(\boldsymbol{p}(t)) =  P(X_{n}=k^*|X_{n-1}=k,\boldsymbol{p}) = \frac{\exp(\boldsymbol{\beta}_{n_k}\boldsymbol{p})}{\sum_{n'_{k}}\exp(\boldsymbol{\beta}_{n'_{k}}\boldsymbol{p})}
+        \end{equation*}
+    \end{block}
+}
+\end{frame}
+
+\begin{frame}{Results}
+\only<1>{
+    \input{toy2-p-vs-alpha.tex}
+}
+\only<2>{
+    \input{biondi-p-vs-alpha.tex}
+}
+\only<3>{
+\begin{table}[ht]
+    \label{tab:metrics-inst}
+    \centering
+    \begin{tabular}{llrrr}
+        \hline
+        instance & bound & rms\_all & rms\_max & p\_out \\
+        \hline
+        toy & freq & 8.00 & 1.53 & 29.40 \\
+        toy & mc & 10.41 & 3.08 & 21.27 \\
+        P1 & freq & 12.61 & 3.52 & 17.54 \\
+        P1 & mc & 17.25 & 4.39 & 9.62 \\
+        P2 & freq & 7.40 & 2.31 & 18.08 \\
+        P2 & mc & 13.68 & 4.98 & 10.13 \\
+        P4 & freq & 9.17 & 3.27 & 47.78 \\
+        P4 & mc & 11.43 & 2.84 & 32.50 \\
+        P6 & freq & 18.75 & 8.94 & 12.17 \\
+        P6 & mc & 20.84 & 10.09 & 10.98 \\
+        \hline
+        all & freq & 11.19 & 3.91 & 24.99 \\
+        all & mc & 14.72 & 5.08 & 16.90 \\
+        \hline
+    \end{tabular}
+    \caption{Average performance metrics for probability estimates - all instances}
+\end{table}
+}
+\end{frame}
+
+\begin{frame}{Outlook}
+\begin{columns}
+    \begin{column}{0.48\textwidth}
+        \begin{block}{Optimizing $\alpha$}
+            \begin{equation*}
+            \min_{\alpha} c^*(\alpha) + \sum_{j} p^f_{j}(\alpha)\cdot c_{j}^f
+            \end{equation*}
+        \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+            \includegraphics[width=\linewidth]{boobj-vs-alpha.png}
+    \end{column}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Degradation modelling with multiple operating modes}
+\begin{center}
+    \includegraphics[scale=0.46]{example-wiener-om.pdf} \\
+\end{center}
+\end{frame}
+
+\begin{frame}{How does robust optimization work?}
+\begin{block}{General idea}
+    \begin{itemize}
+        \item Make constraints hold for all values in $\mathcal{U}$: $\sum_{j}{\tilde{a}_{ij}x_j} \leq b_i,
+        \forall \tilde{a}_{ij} \in \mathcal{U}$
+        \item Reformulate semi-infinite constraint:
+        $\sum_{j}{a_{ij}x_j} + \text{protection}\left(\mathcal{U}\right) \leq b_i$
+        \item{\color{red} How do we choose the right protection level?}
+    \end{itemize}
+\end{block}
+
+    \begin{exampleblock}{Example: Soyster's method (worst case) [1973]}
+        \vspace{-10pt}
+        \begin{minipage}[t]{.4\linewidth}
+            \begin{equation*}
+            \begin{aligned}
+            & \max_{x_1,x_2}
+            && x_1 + x_2\\
+            & \text{s.t.}
+            && \tilde{a}_{11} x_1 + \tilde{a}_{12} x_2 \leq b_1,\\
+            &
+            && \forall \tilde{a}_{ij} \in \mathcal{U}\\
+            \end{aligned}
+            \end{equation*}
+        \end{minipage}
+        \hfill\vline\hfill
+        \begin{minipage}[t]{.58\linewidth}
+            \begin{equation*}
+            \begin{aligned}
+            & \max_{x_1,x_2}
+            && x_1 + x_2\\
+            & \text{s.t.}
+            && a_{11} x_1 + a_{12} x_2  + \sum_{j}{\hat{a}_{ij}\abs{x_j}}  \leq b_1
+            \end{aligned}
+            \end{equation*}
+        \end{minipage}
+        %\vspace{10pt}
+        \begin{equation*}
+        \text{Given: }[a_{11}, a_{12}] = [1,2], [\hat{a}_{11}, \hat{a}_{12}] = [0.1, 0.2], [b_1] = [2]
+        \end{equation*}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Formulation}
+\begin{block}{Scheduling}
+    \vspace{-20pt}
+    \begin{equation*}
+    \begin{aligned}
+    & M_{j,t} S_{j,0} \leq S_{j,t} \leq S_{j,max} + M_{j,t} \cdot (S_{j,0} - S_{j,max})
+    && \forall t, j \in J, D \in \mathcal{D}\\
+    & S_{j,t} \geq S_{j,t-\Delta t} + \sum_{k}{Z_{j,k,t}D_{j,k,t}} + M_{j,t} \cdot (S_{j,0} - S_{j,max})
+    && \forall t, j \in J, D \in \mathcal{D}\\
+    & S_{j,t} \leq S_{j,t-\Delta t} + \sum_{k}{Z_{j,k,t}D_{j,k,t}}
+    && \forall t, j \in J, D \in \mathcal{D}\\
+    \end{aligned}
+    \end{equation*}
+    \vspace{-10pt}
+\end{block}
+\begin{block}{Planning}
+    \vspace{-20pt}
+    \begin{equation*}
+    \begin{aligned}
+    & S_{j,t} \leq S_{j,max}
+    && \forall t, j \in J\\
+    & S_{j,t} \geq S_{j,t-\Delta t} + \sum_{k}{N_{j,k,t}D_{j,k,t}} + M_{j,t} \cdot (S_{j,0} - S_{j,max})
+    && \forall t, j \in J\\
+    & S_{j,t} \leq S_{j,t-\Delta t} + \sum_{k}{N_{j,k,t}D_{j,k,t}}
+    && \forall t, j \in J\\
+    \end{aligned}
+    \end{equation*}
+    \vspace{-10pt}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Adjustable robust optimization}
+\begin{block}{Affine decision rule}
+\begin{equation}
+S_{j,t} = [S_{j,t}]_{0} + \sum_{k}\sum_{t'=0}^t{[S_{j,t}]_{k,t'}D_{j,k,t'}}.
+\end{equation}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Size of toy problem}
+\centering
+\begin{tabular}{|l|c|c|c|} \hline
+     & deterministic & robust $D \neq f(t)$ & robust $D = f(t)$ \\ \hline
+    \# vars & 913 & 3011 & 27719\\
+    \# binaries & 338 & 338 & 338\\
+    \# constraints & 1198 & 2356 & 13300\\ \hline
+    time to solve [s] & 2 & 0.3-10 & 0.3-10\\
+    gap [\%] & 0 & 0 & 0 \\ \hline
+    scheduling periods & 30 & 30 & 30\\
+    planning periods & 8 & 8 & 8\\
+    \makecell[l]{task-unit-op. mode\\ combinations} & 6 & 6 & 6\\\hline
+
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Size of realistic problem}
+\centering
+\begin{tabular}{|l|c|c|c|} \hline
+    & deterministic & robust $D \neq f(t)$ & robust $D = f(t)$ \\ \hline
+    \# vars & 5389 &  & 397361\\
+    \# binaries & 2492 &  & 2492\\
+    \# constraints & 6798 & & 180858\\ \hline
+    time to solve [s] & 7883 &  & 16756\\
+    gap [\%] & 3.62 &  & 31.02\\ \hline
+    scheduling periods & 56 & 56 & 56\\
+    planning periods & 24 & 24 & 24\\
+    \makecell[l]{task-unit-op. mode\\ combinations} & 24 & 24 & 24\\ \hline
+
+\end{tabular}
+\end{frame}
+
+\begin{frame}{How do we choose $\mathcal{U}$?}
+\vspace{-10pt}
+\begin{block}{Choose $\mathcal{U}$ from distribution}
+    \begin{minipage}[t]{.47\textwidth}
+
+
+        \begin{itemize}
+            \item Choose parameter $\alpha$
+            \item Choose $D_{min}$ such that $P(D \leq D_{min}) = \alpha$
+            \item Choose $D_{max}$ such that $P(D \geq D_{max}) = \alpha$
+            \item $\mathcal{U} = \{D|D_{min} \leq D \leq D_{max}\}$
+        \end{itemize}
+
+    \end{minipage}
+    \hfill\hfill
+    \begin{minipage}[t]{.47\textwidth}
+        \begin{center}
+            \includegraphics[scale=0.45]{uncertainty-set.pdf} \\
+        \end{center}
+    \end{minipage}
+\end{block}
+\end{frame}
+
+
+\end{document}
