@@ -4,7 +4,7 @@ library(tikzDevice)
 library(png)
 library(grid)
 plot(dis, type="l", main="Wiener process", xlab="Time", ylab="Degradation signal S")
-
+setwd("/home/johannes/OneDrive/Presentations/esa")
 Rmax = 100
 mu = 1.2
 sigma = 1.1
@@ -49,55 +49,106 @@ dfpdf = data.frame(
   x = df$x[df$invgauss >= Rmax + 0.05],
   y = df$invgauss[df$invgauss >= Rmax + 0.05]
 )
-#tikz('H:/STN/STN-Scheduler/results/deg-sig2.tex',width=4,height=3)
+icdarkgreen = rgb(102/255, 164/255, 10/255)
+icgreen = rgb(206/255, 226/255, 177/255)
+iclightgreen = rgb(225/255, 237/255, 206/266) 
+icdarkblue = rgb(0, 52/255, 92/255)
+icblue = rgb(173/255, 190/255, 203/255)
+iclightblue = rgb(225/255, 229/255, 236/255)
+mbg = rgb(250/255, 250/255, 250/255)
+icdarkorange = rgb(210/255, 64/255, 0)
+tikz('/home/johannes/OneDrive/Presentations/esa/deg-sig2.tex',width=4.27,height=3,bg=rgb(250/255,250/255,250/255))
 ggplot(df, aes(x, y)) +
-  theme(text = element_text(color=rgb(0, 52/255, 92/255))) +
-  theme(panel.background = element_rect(fill = rgb(225/255, 229/255, 235/255))) +
-  theme(axis.text = element_text(color=rgb(77/255, 106/255, 141/255))) +
-  geom_ribbon(aes(ymin=df$min, ymax=df$shademax), fill=rgb(173/255, 190/255, 203/255)) +
-  geom_ribbon(data=dfpdf, aes(ymin=Rmax, ymax=y), fill=rgb(205/255, 231/255, 205/255)) +
-  geom_line(aes(x, ymax), linetype=2, color="red") +
-  labs(y="$s^{meas}(t)$", x="time t") +
-  geom_text(aes(x = 25, y = Rmax+5), label = "$s^{max}$", color = "red") +
-  geom_text(aes(x = Tfail+5, y = 10), label = "$t^{fail}$", color = "red") +
-  geom_text(aes(x = Tfail+3, y = 119), label = "$P(S(t)>s^{max})$", color=rgb(2/255, 128/255, 2/255)) +
-  geom_segment(aes(x=Tfail, y=0, xend=Tfail, yend=Rmax), linetype=2, color=rgb(254/255, 3/255, 4/255)) +
-  geom_line(data=dfsig, linetype=1, color=rgb(0, 52/255, 92/255)) +
-  geom_line(data=dfmean, color=rgb(77/255, 106/255, 141/255)) +
-  geom_line(aes(x, min), linetype=2, color=rgb(77/255, 106/255, 141/255)) +
-  geom_line(data=dfmax, linetype=2, color=rgb(77/255, 106/255, 141/255)) +
+  theme_classic()+
+  theme(text = element_text(color=icdarkblue)) +
+  theme(plot.background = element_rect(fill=iclightblue)) +
+  theme(panel.background = element_rect(fill=mbg)) +
+  theme(axis.text = element_text(color=icdarkblue)) +
+  geom_ribbon(aes(ymin=df$min, ymax=df$shademax), fill=icblue) +
+  geom_ribbon(data=dfpdf, aes(ymin=Rmax, ymax=y), fill=iclightgreen) +
+  geom_line(aes(x, ymax), linetype=2, color=icdarkorange) +
+  labs(y="$s^{meas}(t)$", x="time $t$") +
+  geom_text(aes(x = 25, y = Rmax+5), label = "$s^{max}$", color=icdarkorange) +
+  geom_text(aes(x = Tfail+5, y = 10), label = "$t^{fail}$", color=icdarkorange) +
+  geom_text(aes(x = Tfail+3, y = 119), label = "$P(S(t)>s^{max})$", color=icdarkgreen) +
+  geom_segment(aes(x=Tfail, y=0, xend=Tfail, yend=Rmax), linetype=2, color=icdarkorange) +
+  geom_line(data=dfsig, linetype=1, color=icdarkblue) +
+  geom_line(data=dfmean, color=icdarkblue) +
+  geom_line(aes(x, min), linetype=2, color=icdarkblue) +
+  geom_line(data=dfmax, linetype=2, color=icdarkblue) +
   scale_x_continuous(limits = c(0,100)) +
-  scale_y_continuous(limits = c(-10,120)) +
+  scale_y_continuous(limits = c(0,120)) +
   # geom_vline(xintercept=Tmean, color="red") +
-  geom_line(data=dfpdf, color=rgb(2/255, 128/255, 2/255))
+  geom_line(data=dfpdf, color=icdarkgreen)
 dev.off()
-ggsave(file="example-wiener.pdf", width=10, height=6)
 
 
-img <- readPNG("maintenance.png")
+img <- readPNG("wrench.png")
 g <- rasterGrob(img, interpolate=TRUE)
-img2 <- readPNG("car-breakdown.png")
+img2 <- readPNG("fire.png")
 g2 <- rasterGrob(img2, interpolate=TRUE)
 
-tikz('H:/STN/STN-Scheduler/results/deg-sig.tex',width=4,height=3)
+Rmax = 100
+mu = 1.4
+sigma = 1.1
+N = 1001
+tm = 60
+Tmax = 200
+Sinit = 40
+df = data.frame(
+  dis = rnorm(N, mu/10, sigma/sqrt(10)),
+  x = seq(0, Tmax, Tmax/(N-1)),
+  ymax = rep(Rmax, N)
+)
+df$y = cumsum(df$dis) + Sinit
+df$y[df$x >= tm] = df$y[df$x >= tm] - min(df$y[df$x >= tm])
+df$mean = Sinit + mu*df$x
+df$var = sigma^2*df$x
+df$sigma = sqrt(df$var)
+df$min = df$mean - 2*df$sigma
+df$min[df$x >= tm] = df$min[df$x >= tm] - min(df$min[df$x >= tm])
+df$max = df$mean + 2*df$sigma
+df$max[df$x >= tm] = df$max[df$x >= tm] - min(df$max[df$x >= tm])
+df$mean[df$x >= tm] = df$mean[df$x >= tm] - min(df$mean[df$x >= tm])
+df$shademax = rep(Rmax, N)
+df$shademax[df$max < Rmax] = df$max[df$max < Rmax]
+Tfail = df$x[min(which(df$y > Rmax))]
+Tmean = df$x[min(which(df$mean > Rmax))]
+dfmax = data.frame(
+  x = df$x[df$max < Rmax],
+  y = df$max[df$max < Rmax]
+)
+dfmean = data.frame(
+  x = df$x[df$mean < Rmax],
+  y = df$mean[df$mean < Rmax]
+)
+dfsig = data.frame(
+  x = df$x[df$y < Rmax],
+  y = df$y[df$y < Rmax]
+)
+dfpdf = data.frame(
+  x = df$x[df$invgauss >= Rmax + 0.05],
+  y = df$invgauss[df$invgauss >= Rmax + 0.05]
+)
+tikz('/home/johannes/OneDrive/Presentations/esa/deg-sig.tex',width=4.27,height=3)
 ggplot(df, aes(x, y)) +
-  theme(text = element_text(color=rgb(0, 52/255, 92/255))) +
-  theme(panel.background = element_rect(fill = rgb(225/255, 229/255, 235/255))) +
-  theme(axis.text = element_text(color=rgb(77/255, 106/255, 141/255))) +
-  geom_line(aes(x, ymax), linetype=2, color="red") +
-  labs(y="degradation signal $s^{meas}(t)$", x="time t") +
-  geom_text(aes(x = 25, y = Rmax+5), label = "$s^{max}$", color="red") +
-  geom_text(aes(x = 5, y = Sinit-5), label = "$s^{init}$") +
-  geom_text(aes(x = 59, y = 5), label = "$s^{0}$") +
-  annotation_custom(g, xmin=70, xmax=85, ymin = Sinit, ymax=Sinit+30) +
-  annotation_custom(g2, xmin=180, xmax=195, ymin = 95, ymax=125) +
-  #geom_text(aes(x = Tfail+5, y = 10, label = "T[failure]"), parse = TRUE, color = "red", size=6) +
-  #geom_segment(aes(x=Tfail, y=0, xend=Tfail, yend=Rmax), linetype=2, color=rgb(254/255, 3/255, 4/255)) +
-  geom_line(data=dfsig, linetype=1, color=rgb(0, 52/255, 92/255)) +
+  theme_classic()+
+  theme(text = element_text(color=icdarkblue)) +
+  theme(plot.background = element_rect(fill=iclightblue)) +
+  theme(panel.background = element_rect(fill=mbg)) +
+  theme(axis.text = element_text(color=icdarkblue)) +
+  geom_line(aes(x, ymax), linetype=2, color=icdarkorange) +
+  labs(y="degradation signal $s^{meas}(t)$", x="time $t$") +
+  geom_text(aes(x = 25, y = Rmax-5), label = "$s^{max}$", color=icdarkorange) +
+  geom_text(aes(x = 5, y = Sinit-5), label = "$s^{init}$", color=icdarkblue) +
+  geom_text(aes(x = 55, y = 5), label = "$s^{0}$", color=icdarkblue) +
+  annotation_custom(g, xmin=65, xmax=85, ymin = Sinit, ymax=Sinit+35) +
+  annotation_custom(g2, xmin=175, xmax=187, ymin = 80, ymax=100) +
+  geom_line(data=dfsig, linetype=1, color=icdarkblue) +
   scale_x_continuous(limits = c(0,200)) +
-  scale_y_continuous(limits = c(-10,120))
+  scale_y_continuous(limits = c(0,100))
 dev.off()
-ggsave(file="example-wiener-simple.pdf", width=10, height=6)
+write.csv(df, file="df-deg-sig.csv")
 
 
 
@@ -125,11 +176,13 @@ lab = c(expression(paste("P(D","%in%")), expression(paste("P(D","%in%")))
 dflab = data.frame(
   lab = lab
 )
-tikz('H:/STN/STN-Scheduler/results/alpha.tex',width=2,height=2)
+tikz('/home/johannes/OneDrive/Presentations/esa/alpha.tex',width=2,height=2)
 ggplot(df) +
-  theme(text = element_text(size=8, color=rgb(0, 52/255, 92/255))) +
-  theme(panel.background = element_rect(fill = rgb(225/255, 229/255, 235/255))) +
-  theme(axis.text = element_text(color=rgb(77/255, 106/255, 141/255))) +
+  theme_classic()+
+  theme(text = element_text(color=icdarkblue)) +
+  theme(plot.background = element_rect(fill=iclightblue)) +
+  theme(panel.background = element_rect(fill=mbg)) +
+  theme(axis.text = element_text(color=icdarkblue)) +
   labs(y="$\\mathrm{pdf}(D_{j,k})$", x="$D_{j,k}$") +
   geom_ribbon(data=dfmiddle, aes(x=x, ymin=0, ymax=y), fill=rgb(173/255, 190/255, 203/255)) +
   geom_line(aes(x,y), color=rgb(0, 52/255, 92/255))+
