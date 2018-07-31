@@ -422,32 +422,59 @@ London
 \only<1>{
     \input{biondi-r1-p-vs-alpha.tex}
 }
-\only<2>{
-\begin{table}[ht]
-    \label{tab:metrics-inst}
-    \centering
-    \begin{tabular}{llrrr}
-        \hline
-        instance & bound & rms\_all & rms\_max & p\_out \\
-        \hline
-        toy & freq & 8.00 & 1.53 & 29.40 \\
-        toy & mc & 10.41 & 3.08 & 21.27 \\
-        P1 & freq & 12.61 & 3.52 & 17.54 \\
-        P1 & mc & 17.25 & 4.39 & 9.62 \\
-        P2 & freq & 7.40 & 2.31 & 18.08 \\
-        P2 & mc & 13.68 & 4.98 & 10.13 \\
-        P4 & freq & 9.17 & 3.27 & 47.78 \\
-        P4 & mc & 11.43 & 2.84 & 32.50 \\
-        P6 & freq & 18.75 & 8.94 & 12.17 \\
-        P6 & mc & 20.84 & 10.09 & 10.98 \\
-        \hline
-        all & freq & 11.19 & 3.91 & 24.99 \\
-        all & mc & 14.72 & 5.08 & 16.90 \\
-        \hline
-    \end{tabular}
-    \caption{Average performance metrics for probability estimates - all instances}
-\end{table}
-}
+\end{frame}
+
+\begin{frame}{Bayesian Optimization}
+    \only<1>{
+        \tikzsetnextfilename{biondi-bo-vs-alpha}
+        \input{biondi-bo-vs-alpha.tex}
+    }
+    \only<2>{
+        \tikzsetnextfilename{biondi-bo-vs-iter}
+        \input{biondi-bo-vs-iter-mean.tex}
+    }
+\end{frame}
+
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item Something smart.
+        \item Something really smart.
+        \item Something really really smart.
+    \end{itemize}
+    \visible<2>{
+        \centering
+        {\Huge Thank You!\\}
+    }
+        \tikzexternaldisable
+        \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west, %anchor is upper left corner of the graphic
+            xshift=7pt, %shifting around
+            yshift=-216pt]
+           at (current page.north west) %left upper corner of the page
+           {\includegraphics[width=0.29\textwidth]{Imperial_1_Pantone_solid.eps}};
+        \end{tikzpicture}
+        \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north east, %anchor is upper left corner of the graphic
+            xshift=-170pt, %shifting around
+            yshift=-214pt]
+           at (current page.north east) %left upper corner of the page
+           {\includegraphics[width=0.23\textwidth]{COG_logo}};
+        \end{tikzpicture}
+        \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north east, %anchor is upper left corner of the graphic
+            xshift=-88pt, %shifting around
+            yshift=-220pt]
+           at (current page.north east) %left upper corner of the page
+           {\includegraphics[width=0.23\textwidth]{logo_hipeds_v3.pdf}};
+        \end{tikzpicture}
+        \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north east, %anchor is upper left corner of the graphic
+        xshift=-4pt, %shifting around
+        yshift=-220pt]
+        at (current page.north east) %left upper corner of the page
+        {\includegraphics[width=0.23\textwidth]{Schlumberger}};
+        \end{tikzpicture}
+        \tikzexternalenable
 \end{frame}
 
 \begin{frame}{Outlook}
@@ -647,5 +674,31 @@ Replace $s_{j,t}$ by linear decision rule $s_{j,t} = [s_{j,t}]_{0} + \sum_{k}{[s
 %\end{block}
 \end{frame}
 
+
+\begin{frame}{Results: metrics data-driven approximation}
+    \begin{table}[ht]
+        \label{tab:metrics-inst}
+        \centering
+        \begin{tabular}{llrrr}
+            \hline
+            instance & bound & rms\_all & rms\_max & p\_out \\
+            \hline
+            toy & freq & 8.00 & 1.53 & 29.40 \\
+            toy & mc & 10.41 & 3.08 & 21.27 \\
+            P1 & freq & 12.61 & 3.52 & 17.54 \\
+            P1 & mc & 17.25 & 4.39 & 9.62 \\
+            P2 & freq & 7.40 & 2.31 & 18.08 \\
+            P2 & mc & 13.68 & 4.98 & 10.13 \\
+            P4 & freq & 9.17 & 3.27 & 47.78 \\
+            P4 & mc & 11.43 & 2.84 & 32.50 \\
+            P6 & freq & 18.75 & 8.94 & 12.17 \\
+            P6 & mc & 20.84 & 10.09 & 10.98 \\
+            \hline
+            all & freq & 11.19 & 3.91 & 24.99 \\
+            all & mc & 14.72 & 5.08 & 16.90 \\
+            \hline
+        \end{tabular}
+    \end{table}
+\end{frame}
 
 \end{document}

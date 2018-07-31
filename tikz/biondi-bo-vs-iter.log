@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.7.25)  31 JUL 2018 10:14
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.7.25)  31 JUL 2018 10:03
  system commands enabled.
 **\def\tikzexternalrealjob{presentation}\input{presentation}
 Lua module: luaotfload-main 2017/01/29 2.80001 OpenType layout system.
@@ -20,7 +20,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.104 seconds
+luaotfload | main : initialization completed in 0.096 seconds
 (./presentation.tex (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2018/02/20 v3.50 A class for typesetting presentations
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (/usr/share
@@ -1743,7 +1743,7 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\new@ifnextchar' on input line 16.
 
-No file tikz/presentation-figure0.aux.
+No file tikz/biondi-bo-vs-iter.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
@@ -1927,7 +1927,7 @@ ur preamble.
  on input line 16.
 
 \c@lstlisting=\count402
-No file tikz/presentation-figure0.nav.
+No file tikz/biondi-bo-vs-iter.nav.
 Package epstopdf Info: Source file: <Imperial_1_Pantone_solid.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 310981 bytes
@@ -2125,12 +2125,15 @@ Overfull \hbox (4.24072pt too wide) in paragraph at lines 9--388
 Overfull \vbox (38.16672pt too high) detected at line 388
  []
 
-(./biondi-r1-p-vs-alpha.tex
-\openout5 = tikz/presentation-figure0.dpth
- [27
+(./biondi-r1-p-vs-alpha.tex)
+Overfull \hbox (1.30013pt too wide) in paragraph at lines 3--451
+[] 
+ []
 
-\providecommand \oddpage@label [2]{}
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+
+Overfull \vbox (40.1906pt too high) detected at line 451
+ []
+
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -2171,21 +2174,18 @@ Overfull \hbox (1.30013pt too wide) in paragraph at lines 3--462
 Overfull \vbox (40.1906pt too high) detected at line 462
  []
 
-(./biondi-bo-vs-iter-mean.tex)
-Overfull \hbox (1.30013pt too wide) in paragraph at lines 3--462
-[] 
- []
+(./biondi-bo-vs-iter-mean.tex
+\openout5 = tikz/biondi-bo-vs-iter.dpth
+ [30
 
-
-Overfull \vbox (40.1906pt too high) detected at line 462
- []
-
-<boobj-vs-alpha.png, id=27, 622.57594pt x 479.54156pt>
+\providecommand \oddpage@label [2]{}
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+<boobj-vs-alpha.png, id=26, 622.57594pt x 479.54156pt>
 File: boobj-vs-alpha.png Graphic file (type png)
 <use boobj-vs-alpha.png>
 Package luatex.def Info: boobj-vs-alpha.png  used on input line 478.
 (luatex.def)             Requested size: 147.49782pt x 113.60693pt.
-<example-wiener-om.pdf, id=28, 722.7pt x 433.62pt>
+<example-wiener-om.pdf, id=27, 722.7pt x 433.62pt>
 File: example-wiener-om.pdf Graphic file (type pdf)
 <use example-wiener-om.pdf>
 Package luatex.def Info: example-wiener-om.pdf  used on input line 485.
@@ -2218,7 +2218,7 @@ Overfull \hbox (52.79442pt too wide) in paragraph at lines 601--601
  [][] 
  []
 
-<uncertainty-set.pdf, id=29, 361.35pt x 289.08pt>
+<uncertainty-set.pdf, id=28, 361.35pt x 289.08pt>
 File: uncertainty-set.pdf Graphic file (type pdf)
 <use uncertainty-set.pdf>
 Package luatex.def Info: uncertainty-set.pdf  used on input line 624.
@@ -2256,14 +2256,13 @@ ite, 10 pdf_colorstack nodes
  53052 multiletter control sequences out of 65536+600000
  148 fonts using 23851655 bytes
  70i,17n,105p,1899b,2467s stack positions out of 5000i,500n,10000p,200000b,100000s
-</usr/share/texmf/fonts/opentype/public/lm/lmroman8-italic.otf></usr/share/texmf
-/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texlive/texmf-dist/fo
-nts/opentype/public/fira/FiraSans-Light.otf></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb>
-Output written on tikz/presentation-figure0.pdf (1 page, 47363 bytes).
+</usr/share/texmf/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texm
+f/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texlive/texmf-dist/
+fonts/opentype/public/fira/FiraSans-Light.otf>
+Output written on tikz/biondi-bo-vs-iter.pdf (1 page, 38061 bytes).
 
-PDF statistics: 53 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+PDF statistics: 49 PDF objects out of 1000 (max. 8388607)
+ 20 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

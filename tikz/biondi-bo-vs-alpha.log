@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.7.25)  31 JUL 2018 10:14
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.7.25)  31 JUL 2018 09:49
  system commands enabled.
 **\def\tikzexternalrealjob{presentation}\input{presentation}
 Lua module: luaotfload-main 2017/01/29 2.80001 OpenType layout system.
@@ -20,7 +20,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.104 seconds
+luaotfload | main : initialization completed in 0.106 seconds
 (./presentation.tex (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2018/02/20 v3.50 A class for typesetting presentations
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (/usr/share
@@ -1743,7 +1743,7 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\new@ifnextchar' on input line 16.
 
-No file tikz/presentation-figure0.aux.
+No file tikz/biondi-bo-vs-alpha.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
@@ -1927,7 +1927,7 @@ ur preamble.
  on input line 16.
 
 \c@lstlisting=\count402
-No file tikz/presentation-figure0.nav.
+No file tikz/biondi-bo-vs-alpha.nav.
 Package epstopdf Info: Source file: <Imperial_1_Pantone_solid.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 310981 bytes
@@ -2125,12 +2125,15 @@ Overfull \hbox (4.24072pt too wide) in paragraph at lines 9--388
 Overfull \vbox (38.16672pt too high) detected at line 388
  []
 
-(./biondi-r1-p-vs-alpha.tex
-\openout5 = tikz/presentation-figure0.dpth
- [27
+(./biondi-r1-p-vs-alpha.tex)
+Overfull \hbox (1.30013pt too wide) in paragraph at lines 3--451
+[] 
+ []
 
-\providecommand \oddpage@label [2]{}
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+
+Overfull \vbox (40.1906pt too high) detected at line 451
+ []
+
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -2162,90 +2165,78 @@ Overfull \vbox (38.16672pt too high) detected at line 388
 Overfull \vbox (45.45946pt too high) detected at line 451
  []
 
-(./biondi-bo-vs-alpha.tex)
-Overfull \hbox (1.30013pt too wide) in paragraph at lines 3--462
-[] 
- []
+(./biondi-bo-vs-alpha.tex
+\openout5 = tikz/biondi-bo-vs-alpha.dpth
+ [29
 
-
-Overfull \vbox (40.1906pt too high) detected at line 462
- []
-
-(./biondi-bo-vs-iter-mean.tex)
-Overfull \hbox (1.30013pt too wide) in paragraph at lines 3--462
-[] 
- []
-
-
-Overfull \vbox (40.1906pt too high) detected at line 462
- []
-
+\providecommand \oddpage@label [2]{}
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 <boobj-vs-alpha.png, id=27, 622.57594pt x 479.54156pt>
 File: boobj-vs-alpha.png Graphic file (type png)
 <use boobj-vs-alpha.png>
-Package luatex.def Info: boobj-vs-alpha.png  used on input line 478.
+Package luatex.def Info: boobj-vs-alpha.png  used on input line 472.
 (luatex.def)             Requested size: 147.49782pt x 113.60693pt.
 <example-wiener-om.pdf, id=28, 722.7pt x 433.62pt>
 File: example-wiener-om.pdf Graphic file (type pdf)
 <use example-wiener-om.pdf>
-Package luatex.def Info: example-wiener-om.pdf  used on input line 485.
+Package luatex.def Info: example-wiener-om.pdf  used on input line 479.
 (luatex.def)             Requested size: 332.44603pt x 199.46762pt.
 
-Overfull \hbox (25.15616pt too wide) in paragraph at lines 485--485
+Overfull \hbox (25.15616pt too wide) in paragraph at lines 479--479
  [] 
  []
 
 
-Overfull \vbox (19.2083pt too high) detected at line 485
+Overfull \vbox (19.2083pt too high) detected at line 479
  []
 
 
-Overfull \vbox (95.26154pt too high) detected at line 528
+Overfull \vbox (95.26154pt too high) detected at line 522
  []
 
 
-Overfull \hbox (25.49245pt too wide) detected at line 560
+Overfull \hbox (25.49245pt too wide) detected at line 554
 [][]
  []
 
 
-Overfull \hbox (52.79442pt too wide) in paragraph at lines 585--585
+Overfull \hbox (52.79442pt too wide) in paragraph at lines 579--579
  [][] 
  []
 
 
-Overfull \hbox (52.79442pt too wide) in paragraph at lines 601--601
+Overfull \hbox (52.79442pt too wide) in paragraph at lines 595--595
  [][] 
  []
 
 <uncertainty-set.pdf, id=29, 361.35pt x 289.08pt>
 File: uncertainty-set.pdf Graphic file (type pdf)
 <use uncertainty-set.pdf>
-Package luatex.def Info: uncertainty-set.pdf  used on input line 624.
+Package luatex.def Info: uncertainty-set.pdf  used on input line 618.
 (luatex.def)             Requested size: 162.60599pt x 130.0848pt.
 
-Overfull \hbox (18.17938pt too wide) in paragraph at lines 624--624
+Overfull \hbox (18.17938pt too wide) in paragraph at lines 618--618
  [] 
  []
 
 
-Overfull \hbox (19.32959pt too wide) detected at line 659
+Overfull \hbox (19.32959pt too wide) detected at line 653
 [][]
  []
 
 
-Overfull \hbox (7.16252pt too wide) detected at line 659
+Overfull \hbox (7.16252pt too wide) detected at line 653
 [][]
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 662.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 662.
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 662.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 662.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 656.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 656.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 656.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 656.
 )
 
 Here is how much of LuaTeX's memory you used:
- 51128 strings out of 494480
+ 51120 strings out of 494480
  2274278,2373549 words of node,token memory allocated
  10309 words of node memory still in use:
    221 hlist, 45 vlist, 21 rule, 25 disc, 4 local_par, 85 math, 229 glue, 168 ke
@@ -2253,14 +2244,14 @@ rn, 22 penalty, 446 glyph, 290 attribute, 79 glue_spec, 290 attribute_list, 3 wr
 ite, 10 pdf_colorstack nodes
    avail lists: 1:20,2:165395,3:88006,4:126,5:17955,6:42134,7:75298,8:170,9:4227
 2,10:13,11:80
- 53052 multiletter control sequences out of 65536+600000
+ 53051 multiletter control sequences out of 65536+600000
  148 fonts using 23851655 bytes
  70i,17n,105p,1899b,2467s stack positions out of 5000i,500n,10000p,200000b,100000s
-</usr/share/texmf/fonts/opentype/public/lm/lmroman8-italic.otf></usr/share/texmf
-/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texlive/texmf-dist/fo
-nts/opentype/public/fira/FiraSans-Light.otf></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb>
-Output written on tikz/presentation-figure0.pdf (1 page, 47363 bytes).
+</usr/share/texmf/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texm
+f/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texlive/texmf-dist/
+fonts/opentype/public/fira/FiraSans-Light.otf></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb>
+Output written on tikz/biondi-bo-vs-alpha.pdf (1 page, 33670 bytes).
 
 PDF statistics: 53 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream
