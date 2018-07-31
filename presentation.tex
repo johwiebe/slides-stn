@@ -78,7 +78,7 @@ London
     \vspace{5pt}
 \only<3>{
     \begin{block}{Related Work}
-        \cite{Vassiliadis1999}
+        \citet{Vassiliadis2001,Liu2014,Xenos2016,Aguirre2018,Biondi2017,Yildirim2017,Basciftci2018}
     \end{block}
 }
 \only<4->{
@@ -96,27 +96,26 @@ London
 }
 
 \only<2-3>{
-    The degradation signal $s^{meas}(t)$ is often modelled by a stochastic process:
+    The degradation signal $s^{meas}(t)$ can be modelled by a stochastic process :
     \begin{equation*}
         S(t) = \{S_t : t \in T\},
     \end{equation*}
-    where $S_t$ is a random variable.
+    where $S_t$ is a random variable\citep{Alaswad2016}.
 \visible<3>{
-\begin{block}{Often used: L\'evy type processes}
+    \begin{block}{Often used: L\'evy type processes \citep{Applebaum2004}}
     \begin{itemize}
         \item Independent increments: $S_{t_2} - S_{t_1}, ..., S_{t_n} - S_{t_{n-1}}$ are independent for any $0 < t_1 < t_2 < ... < t_n < \infty$
         \item Stationary increments: $S_t - S_s$ and $S_{t-s}$ have the same distribution for any $s<t$
-        \item Continuity in probability: $\lim_{h \rightarrow 0} P(|{S_{t+h} - S_t}| > \epsilon) = 0$ for any $\epsilon > 0$, $t \geq 0$.
+        %\item Continuity in probability: $\lim_{h \rightarrow 0} P(|{S_{t+h} - S_t}| > \epsilon) = 0$ for any $\epsilon > 0$, $t \geq 0$.
     \end{itemize}
-\end{block}
+    \end{block}
+    Therefore
+        %\begin{equation*}
+           $S_{t} - S_{t-\Delta t} = D \sim
+           \mathcal{D}(\boldsymbol{\Theta}, \Delta t)$, where
+           $\boldsymbol{\Theta}$ are parameters of distribution $\mathcal{D}$.
+        %\end{equation*}
 }
-}
-\only<4>{
-    \centering
-    %\includegraphics{tikz/deg-sig2.pdf}
-    \tikzsetnextfilename{deg-sig2}
-    \input{deg-sig2.tex}
-    % \IfFileExists{tikz/deg-sig2.pdf}{\includegraphics{tikz/deg-sig2.pdf}}{\tikzsetnextfilename{deg-sig2} \input{deg-sig2.tex}}
 }
 \end{frame}
 
@@ -124,9 +123,9 @@ London
 \begin{alertblock}{Assumption}
     The health of each unit $j$ can be described by a L\'evy process $S_j(t)$
     with increments $S_{j,t} - S_{j,t-\Delta t} = D_j \sim
-    \mathcal{D}_j(\boldsymbol{\Theta}, \only<2>{{\color{imperialAlertText}\boldsymbol{x}}, } \Delta t)$.
+    \mathcal{D}_j(\boldsymbol{\Theta}\only<3>{{\color{imperialAlertText}(\boldsymbol{x})}}, \Delta t)$.
 \end{alertblock}
-\visible<2>{
+\visible<2->{
     \vspace{-10pt}
     \begin{equation*}
     \begin{aligned}
@@ -155,7 +154,7 @@ London
 \end{frame}
 
 \begin{frame}{Accounting for effects of process variables}
-\begin{alertblock}{Assumption [Liao \& Tian 2013]}
+    \begin{alertblock}{Assumption \citep{Liao2013}}
     All relevant operating variables are piecewise constant -- i.e. the process has a set of discrete operating modes $k \in K$.
 \end{alertblock}
 %\begin{block}{A health model based on L\'evy processes}
@@ -176,9 +175,9 @@ London
     &
     && S_{j,t} =
     \begin{cases}
-        S_{j,t-1} + {\color{imperialAlertText}\visible<2>{\sum\limits_{k \in
+        S_{j,t-1} + {\color{imperialAlertText}{\sum\limits_{k \in
         \mathcal{K}}{x_{j,k,t}\cdot}}}
-        D_{j{\color{imperialAlertText}\visible<2>{,k}}}, & \text{if } m_{j,t} = 0\\
+        D_{j{\color{imperialAlertText}{,k}}}, & \text{if } m_{j,t} = 0\\
     s_{j}^{0}, & \text{otherwise}
     \end{cases}
     &&& \forall t, j \in J\\
@@ -188,7 +187,7 @@ London
 % \end{block}
 \end{frame}
 
-\begin{frame}{Deriving a robust counterpart [Lappas \& Gounaris 2016]}
+\begin{frame}{Deriving a robust counterpart \citep{Lappas2016}}
 %\begin{block}{}
     Replace random variables $D_{j,k}$ and $S_{j,t}$ by uncertain parameter
     $\tilde{d}_{j,k} \in \mathcal{U}$ and second stage variable
@@ -221,7 +220,8 @@ London
     \end{aligned}
     \end{equation*}
     $\forall \tilde{d}_{j,k} \in \mathcal{U}$.
-    Approximate $s_{j,t}\left(\tilde{d}_{j,k}\right)$ by linear decision rule.
+    \visible<2>{Approximate $s_{j,t}\left(\tilde{d}_{j,k}\right)$ by linear decision rule.
+    Utilize Robust Optimization reformulation techniques.}
 \end{frame}
 
 
@@ -255,7 +255,7 @@ London
 
 
 
-\begin{frame}{Case study: State-Task-Network [Kondili et al.~1993]}
+\begin{frame}{Case study: State-Task-Network \citep{Kondili1993}}
     \only<1>{
         \centering
         \tikzsetnextfilename{p2}
@@ -263,7 +263,7 @@ London
     }
     \only<2>{
         %\begin{block}{Extension for degradation [Biondi et al.~2017]}
-        Biondi et al.~(2017) extend the STN to include...
+        \citet{Biondi2017} extend the STN to include...
             \begin{itemize}
                 \item ...unit health and maintenance scheduling
                 \item ...integrated scheduling and planning
@@ -274,7 +274,7 @@ London
         This work...
             \begin{itemize}
                 \item ...replaces their deterministic health model by the
-                    proposed degradation modeling based model.
+                    proposed approach based on degradation modelling.
                 \item ...utilizes robust optimization to obtain a solution that
                     is likely to remain feasible.
             \end{itemize}
@@ -313,7 +313,6 @@ London
 
 \begin{frame}{Saving time: a deterministic approximation}
 \only<1>{
-%\begin{block}{An equivalent deterministic problem}
     \begin{alertblock}{Assumption}
         Only the health model depends on $\tilde{d}_{j,k}$ and $\tilde{d}_{j,k}
         \geq 0.$%,\, \forall \tilde{d}_{j,kt} \in \mathcal{U}$.
@@ -343,7 +342,6 @@ London
     \end{aligned}
     \end{equation*}
     with $d_{j,k}^{max} = \max_{\mathcal{U}} \tilde{d}_{j,k}$ is also feasible in the robust problem.
-%\end{block}
 }
 \only<2>{
     \tikzsetnextfilename{det-vs-rob}
@@ -354,75 +352,18 @@ London
 \begin{frame}{Saving time: data-driven approximations}
     An upper bound on the probability of failure $p^f_j$ can be estimated from
     data (using logistic regression).
-%\begin{block}{Estimating $p^f_j$ from data}
-%    Instead of solving over long time horizon using rolling horizon we can estimate an upper bound $\bar{p}^f_j$ on the probability of failure $p^f_j$ from data.
-%\end{block}
-
-%\begin{block}{Frequency approach}
-%    \begin{enumerate}
-%        \item Estimate the distribution of the frequencies of occurrence $N_{k}$ of the operating modes from data.
-%        \item Randomly select $n_{k}$ frequencies from this distribution.
-%        \item Arrange the selected number of operating modes in a random order.
-%        \item Insert maintenance at the latest possible points in time.
-%        \item Calculate $p_j^f$ for the generated sequence.
-%        \item Repeat steps 2 through 5 $N_{mc}$ times and set $\bar{p}^f_j = \max{p^f_j}$
-%    \end{enumerate}
-%\end{block}
     \tikzsetnextfilename{freq}
     \input{freq.tex}
-%\only<2>{
-%    \begin{block}{Markov-chain approach}
-%            \begin{enumerate}
-%             \item Model sequence of operating modes as Markov chain and estimate transition probabilities
-%            \begin{equation*}
-%            \pi_{k,k^*} = P(X_{n}=k^*|X_{n-1}=k)
-%            \end{equation*}
-%            from data.
-%
-%                \item Randomly draw $N_{mc}$ sequences of operating modes from Markov chain (inserting maintenance at latest point).
-%                \item Evaluate $p^f_j$ for each
-%                \item $\bar{p}^f_j = \max p^f_j$
-%            \end{enumerate}
-%    \end{block}
-%}
 \end{frame}
 
-%\begin{frame}{Estimating frequencies and transition probabilities}
-%\begin{block}{Covariate dependencies}
-%Frequencies and transition probabilities depend on product demand $\boldsymbol{p}$.
-%\end{block}
-%\only<1>{
-%    \begin{columns}
-%        \begin{column}{0.48\textwidth}
-%            \includegraphics[width=\linewidth]{flat.eps}
-%        \end{column}
-%        \begin{column}{0.48\textwidth}
-%            \includegraphics[width=\linewidth]{3d.eps}
-%        \end{column}
-%    \end{columns}
-%}
-%\only<2>{
-%    \begin{block}{Logistic regression [Paton et al 2014]}
-%        Predict the probability $\eta_{n_{k}}$ that mode $k$ occurs $n_k$ times using logistic regression:
-%        \begin{equation*}
-%        \eta_{n_{k}}(\boldsymbol{p}(t)) = P(N_{k} = n_{k}, \boldsymbol{p}) = \frac{\exp(\boldsymbol{\beta}_{n_k}\boldsymbol{p})}{\sum_{n'_{k}}\exp(\boldsymbol{\beta}_{n'_{k}}\boldsymbol{p})}
-%        \end{equation*}
-%        Similarly predict transition probabilities based on demand:
-%        \begin{equation*}
-%        \pi_{k,k^*}(\boldsymbol{p}(t)) =  P(X_{n}=k^*|X_{n-1}=k,\boldsymbol{p}) = \frac{\exp(\boldsymbol{\beta}_{n_k}\boldsymbol{p})}{\sum_{n'_{k}}\exp(\boldsymbol{\beta}_{n'_{k}}\boldsymbol{p})}
-%        \end{equation*}
-%    \end{block}
-%}
-%\end{frame}
+
 
 \begin{frame}{Results}
-%\only<1>{
-%    \input{toy2-p-vs-alpha.tex}
-%}
 \only<1>{
     \input{biondi-r1-p-vs-alpha.tex}
 }
 \end{frame}
+
 
 \begin{frame}{Bayesian Optimization}
     \only<1>{
@@ -434,6 +375,7 @@ London
         \input{biondi-bo-vs-iter-mean.tex}
     }
 \end{frame}
+
 
 \begin{frame}{Conclusion}
     \begin{itemize}
@@ -477,20 +419,16 @@ London
         \tikzexternalenable
 \end{frame}
 
-\begin{frame}{Outlook}
-\begin{columns}
-    \begin{column}{0.48\textwidth}
-        \begin{block}{Optimizing $\alpha$}
-            \begin{equation*}
-            \min_{\alpha} c^*(\alpha) + \sum_{j} p^f_{j}(\alpha)\cdot c_{j}^f
-            \end{equation*}
-        \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-            \includegraphics[width=\linewidth]{boobj-vs-alpha.png}
-    \end{column}
-\end{columns}
+\appendix \begin{frame}
+    \tiny
+    \bibliographystyle{apalike}
+    \bibliography{lit_manual,lit}
+\end{frame}
 
+\begin{frame}{Degradation modelling}
+    \centering
+    \tikzsetnextfilename{deg-sig2}
+    \input{deg-sig2.tex}
 \end{frame}
 
 
