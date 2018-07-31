@@ -123,7 +123,7 @@ gg <- ggplot(dfl[dfl$Unit == "Reactor 1",], aes(alpha, p, color=scenario)) +
   scale_linetype_manual(values=c(1, 2),
                      labels=c("{\\scriptsize freq\\,}", "{\\scriptsize MC\\qquad}")) +
   theme(legend.position = "top", legend.margin=margin(t=-0.05, b=-0.01, unit="cm")) +
-  coord_fixed(ratio=1/300, ylim = c(0, 100), xlim =c(0,0.5)) +
+  #coord_fixed(ratio=1/300, ylim = c(0, 100), xlim =c(0,0.5)) +
   labs(color = "{\\scriptsize Scenario}", linetype="{\\scriptsize Bound}", x="$\\alpha$", y="$p^f_j$ [\\%]") +
   geom_line(aes(linetype=bound), size=0.5) + 
   geom_point(data=dfl_det, alpha=a, size=0.5) +

@@ -58,7 +58,7 @@ London
 \end{frame}
 
 \begin{frame}[t]{Starting point: Process level MI(N)LP model}
-    \vspace{-10pt}
+    %\vspace{-10pt}
     \begin{equation*}
     \begin{aligned}
         & \underset{\bm{x},\bm{m}\visible<2->{, {\color{icOrange}\bm{h}}}}{\text{min}}
@@ -76,10 +76,12 @@ London
     where $\bm{x}$ are process variables, $\bm{m}$ are maintenance
     variables\visible<2->{, and {\color{icOrange}$\bm{h}$ are health related variables}.}
     \vspace{5pt}
-\only<3>{
-    \begin{block}{Related Work}
-        \citet{Vassiliadis2001,Liu2014,Xenos2016,Aguirre2018,Biondi2017,Yildirim2017,Basciftci2018}
-    \end{block}
+\only<1-3>{
+    \visible<3>{
+        \begin{block}{Related Work}
+            \citet{Vassiliadis2001,Liu2014,Xenos2016,Aguirre2018,Biondi2017,Yildirim2017,Basciftci2018}
+        \end{block}
+    }
 }
 \only<4->{
     \begin{exampleblock}{Idea}
@@ -95,13 +97,13 @@ London
     \input{deg-sig.tex}
 }
 
-\only<2-3>{
+\only<2-4>{
     The degradation signal $s^{meas}(t)$ can be modelled by a stochastic process :
     \begin{equation*}
         S(t) = \{S_t : t \in T\},
     \end{equation*}
-    where $S_t$ is a random variable\citep{Alaswad2016}.
-\visible<3>{
+    where $S_t$ is a random variable \citep{Alaswad2016}.
+\visible<3->{
     \begin{block}{Often used: L\'evy type processes \citep{Applebaum2004}}
     \begin{itemize}
         \item Independent increments: $S_{t_2} - S_{t_1}, ..., S_{t_n} - S_{t_{n-1}}$ are independent for any $0 < t_1 < t_2 < ... < t_n < \infty$
@@ -109,6 +111,8 @@ London
         %\item Continuity in probability: $\lim_{h \rightarrow 0} P(|{S_{t+h} - S_t}| > \epsilon) = 0$ for any $\epsilon > 0$, $t \geq 0$.
     \end{itemize}
     \end{block}
+}
+\visible<4>{
     Therefore
         %\begin{equation*}
            $S_{t} - S_{t-\Delta t} = D \sim
@@ -188,13 +192,13 @@ London
 \end{frame}
 
 \begin{frame}{Deriving a robust counterpart \citep{Lappas2016}}
-%\begin{block}{}
+\begin{exampleblock}{Idea}
     Replace random variables $D_{j,k}$ and $S_{j,t}$ by uncertain parameter
     $\tilde{d}_{j,k} \in \mathcal{U}$ and second stage variable
-    $s_{j,t}\left(\tilde{d}_{j,k}\right)$.
-%\end{block}
+    $s_{j,t}(\tilde{d}_{j,k})$.
+\end{exampleblock}
 %\begin{block}{A health model based on L\'evy processes}
-%    \vspace{-15pt}
+    \vspace{-15pt}
     \begin{equation*}
     \begin{aligned}
     & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
@@ -206,7 +210,7 @@ London
     && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
     &&& \\
     &
-    && {\color{imperialAlertText}s_{j,t}\left(\tilde{d}_{j,k}\right)} \leq s_{j}^{max}
+    && {\color{imperialAlertText}s_{j,t}(\tilde{d}_{j,k})} \leq s_{j}^{max}
     &&& \forall t, j \in J\\
     &
     && {\color{imperialAlertText}s_{j,t}} =
@@ -350,16 +354,13 @@ London
 
 \end{frame}
 \begin{frame}{Saving time: data-driven approximations}
+\only<1>{
     An upper bound on the probability of failure $p^f_j$ can be estimated from
     data (using logistic regression).
     \tikzsetnextfilename{freq}
     \input{freq.tex}
-\end{frame}
-
-
-
-\begin{frame}{Results}
-\only<1>{
+}
+\only<2>{
     \input{biondi-r1-p-vs-alpha.tex}
 }
 \end{frame}
@@ -387,36 +388,36 @@ London
         \centering
         {\Huge Thank You!\\}
     }
-        \tikzexternaldisable
-        \begin{tikzpicture}[overlay, remember picture]
-        \node[anchor=north west, %anchor is upper left corner of the graphic
-            xshift=7pt, %shifting around
-            yshift=-216pt]
-           at (current page.north west) %left upper corner of the page
-           {\includegraphics[width=0.29\textwidth]{Imperial_1_Pantone_solid.eps}};
-        \end{tikzpicture}
-        \begin{tikzpicture}[overlay, remember picture]
-        \node[anchor=north east, %anchor is upper left corner of the graphic
-            xshift=-170pt, %shifting around
-            yshift=-214pt]
-           at (current page.north east) %left upper corner of the page
-           {\includegraphics[width=0.23\textwidth]{COG_logo}};
-        \end{tikzpicture}
-        \begin{tikzpicture}[overlay, remember picture]
-        \node[anchor=north east, %anchor is upper left corner of the graphic
-            xshift=-88pt, %shifting around
-            yshift=-220pt]
-           at (current page.north east) %left upper corner of the page
-           {\includegraphics[width=0.23\textwidth]{logo_hipeds_v3.pdf}};
-        \end{tikzpicture}
-        \begin{tikzpicture}[overlay, remember picture]
-        \node[anchor=north east, %anchor is upper left corner of the graphic
-        xshift=-4pt, %shifting around
+    \tikzexternaldisable
+    \begin{tikzpicture}[overlay, remember picture]
+    \node[anchor=north west, %anchor is upper left corner of the graphic
+        xshift=7pt, %shifting around
+        yshift=-216pt]
+       at (current page.north west) %left upper corner of the page
+       {\includegraphics[width=0.29\textwidth]{Imperial_1_Pantone_solid.eps}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+    \node[anchor=north east, %anchor is upper left corner of the graphic
+        xshift=-170pt, %shifting around
+        yshift=-214pt]
+       at (current page.north east) %left upper corner of the page
+       {\includegraphics[width=0.23\textwidth]{COG_logo}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+    \node[anchor=north east, %anchor is upper left corner of the graphic
+        xshift=-88pt, %shifting around
         yshift=-220pt]
-        at (current page.north east) %left upper corner of the page
-        {\includegraphics[width=0.23\textwidth]{Schlumberger}};
-        \end{tikzpicture}
-        \tikzexternalenable
+       at (current page.north east) %left upper corner of the page
+       {\includegraphics[width=0.23\textwidth]{logo_hipeds_v3.pdf}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+    \node[anchor=north east, %anchor is upper left corner of the graphic
+    xshift=-4pt, %shifting around
+    yshift=-220pt]
+    at (current page.north east) %left upper corner of the page
+    {\includegraphics[width=0.23\textwidth]{Schlumberger}};
+    \end{tikzpicture}
+    \tikzexternalenable
 \end{frame}
 
 \appendix \begin{frame}
@@ -523,62 +524,60 @@ S_{j,t} = [S_{j,t}]_{0} + \sum_{k}\sum_{t'=0}^t{[S_{j,t}]_{k,t'}D_{j,k,t'}}.
 
 
 \begin{frame}{Size of toy problem}
-\centering
-\begin{tabular}{|l|c|c|c|} \hline
-     & deterministic & robust $D \neq f(t)$ & robust $D = f(t)$ \\ \hline
-    \# vars & 913 & 3011 & 27719\\
-    \# binaries & 338 & 338 & 338\\
-    \# constraints & 1198 & 2356 & 13300\\ \hline
-    time to solve [s] & 2 & 0.3-10 & 0.3-10\\
-    gap [\%] & 0 & 0 & 0 \\ \hline
-    scheduling periods & 30 & 30 & 30\\
-    planning periods & 8 & 8 & 8\\
-    \makecell[l]{task-unit-op. mode\\ combinations} & 6 & 6 & 6\\\hline
-
-\end{tabular}
+    \footnotesize
+    \centering
+    \begin{tabular}{|l|c|c|c|} \hline
+         & deterministic & robust $D \neq f(t)$ & robust $D = f(t)$ \\ \hline
+        \# vars & 913 & 3011 & 27719\\
+        \# binaries & 338 & 338 & 338\\
+        \# constraints & 1198 & 2356 & 13300\\ \hline
+        time to solve [s] & 2 & 0.3-10 & 0.3-10\\
+        gap [\%] & 0 & 0 & 0 \\ \hline
+        scheduling periods & 30 & 30 & 30\\
+        planning periods & 8 & 8 & 8\\
+        \makecell[l]{task-unit-op. mode\\ combinations} & 6 & 6 & 6\\\hline
+    \end{tabular}
 \end{frame}
 
 \begin{frame}{Size of realistic problem}
-\centering
-\begin{tabular}{|l|c|c|c|} \hline
-    & deterministic & robust $D \neq f(t)$ & robust $D = f(t)$ \\ \hline
-    \# vars & 5389 &  & 397361\\
-    \# binaries & 2492 &  & 2492\\
-    \# constraints & 6798 & & 180858\\ \hline
-    time to solve [s] & 7883 &  & 16756\\
-    gap [\%] & 3.62 &  & 31.02\\ \hline
-    scheduling periods & 56 & 56 & 56\\
-    planning periods & 24 & 24 & 24\\
-    \makecell[l]{task-unit-op. mode\\ combinations} & 24 & 24 & 24\\ \hline
-
-\end{tabular}
+    \footnotesize
+    \centering
+    \begin{tabular}{|l|c|c|c|} \hline
+        & deterministic & robust $D \neq f(t)$ & robust $D = f(t)$ \\ \hline
+        \# vars & 5389 &  & 397361\\
+        \# binaries & 2492 &  & 2492\\
+        \# constraints & 6798 & & 180858\\ \hline
+        time to solve [s] & 7883 &  & 16756\\
+        gap [\%] & 3.62 &  & 31.02\\ \hline
+        scheduling periods & 56 & 56 & 56\\
+        planning periods & 24 & 24 & 24\\
+        \makecell[l]{task-unit-op. mode\\ combinations} & 24 & 24 & 24\\ \hline
+    \end{tabular}
 \end{frame}
 
 \begin{frame}{How do we choose $\mathcal{U}$?}
-\vspace{-10pt}
-\begin{block}{Choose $\mathcal{U}$ from distribution}
-    \begin{minipage}[t]{.47\textwidth}
-
-
-        \begin{itemize}
-            \item Choose parameter $\alpha$
-            \item Choose $D_{min}$ such that $P(D \leq D_{min}) = \alpha$
-            \item Choose $D_{max}$ such that $P(D \geq D_{max}) = \alpha$
-            \item $\mathcal{U} = \{D|D_{min} \leq D \leq D_{max}\}$
-        \end{itemize}
-
-    \end{minipage}
-    \hfill\hfill
-    \begin{minipage}[t]{.47\textwidth}
-        \begin{center}
-            \includegraphics[scale=0.45]{uncertainty-set.pdf} \\
-        \end{center}
-    \end{minipage}
-\end{block}
+    \vspace{-10pt}
+    \begin{block}{Choose $\mathcal{U}$ from distribution}
+        \begin{minipage}[t]{.47\textwidth}
+            \begin{itemize}
+                \item Choose parameter $\alpha$
+                \item Choose $D_{min}$ such that $P(D \leq D_{min}) = \alpha$
+                \item Choose $D_{max}$ such that $P(D \geq D_{max}) = \alpha$
+                \item $\mathcal{U} = \{D|D_{min} \leq D \leq D_{max}\}$
+            \end{itemize}
+        \end{minipage}
+        \hfill\hfill
+        \begin{minipage}[t]{.47\textwidth}
+            \begin{center}
+                \includegraphics[scale=0.45]{uncertainty-set.pdf} \\
+            \end{center}
+        \end{minipage}
+    \end{block}
 \end{frame}
 
-\begin{frame}{Robust optimization:deriving a robust counterpart [lappas \& gounaris 2016]}
+\begin{frame}{Deriving a robust counterpart}
 %\begin{block}{Random variables can be replaced by uncertain parameters}
+    \scriptsize
     Replace $D_{j,k}$ by an uncertain parameter $\tilde{d}_{j,k}$ bounded by a set $\mathcal{U}$:
     \vspace{-10pt}
     \begin{equation*}
