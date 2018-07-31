@@ -130,7 +130,7 @@ London
     \mathcal{D}_j(\boldsymbol{\Theta}\only<3>{{\color{imperialAlertText}(\boldsymbol{x})}}, \Delta t)$.
 \end{alertblock}
 \visible<2->{
-    \vspace{-10pt}
+    \vspace{-15pt}
     \begin{equation*}
     \begin{aligned}
     & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
@@ -159,8 +159,8 @@ London
 
 \begin{frame}{Accounting for effects of process variables}
     \begin{alertblock}{Assumption \citep{Liao2013}}
-    All relevant operating variables are piecewise constant -- i.e. the process has a set of discrete operating modes $k \in K$.
-\end{alertblock}
+         All relevant operating variables are piecewise constant -- i.e. the process has a set of discrete operating modes $k \in K$.
+    \end{alertblock}
 %\begin{block}{A health model based on L\'evy processes}
     \vspace{-15pt}
     \begin{equation*}
@@ -224,7 +224,7 @@ London
     \end{aligned}
     \end{equation*}
     $\forall \tilde{d}_{j,k} \in \mathcal{U}$.
-    \visible<2>{Approximate $s_{j,t}\left(\tilde{d}_{j,k}\right)$ by linear decision rule.
+    \visible<2>{Approximate $s_{j,t}(\tilde{d}_{j,k})$ by linear decision rule.
     Utilize Robust Optimization reformulation techniques.}
 \end{frame}
 
@@ -240,18 +240,18 @@ London
     \end{alertblock}
     \visible<2>{
         \begin{columns}
-            \begin{column}{0.47\textwidth}
-                Choose $\epsilon_{j,k}$ from distribution $\mathcal{D}_{j,k}$:
-                \begin{equation*}
-                \epsilon_{j,k}= 1 - F^{-1}(\alpha)/\bar{d}_{j,k}
-                \end{equation*}
-                Size of $\mathcal{U}$ depends on a single parameter $\alpha$!
-            \end{column}
             \begin{column}{0.50\textwidth}
                 \centering
                 \tikzsetnextfilename{alpha}
                 \input{alpha.tex}
                 \quad
+            \end{column}
+            \begin{column}{0.47\textwidth}
+                Choose $\epsilon_{j,k}$ from distribution $\mathcal{D}_{j,k}$:
+                \begin{equation*}
+                    \epsilon_{j,k}= 1 - F^{-1}(\alpha)/\bar{d}_{j,k}
+                \end{equation*}
+                Size of $\mathcal{U}$ depends on a single parameter $\alpha$!
             \end{column}
         \end{columns}
     }
@@ -420,7 +420,8 @@ London
     \tikzexternalenable
 \end{frame}
 
-\appendix \begin{frame}
+\appendix
+\begin{frame}[allowframebreaks]
     \tiny
     \bibliographystyle{apalike}
     \bibliography{lit_manual,lit}
