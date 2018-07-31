@@ -8,6 +8,15 @@ dir = "/home/johannes/homedir/STN/STN-Scheduler/results"
 rdir = "/home/johannes/OneDrive/Presentations/esa"
 setwd(paste0(dir, "/", instance))
 
+icdarkgreen = rgb(102/255, 164/255, 10/255)
+icgreen = rgb(206/255, 226/255, 177/255)
+iclightgreen = rgb(225/255, 237/255, 206/266) 
+icdarkblue = rgb(0, 52/255, 92/255)
+icblue = rgb(173/255, 190/255, 203/255)
+iclightblue = rgb(225/255, 229/255, 236/255)
+mbg = rgb(250/255, 250/255, 250/255)
+icdarkorange = rgb(210/255, 64/255, 0)
+
 p_det_high = read.csv("det/high_pfail.csv")
 p_det_avg = read.csv("det/avg_pfail.csv")
 p_det_low = read.csv("det/low_pfail.csv")
@@ -100,6 +109,7 @@ dev.off()
 tikz(paste0(rdir, '/biondi-r1-p-vs-alpha.tex'),width=4.27,height=3,pointsize=8)
 a = 0.85
 cols = hue_pal()(3)
+cols = c(icdarkgreen, icdarkblue, icdarkorange)
 gg <- ggplot(dfl[dfl$Unit == "Reactor 1",], aes(alpha, p, color=scenario)) +
   theme_classic()+
   theme(text = element_text(color=icdarkblue)) +

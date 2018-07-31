@@ -189,13 +189,13 @@ London
 \end{frame}
 
 \begin{frame}{Deriving a robust counterpart [Lappas \& Gounaris 2016]}
-\begin{block}{}
+%\begin{block}{}
     Replace random variables $D_{j,k}$ and $S_{j,t}$ by uncertain parameter
     $\tilde{d}_{j,k} \in \mathcal{U}$ and second stage variable
     $s_{j,t}\left(\tilde{d}_{j,k}\right)$.
-\end{block}
+%\end{block}
 %\begin{block}{A health model based on L\'evy processes}
-    \vspace{-15pt}
+%    \vspace{-15pt}
     \begin{equation*}
     \begin{aligned}
     & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
@@ -262,13 +262,23 @@ London
         \input{p2.tex}\\[0.5\baselineskip]
     }
     \only<2>{
-        \begin{block}{Extension for degradation [Biondi et al.~2017]}
+        %\begin{block}{Extension for degradation [Biondi et al.~2017]}
+        Biondi et al.~(2017) extend the STN to include...
             \begin{itemize}
-                \item Include maintenance scheduling
-                \item Multiple operating modes per task
-                \item Integrated scheduling and planning
+                \item ...unit health and maintenance scheduling
+                \item ...integrated scheduling and planning
+                \item ...multiple operating modes per task
             \end{itemize}
-        \end{block}
+    }
+    \only<3>{
+        This work...
+            \begin{itemize}
+                \item ...replaces their deterministic health model by the
+                    proposed degradation modeling based model.
+                \item ...utilizes robust optimization to obtain a solution that
+                    is likely to remain feasible.
+            \end{itemize}
+        %\end{block}
     }
     \includegraphics{schedule}
 \end{frame}
@@ -342,9 +352,8 @@ London
 
 \end{frame}
 \begin{frame}{Saving time: data-driven approximations}
-    For long time horizons, model can only be solved using rolling horizon.
-    Instead, an upper bound on the probability of failure $p^f_j$ can be estimated from
-    data.
+    An upper bound on the probability of failure $p^f_j$ can be estimated from
+    data (using logistic regression).
 %\begin{block}{Estimating $p^f_j$ from data}
 %    Instead of solving over long time horizon using rolling horizon we can estimate an upper bound $\bar{p}^f_j$ on the probability of failure $p^f_j$ from data.
 %\end{block}
@@ -361,50 +370,50 @@ London
 %\end{block}
     \tikzsetnextfilename{freq}
     \input{freq.tex}
-\only<2>{
-    \begin{block}{Markov-chain approach}
-            \begin{enumerate}
-             \item Model sequence of operating modes as Markov chain and estimate transition probabilities
-            \begin{equation*}
-            \pi_{k,k^*} = P(X_{n}=k^*|X_{n-1}=k)
-            \end{equation*}
-            from data.
-
-                \item Randomly draw $N_{mc}$ sequences of operating modes from Markov chain (inserting maintenance at latest point).
-                \item Evaluate $p^f_j$ for each
-                \item $\bar{p}^f_j = \max p^f_j$
-            \end{enumerate}
-    \end{block}
-}
+%\only<2>{
+%    \begin{block}{Markov-chain approach}
+%            \begin{enumerate}
+%             \item Model sequence of operating modes as Markov chain and estimate transition probabilities
+%            \begin{equation*}
+%            \pi_{k,k^*} = P(X_{n}=k^*|X_{n-1}=k)
+%            \end{equation*}
+%            from data.
+%
+%                \item Randomly draw $N_{mc}$ sequences of operating modes from Markov chain (inserting maintenance at latest point).
+%                \item Evaluate $p^f_j$ for each
+%                \item $\bar{p}^f_j = \max p^f_j$
+%            \end{enumerate}
+%    \end{block}
+%}
 \end{frame}
 
-\begin{frame}{Estimating frequencies and transition probabilities}
-\begin{block}{Covariate dependencies}
-Frequencies and transition probabilities depend on product demand $\boldsymbol{p}$.
-\end{block}
-\only<1>{
-    \begin{columns}
-        \begin{column}{0.48\textwidth}
-            \includegraphics[width=\linewidth]{flat.eps}
-        \end{column}
-        \begin{column}{0.48\textwidth}
-            \includegraphics[width=\linewidth]{3d.eps}
-        \end{column}
-    \end{columns}
-}
-\only<2>{
-    \begin{block}{Logistic regression [Paton et al 2014]}
-        Predict the probability $\eta_{n_{k}}$ that mode $k$ occurs $n_k$ times using logistic regression:
-        \begin{equation*}
-        \eta_{n_{k}}(\boldsymbol{p}(t)) = P(N_{k} = n_{k}, \boldsymbol{p}) = \frac{\exp(\boldsymbol{\beta}_{n_k}\boldsymbol{p})}{\sum_{n'_{k}}\exp(\boldsymbol{\beta}_{n'_{k}}\boldsymbol{p})}
-        \end{equation*}
-        Similarly predict transition probabilities based on demand:
-        \begin{equation*}
-        \pi_{k,k^*}(\boldsymbol{p}(t)) =  P(X_{n}=k^*|X_{n-1}=k,\boldsymbol{p}) = \frac{\exp(\boldsymbol{\beta}_{n_k}\boldsymbol{p})}{\sum_{n'_{k}}\exp(\boldsymbol{\beta}_{n'_{k}}\boldsymbol{p})}
-        \end{equation*}
-    \end{block}
-}
-\end{frame}
+%\begin{frame}{Estimating frequencies and transition probabilities}
+%\begin{block}{Covariate dependencies}
+%Frequencies and transition probabilities depend on product demand $\boldsymbol{p}$.
+%\end{block}
+%\only<1>{
+%    \begin{columns}
+%        \begin{column}{0.48\textwidth}
+%            \includegraphics[width=\linewidth]{flat.eps}
+%        \end{column}
+%        \begin{column}{0.48\textwidth}
+%            \includegraphics[width=\linewidth]{3d.eps}
+%        \end{column}
+%    \end{columns}
+%}
+%\only<2>{
+%    \begin{block}{Logistic regression [Paton et al 2014]}
+%        Predict the probability $\eta_{n_{k}}$ that mode $k$ occurs $n_k$ times using logistic regression:
+%        \begin{equation*}
+%        \eta_{n_{k}}(\boldsymbol{p}(t)) = P(N_{k} = n_{k}, \boldsymbol{p}) = \frac{\exp(\boldsymbol{\beta}_{n_k}\boldsymbol{p})}{\sum_{n'_{k}}\exp(\boldsymbol{\beta}_{n'_{k}}\boldsymbol{p})}
+%        \end{equation*}
+%        Similarly predict transition probabilities based on demand:
+%        \begin{equation*}
+%        \pi_{k,k^*}(\boldsymbol{p}(t)) =  P(X_{n}=k^*|X_{n-1}=k,\boldsymbol{p}) = \frac{\exp(\boldsymbol{\beta}_{n_k}\boldsymbol{p})}{\sum_{n'_{k}}\exp(\boldsymbol{\beta}_{n'_{k}}\boldsymbol{p})}
+%        \end{equation*}
+%    \end{block}
+%}
+%\end{frame}
 
 \begin{frame}{Results}
 %\only<1>{
