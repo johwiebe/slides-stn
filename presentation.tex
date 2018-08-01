@@ -121,6 +121,11 @@ London
         %\end{equation*}
 }
 }
+\only<5>{
+    \centering
+    \tikzsetnextfilename{deg-sig2}
+    \input{deg-sig2.tex}
+}
 \end{frame}
 
 \begin{frame}{A health model based on L\'evy processes}
@@ -260,12 +265,14 @@ London
 
 
 \begin{frame}{Case study: State-Task-Network \citep{Kondili1993}}
-    \only<1>{
+    \begin{overlayarea}{\linewidth}{0.52\textheight}
+    \only<1>{%
         \centering
         \tikzsetnextfilename{p2}
         \input{p2.tex}\\[0.5\baselineskip]
     }
-    \only<2>{
+    \only<2>{%
+        \vspace{20pt}
         %\begin{block}{Extension for degradation [Biondi et al.~2017]}
         \citet{Biondi2017} extend the STN to include...
             \begin{itemize}
@@ -274,7 +281,8 @@ London
                 \item ...multiple operating modes per task
             \end{itemize}
     }
-    \only<3>{
+    \only<3>{%
+        \vspace{20pt}
         This work...
             \begin{itemize}
                 \item ...replaces their deterministic health model by the
@@ -284,7 +292,7 @@ London
             \end{itemize}
         %\end{block}
     }
-    \includegraphics{schedule}
+    \end{overlayarea} \includegraphics{schedule}
 \end{frame}
 
 
@@ -379,11 +387,8 @@ London
 
 
 \begin{frame}{Conclusion}
-    \begin{itemize}
-        \item Something smart.
-        \item Something really smart.
-        \item Something really really smart.
-    \end{itemize}
+    \tikzsetnextfilename{flowchart}
+    \input{flowchart-big.tex}
     \visible<2>{
         \centering
         {\Huge Thank You!\\}

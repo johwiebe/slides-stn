@@ -50,3 +50,22 @@
 \setlength{\belowdisplayskip}{-5pt}
 \setlength{\abovedisplayshortskip}{-5pt}
 \setlength{\belowdisplayshortskip}{-5pt}
+%\setbeamertemplate{frame
+%footer}{\insertshortauthor~(\insertshortinstitute)\hfill\insertshorttitle\hfill}
+
+\setbeamertemplate{footline}
+  {
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,center]{author}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{title}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,right]{date}%
+      \usebeamerfont{date in head/foot}\hspace*{3ex}\insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+    \end{beamercolorbox}}%
+    \vskip0pt%
+  }
+

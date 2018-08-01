@@ -1,0 +1,87 @@
+	\begin{tikzpicture}[x=13mm, y=12mm ,>=stealth',bend angle=45,auto]
+		\definecolor{mred}{RGB}{210,63,0}
+		\definecolor{mblue}{RGB}{0,52,92}
+		\definecolor{mgreen}{RGB}{102,164,10}
+		\scriptsize
+
+
+		% Bayesian optimization
+		\node[draw, fit={(0,0) (8,0.6)},
+			inner sep=0pt,
+			label=center:{Bayesian Optimization: $\min_{\alpha} c^*(\alpha) + \sum_j c^f_j p^f_j(\alpha)$},
+			fill=mred!20,
+			align=center
+			] (bo) {};
+
+		% Robust MILP
+		\node[draw, fit={(0,1) (3.5,2.5)},
+			inner sep=0pt,
+			fill=mblue!20
+			] (rob) {};
+			\node[anchor=center] at (2.62, 2.35) {Robust MILP};
+		% Integrated MILP
+		\node[draw, fit={(0,1) (3.4,2.17)},
+			inner sep=0pt,
+			fill=mblue!35
+			] (int) {};
+		\node[draw, fit={(0.1,1.1) (2.8,1.45)},
+			inner sep=0pt,
+			align=center,
+			label=center:{Process \& maintenance model},
+			fill=mblue!50
+			] (pmm) {};
+			%edge [-|] node [left] {$c^*(\alpha)$} (bo);
+			\node[anchor=center] at (2.35, 2.0) {Integrated MILP};
+		\node[draw, fit={(0.1,1.50) (2.17,1.85)},
+			inner sep=0pt,
+			label=center:{Health model},
+			fill=mblue!50
+			] (hm) {};
+
+		% Estimating p^f
+		\node[draw, fit={(4.2,1.0) (8.0,2.37)},
+			inner sep=0pt,
+			fill=mblue!20
+			] (pf) {};
+			%edge [<-] node [above] {$\boldsymbol{x}^k_j$} (rob);
+		\node[draw, fit={(4.3,1.1) (7.9,1.5)},
+			inner sep=0pt,
+			fill=mblue!50,
+			label=center:{Rolling horizon}
+			] (rr) {};
+		\node[draw, fit={(4.3,1.8) (7.9,2.2)},
+			inner sep=0pt,
+			fill=mblue!50,
+			label=center:{Freq./Markov chain estimate}
+			] (mc) {};
+		\node[anchor=center] at (6.0, 1.65) {or};
+
+		% Inputs
+		\node[draw, fit={(0.0,2.9) (2.8,3.5)},
+			inner sep=0pt,
+			fill=mgreen!20,
+			label=center:{Degradation Modeling}
+			] (dm) {} edge[out=270,in=90,->] node [yshift=2.4em,xshift=0.5em,below right] {$\mathcal{D}_{j,k}$} (hm);
+		\node[draw, fit={(5.0,2.9) (8.0,3.5)},
+			inner sep=0pt,
+			fill=mgreen!20,
+			label=center:{Logistic regression}
+			] (lr) {};
+		\node[draw, fit={(3.0,2.9) (4.8,3.5)},
+			inner sep=0pt,
+			fill=mgreen!20,
+			label=center:{Historical data}
+			] (pd) {}
+			edge[out=210,in=320,->] (dm)
+			edge[out=320,in=210,->] (lr);
+
+		% Edges
+		\coordinate (bo-a) at (4.3, 0.6) {};
+		\draw (8,1.65) edge[out=320,in=0,->] node [left,yshift=-0.15em] {$p^f_j$} (8.0, 0.35);
+		\draw (rob) edge[out=342,in=110,->] node [yshift=0.9em,xshift=-1.0em,right] {$c^*$} (bo-a);
+		\draw (2.5,0.6) edge[out=150,in=300,->] node [xshift=0.2em,right] {$\alpha$} (int);
+		\draw (rob) edge[out=0,in=180,->] node [above] {$\boldsymbol{x}^k_j$} (pf);
+		\draw (rr) edge[out=180,in=350,->] node [above] {$T_S,T_P$} (rob);
+		\draw (lr) edge[out=270,in=90,->] node [xshift=0.2em,right] {$\eta_{n_{j,k}},\pi_{k,k^*}$} (mc);
+	\end{tikzpicture}
+%\end{document}
