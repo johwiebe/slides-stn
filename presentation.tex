@@ -1,4 +1,5 @@
 \documentclass[slides]{beamer}
+% compile with lualatex --shell-escape presentation.tex
 
 \input{preamble.tex}
 %\setsansfont[BoldFont={Fira Sans}, ItalicFont={Fira Sans Light Italic}]{Fira Sans Light}
@@ -295,6 +296,11 @@ London
     \end{overlayarea} \includegraphics{schedule}
 \end{frame}
 
+\begin{frame}{Evaluating solution robustness}
+    \centering
+    \tikzsetnextfilename{calcp}
+    \input{calcp.tex}
+\end{frame}
 
 \begin{frame}{The price of robustness}
     \centering
@@ -326,8 +332,7 @@ London
 \begin{frame}{Saving time: a deterministic approximation}
 \only<1>{
     \begin{alertblock}{Assumption}
-        Only the health model depends on $\tilde{d}_{j,k}$ and $\tilde{d}_{j,k}
-        \geq 0.$%,\, \forall \tilde{d}_{j,kt} \in \mathcal{U}$.
+        Only the health model depends on $\tilde{d}_{j,k}$ and $\tilde{d}_{j,k} \geq 0.$
     \end{alertblock}
     Then we can prove that a solution to
     \begin{equation*}
@@ -386,13 +391,14 @@ London
 \end{frame}
 
 
-\begin{frame}{Conclusion}
+\begin{frame}[t]{Conclusion}
     \tikzsetnextfilename{flowchart}
     \input{flowchart-big.tex}
-    \visible<2>{
         \centering
-        {\Huge Thank You!\\}
-    }
+        \visible<2>{
+        {\huge Thank You!\\}
+            {\tiny Funding: EP/L016796/1, EP/R511961/1 no.~17000145, and
+            EP/P016871/1}
     \tikzexternaldisable
     \begin{tikzpicture}[overlay, remember picture]
     \node[anchor=north west, %anchor is upper left corner of the graphic
@@ -423,6 +429,7 @@ London
     {\includegraphics[width=0.23\textwidth]{Schlumberger}};
     \end{tikzpicture}
     \tikzexternalenable
+}
 \end{frame}
 
 \appendix
