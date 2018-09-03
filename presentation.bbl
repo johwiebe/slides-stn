@@ -1,11 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[Aguirre and Papageorgiou, 2018]{Aguirre2018}
-Aguirre, A.~M. and Papageorgiou, L.~G. (2018).
-\newblock {Medium-term optimization-based approach for the integration of
-  production planning, scheduling and maintenance}.
-\newblock {\em Computers and Chemical Engineering}, 0:1--21.
-
 \bibitem[Alaswad and Xiang, 2017]{Alaswad2016}
 Alaswad, S. and Xiang, Y. (2017).
 \newblock {A review on condition-based maintenance optimization models for
@@ -19,17 +13,10 @@ Applebaum, D. (2004).
 \newblock {\em Notices of the American Mathematical Society},
   51(11):1336--1347.
 
-\bibitem[Ba{\c{s}}{\c{c}}iftci et~al., 2018]{Basciftci2018}
-Ba{\c{s}}{\c{c}}iftci, B., Ahmed, S., Gebraeel, N.~Z., and Yildirim, M. (2018).
-\newblock {Stochastic Optimization of Maintenance and Operations Schedules
-  under Unexpected Failures}.
-\newblock {\em IEEE Transactions on Power Systems}, 8950(c):1--1.
-
-\bibitem[Biondi et~al., 2017]{Biondi2017}
-Biondi, M., Sand, G., and Harjunkoski, I. (2017).
-\newblock {Optimization of multipurpose process plant operations: A
-  multi-time-scale maintenance and production scheduling approach}.
-\newblock {\em Computers and Chemical Engineering}, 99:325--339.
+\bibitem[Jones et~al., 1998]{Jones1998}
+Jones, D.~R., Schonlau, M., and Welch, W.~J. (1998).
+\newblock {Efficient Global Optimization of Expensive Black-Box Functions}.
+\newblock {\em Journal of Global Optimization}, 13:455--492.
 
 \bibitem[Kondili et~al., 1993]{Kondili1993}
 Kondili, E., Pantelides, C., and Sargent, R. (1993).
@@ -48,29 +35,5 @@ Liao, H. and Tian, Z. (2013).
 \newblock {A framework for predicting the remaining useful life of a single
   unit under time-varying operating conditions}.
 \newblock {\em IIE Transactions}, 45(9):964--980.
-
-\bibitem[Liu et~al., 2014]{Liu2014}
-Liu, S., Yahia, A., and Papageorgiou, L.~G. (2014).
-\newblock {Optimal Production and Maintenance Planning of Biopharmaceutical
-  Manufacturing under Performance Decay}.
-\newblock {\em Industrial {\&} Engineering Chemistry Research},
-  53(44):17075--17091.
-
-\bibitem[Vassiliadis and Pistikopoulos, 2001]{Vassiliadis2001}
-Vassiliadis, C. and Pistikopoulos, E. (2001).
-\newblock {Maintenance scheduling and process optimization under uncertainty}.
-\newblock {\em Computers and Chemical Engineering}, 25(2-3):217--236.
-
-\bibitem[Xenos et~al., 2016]{Xenos2016}
-Xenos, D.~P., Kopanos, G.~M., Cicciotti, M., and Thornhill, N.~F. (2016).
-\newblock {Operational optimization of networks of compressors considering
-  condition-based maintenance}.
-\newblock {\em Computers and Chemical Engineering}, 84:117--131.
-
-\bibitem[Yildirim et~al., 2017]{Yildirim2017}
-Yildirim, M., Gebraeel, N.~Z., and Sun, X.~A. (2017).
-\newblock {Integrated Predictive Analytics and Optimization for Opportunistic
-  Maintenance and Operations in Wind Farms}.
-\newblock {\em IEEE Transactions on Power Systems}, 32(6):4319--4328.
 
 \end{thebibliography}

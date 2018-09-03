@@ -11,11 +11,13 @@
 
 \usefonttheme[onlymath]{serif}
 \usepackage{natbib}
+%\usepackage[natbib, maxcitenames=3, mincitenames=1, style=apa]{biblatex}
 \usepackage{adjustbox}
 \usepackage{tabto}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{commath}
+\usepackage{pifont}
 \usepackage{pgfplots,tikz}
 \usetikzlibrary[topaths]
 \usetikzlibrary{shapes,arrows,calc,graphs,trees}
@@ -52,6 +54,24 @@
 \setlength{\belowdisplayshortskip}{-5pt}
 %\setbeamertemplate{frame
 %footer}{\insertshortauthor~(\insertshortinstitute)\hfill\insertshorttitle\hfill}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+	\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+\pgfmathsetseed{2}
+
+\newcommand{\brownian}[2]{% points, advance, rand factor, options, end label
+	\draw[#1] (0,1.5)
+	\foreach \x in {1,...,100}
+	{
+		-- ++(0.02,0.005+rand*0.02)
+	}
+	\foreach \x in {1,...,100}
+	{
+		-- ++(0.02,0.02+rand*0.06)
+	}
+	node[right] {#2};
+}
 
 \setbeamertemplate{footline}
   {

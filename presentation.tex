@@ -5,13 +5,22 @@
 %\setsansfont[BoldFont={Fira Sans}, ItalicFont={Fira Sans Light Italic}]{Fira Sans Light}
 \title[Data-driven optimization \& degradation]{Data-driven optimization of processes with degrading equipment \vspace{-10pt}}
 
-\author[J. Wiebe]{Johannes Wiebe\inst{1}}
-\institute[Imperial College London]{Supervisors: Ruth Misener\inst{1}, Ines
-    Cecilio\inst{2}\\[\baselineskip]
+% Ines and Ruth as co-authors
+\author[J. Wiebe, I. Cec\'ilio, R. Misener]{Johannes Wiebe\inst{1}, In\^{e}s
+Cec\'{i}lio\inst{2}, Ruth Misener\inst{1}}
+\institute[Imperial College London]{
     \inst{1} Department of Computing, Imperial College London, London, UK \and
     \inst{2} Schlumberger Research Cambridge, Cambridge, UK
 London
 }
+% Ines and Ruth as supervisors
+%\author[J. Wiebe]{Johannes Wiebe\inst{1}}
+%\institute[Imperial College London]{Supervisors: Ruth Misener\inst{1}, Ines
+%    Cecilio\inst{2}\\[\baselineskip]
+%    \inst{1} Department of Computing, Imperial College London, London, UK \and
+%    \inst{2} Schlumberger Research Cambridge, Cambridge, UK
+%London
+%}
 \date{\displaydate{date}}
 
 \begin{document}
@@ -80,7 +89,13 @@ London
 \only<1-3>{
     \visible<3>{
         \begin{block}{Related Work}
-            \citet{Vassiliadis2001,Liu2014,Xenos2016,Aguirre2018,Biondi2017,Yildirim2017,Basciftci2018}
+            \small
+
+            Vassiliads and Pistikopoulos (2001); Liu, Yahia and Papageorgiou
+            (2014); Xenos, et int., Thornhill (2016); Aguirre and Papageorgiou
+            (2018); Biondi, Sand and Harjunkoski (2017); Yildirim, Gebraeel and
+            Sun (2017); Ba\c{s}\c{c}iftci, Ahmed, Gebraeel and Yildirim (2018)
+            %\citet*{Vassiliadis2001,Liu2014,Xenos2016,Aguirre2018,Biondi2017,Yildirim2017,Basciftci2018}
         \end{block}
     }
 }
@@ -130,37 +145,48 @@ London
 \end{frame}
 
 \begin{frame}{A health model based on L\'evy processes}
-\begin{alertblock}{Assumption}
-    The health of each unit $j$ can be described by a L\'evy process $S_j(t)$
-    with increments $S_{j,t} - S_{j,t-\Delta t} = D_j \sim
-    \mathcal{D}_j(\boldsymbol{\Theta}\only<3>{{\color{imperialAlertText}(\boldsymbol{x})}}, \Delta t)$.
-\end{alertblock}
-\visible<2->{
-    \vspace{-15pt}
-    \begin{equation*}
-    \begin{aligned}
-    & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
-    && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
-    & \text{s.t.}
-    && \text{process model}(\bm{x}, \bm{m},\bm{h})
-    &&& \\
-    &
-    && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
-    &&& \\
-    &
-    && S_{j,t} \leq s_{j}^{max}
-    &&& \forall t, j \in J\\
-    &
-    && S_{j,t} =
-    \begin{cases}
-    S_{j,t-1} +  D_{j}, & \text{if } m_{j,t} = 0\\
-    s_{j}^{0}, & \text{otherwise}
-    \end{cases}
-    &&& \forall t, j \in J\\
-    \end{aligned}
-    \end{equation*}
-    where $m_{j,t} = 1$ if maintenance is performed on unit $j$ at time $t$.
-}
+    \begin{overprint}
+        \onslide<1>
+        \begin{alertblock}{Assumption}
+            The health of each unit $j$ can be described by a L\'evy process $S_j(t)$
+            with increments $S_{j,t} - S_{j,t-\Delta t} = D_j \sim
+            \mathcal{D}_j(\boldsymbol{\Theta}\only<3>{{\color{imperialAlertText}(\boldsymbol{x})}}, \Delta t)$.
+        \end{alertblock}
+        \onslide<2>
+        \begin{alertblock}{Assumption}
+            The health of each unit $j$ can be described by a L\'evy process $S_j(t)$
+            with increments $S_{j,t} - S_{j,t-\Delta t} = D_j \sim
+            \mathcal{D}_j(\boldsymbol{\Theta}\only<3>{{\color{imperialAlertText}(\boldsymbol{x})}}, \Delta t)$.
+        \end{alertblock}
+            \vspace{-15pt}
+            \begin{equation*}
+            \begin{aligned}
+            & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
+            && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
+            & \text{s.t.}
+            && \text{process model}(\bm{x}, \bm{m},\bm{h})
+            &&& \\
+            &
+            && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
+            &&& \\
+            &
+            && S_{j,t} \leq s_{j}^{max}
+            &&& \forall t, j \in J\\
+            &
+            && S_{j,t} =
+            \begin{cases}
+            S_{j,t-1} +  D_{j}, & \text{if } m_{j,t} = 0\\
+            s_{j}^{0}, & \text{otherwise}
+            \end{cases}
+            &&& \forall t, j \in J\\
+            \end{aligned}
+            \end{equation*}
+            where $m_{j,t} = 1$ if maintenance is performed on unit $j$ at time $t$.
+        \onslide<3>
+        \begin{alertblock}{Assumption \citep{Liao2013}}
+             All relevant operating variables are piecewise constant -- i.e. the process has a set of discrete operating modes $k \in K$.
+        \end{alertblock}
+    \end{overprint}
 \end{frame}
 
 \begin{frame}{Accounting for effects of process variables}
@@ -275,7 +301,8 @@ London
     \only<2>{%
         \vspace{20pt}
         %\begin{block}{Extension for degradation [Biondi et al.~2017]}
-        \citet{Biondi2017} extend the STN to include...
+        %\citet{Biondi2017}
+        Biondi, Sand and Harjunkoski (2017) extend the STN to include...
             \begin{itemize}
                 \item ...unit health and maintenance scheduling
                 \item ...integrated scheduling and planning
@@ -296,11 +323,11 @@ London
     \end{overlayarea} \includegraphics{schedule}
 \end{frame}
 
-%\begin{frame}{Evaluating solution robustness}
-%    \centering
-%    \tikzsetnextfilename{calcp}
-%    \input{calcp.tex}
-%\end{frame}
+\begin{frame}{Evaluating solution robustness}
+    \centering
+    \tikzsetnextfilename{calcp}
+    \input{calcp.tex}
+\end{frame}
 
 \begin{frame}{The price of robustness}
     \centering
@@ -323,7 +350,7 @@ London
     \visible<2->{
         \begin{exampleblock}{Idea: Use Bayesian Optimization (BO)}
             Both $c^*$ and $p^f_j$ can be viewed as expensive black box functions.
-            BO is very suitable for this setting.
+            BO is very suitable for this setting \citep{Jones1998}.
         \end{exampleblock}
     }
 \end{frame}
