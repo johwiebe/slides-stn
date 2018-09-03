@@ -69,6 +69,7 @@ London
 
 \begin{frame}[t]{Starting point: Process level MI(N)LP model}
     %\vspace{-10pt}
+    \begin{overlayarea}{\textwidth}{5cm}
     \begin{equation*}
     \begin{aligned}
         & \underset{\bm{x},\bm{m}\visible<2->{, {\color{icOrange}\bm{h}}}}{\text{min}}
@@ -86,6 +87,7 @@ London
     where $\bm{x}$ are process variables, $\bm{m}$ are maintenance
     variables\visible<2->{, and {\color{icOrange}$\bm{h}$ are health related variables}.}
     \vspace{5pt}
+\end{overlayarea}
 \only<1-3>{
     \visible<3>{
         \begin{block}{Related Work}
@@ -144,119 +146,125 @@ London
 \end{frame}
 
 \begin{frame}{A health model based on L\'evy processes}
-    \begin{overprint}
-        \onslide<1>
+    \begin{overlayarea}{\textwidth}{0.25\textheight}
+        \vspace{-10pt}
         \begin{alertblock}{Assumption}
             The health of each unit $j$ can be described by a L\'evy process $S_j(t)$
             with increments $S_{j,t} - S_{j,t-\Delta t} = D_j \sim
-            \mathcal{D}_j(\boldsymbol{\Theta}\only<3>{{\color{imperialAlertText}(\boldsymbol{x})}}, \Delta t)$.
+            \mathcal{D}_j(\boldsymbol{\Theta}, \Delta t)$.
         \end{alertblock}
-        \onslide<2>
-        \begin{alertblock}{Assumption}
-            The health of each unit $j$ can be described by a L\'evy process $S_j(t)$
-            with increments $S_{j,t} - S_{j,t-\Delta t} = D_j \sim
-            \mathcal{D}_j(\boldsymbol{\Theta}\only<3>{{\color{imperialAlertText}(\boldsymbol{x})}}, \Delta t)$.
-        \end{alertblock}
-            \vspace{-15pt}
-            \begin{equation*}
-            \begin{aligned}
-            & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
-            && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
-            & \text{s.t.}
-            && \text{process model}(\bm{x}, \bm{m},\bm{h})
-            &&& \\
-            &
-            && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
-            &&& \\
-            &
-            && S_{j,t} \leq s_{j}^{max}
-            &&& \forall t, j \in J\\
-            &
-            && S_{j,t} =
-            \begin{cases}
-            S_{j,t-1} +  D_{j}, & \text{if } m_{j,t} = 0\\
-            s_{j}^{0}, & \text{otherwise}
-            \end{cases}
-            &&& \forall t, j \in J\\
-            \end{aligned}
-            \end{equation*}
+    \end{overlayarea}
+    \begin{overlayarea}{\textwidth}{0.75\textheight}
+        \visible<2>{
+            \vspace{-25pt}
+        \begin{equation*}
+        \begin{aligned}
+        & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
+        && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
+        & \text{s.t.}
+        && \text{process model}(\bm{x}, \bm{m},\bm{h})
+        &&& \\
+        &
+        && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
+        &&& \\
+        &
+        && S_{j,t} \leq s_{j}^{max}
+        &&& \forall t, j \in J\\
+        &
+        && S_{j,t} =
+        \begin{cases}
+            S_{j,t-1} +
+            \makebox[0pt][l]{$D_{j}$}
+            \phantom{{\color{imperialAlertText}{\sum\limits_{k \in
+            \mathcal{K}}{x_{j,k,t}\cdot}}} D_{j{\color{imperialAlertText}{,k}}}},
+            & \text{if } m_{j,t} = 0\\
+        s_{j}^{0}, & \text{otherwise}
+        \end{cases}
+        &&& \forall t, j \in J\\
+        \end{aligned}
+        \end{equation*}
             where $m_{j,t} = 1$ if maintenance is performed on unit $j$ at time $t$.
-        \onslide<3>
-        \begin{alertblock}{Assumption \citep{Liao2013}}
-             All relevant operating variables are piecewise constant -- i.e. the process has a set of discrete operating modes $k \in K$.
-        \end{alertblock}
-    \end{overprint}
+        }
+    \end{overlayarea}
 \end{frame}
 
 \begin{frame}{Accounting for effects of process variables}
-    \begin{alertblock}{Assumption \citep{Liao2013}}
-         All relevant operating variables are piecewise constant -- i.e. the process has a set of discrete operating modes $k \in K$.
-    \end{alertblock}
-%\begin{block}{A health model based on L\'evy processes}
-    \vspace{-15pt}
-    \begin{equation*}
-    \begin{aligned}
-    & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
-    && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
-    & \text{s.t.}
-    && \text{process model}(\bm{x}, \bm{m},\bm{h})
-    &&& \\
-    &
-    && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
-    &&& \\
-    &
-    && S_{j,t} \leq s_{j}^{max}
-    &&& \forall t, j \in J\\
-    &
-    && S_{j,t} =
-    \begin{cases}
-        S_{j,t-1} + {\color{imperialAlertText}{\sum\limits_{k \in
-        \mathcal{K}}{x_{j,k,t}\cdot}}}
-        D_{j{\color{imperialAlertText}{,k}}}, & \text{if } m_{j,t} = 0\\
-    s_{j}^{0}, & \text{otherwise}
-    \end{cases}
-    &&& \forall t, j \in J\\
-    \end{aligned}
-    \end{equation*}
-    where $x_{j,k,t} = 1$ if unit $j$ operates in mode $k$ at time $t$.
+    \begin{overlayarea}{\textwidth}{0.25\textheight}
+        \vspace{-10pt}
+        \begin{alertblock}{Assumption \citep{Liao2013}}
+             All relevant operating variables are piecewise constant -- i.e. the process has a set of discrete operating modes $k \in K$.
+        \end{alertblock}
+    \end{overlayarea}
+    \begin{overlayarea}{\textwidth}{0.75\textheight}
+        \vspace{-25pt}
+        \begin{equation*}
+        \begin{aligned}
+        & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
+        && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
+        & \text{s.t.}
+        && \text{process model}(\bm{x}, \bm{m},\bm{h})
+        &&& \\
+        &
+        && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
+        &&& \\
+        &
+        && S_{j,t} \leq s_{j}^{max}
+        &&& \forall t, j \in J\\
+        &
+        && S_{j,t} =
+        \begin{cases}
+            S_{j,t-1} + {\color{imperialAlertText}{\sum\limits_{k \in
+            \mathcal{K}}{x_{j,k,t}\cdot}}}
+            D_{j{\color{imperialAlertText}{,k}}}, & \text{if } m_{j,t} = 0\\
+        s_{j}^{0}, & \text{otherwise}
+        \end{cases}
+        &&& \forall t, j \in J\\
+        \end{aligned}
+        \end{equation*}
+        where $x_{j,k,t} = 1$ if unit $j$ operates in mode $k$ at time $t$.
+    \end{overlayarea}
 % \end{block}
 \end{frame}
 
 \begin{frame}{Deriving a robust counterpart \citep{Lappas2016}}
-\begin{exampleblock}{Idea}
-    Replace random variables $D_{j,k}$ and $S_{j,t}$ by uncertain parameter
-    $\tilde{d}_{j,k} \in \mathcal{U}$ and second stage variable
-    $s_{j,t}(\tilde{d}_{j,k})$.
-\end{exampleblock}
-%\begin{block}{A health model based on L\'evy processes}
-    \vspace{-15pt}
-    \begin{equation*}
-    \begin{aligned}
-    & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
-    && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
-    & \text{s.t.}
-    && \text{process model}(\bm{x}, \bm{m},\bm{h})
-    &&& \\
-    &
-    && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
-    &&& \\
-    &
-    && {\color{imperialAlertText}s_{j,t}(\tilde{d}_{j,k})} \leq s_{j}^{max}
-    &&& \forall t, j \in J\\
-    &
-    && {\color{imperialAlertText}s_{j,t}} =
-    \begin{cases}
-        {\color{imperialAlertText}s_{j,t-1}} + {\sum\limits_{k \in
-        \mathcal{K}}{x_{j,k,t}\cdot}}
-        {\color{imperialAlertText}\tilde{d}_{j,k}}, & \text{if } m_{j,t} = 0\\
-    s_{j}^{0}, & \text{otherwise}
-    \end{cases}
-    &&& \forall t, j \in J\\
-    \end{aligned}
-    \end{equation*}
-    $\forall \tilde{d}_{j,k} \in \mathcal{U}$.
-    \visible<2>{Approximate $s_{j,t}(\tilde{d}_{j,k})$ by linear decision rule.
-    Utilize Robust Optimization reformulation techniques.}
+    \begin{overlayarea}{\textwidth}{0.25\textheight}
+        \vspace{-10pt}
+        \begin{exampleblock}{Idea}
+            Replace random variables $D_{j,k}$ and $S_{j,t}$ by uncertain parameter
+            $\tilde{d}_{j,k} \in \mathcal{U}$ and second stage variable
+            $s_{j,t}(\tilde{d}_{j,k})$.
+        \end{exampleblock}
+    \end{overlayarea}
+    \begin{overlayarea}{\textwidth}{0.75\textheight}
+        \vspace{-25pt}
+        \begin{equation*}
+        \begin{aligned}
+        & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
+        && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
+        & \text{s.t.}
+        && \text{process model}(\bm{x}, \bm{m},\bm{h})
+        &&& \\
+        &
+        && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
+        &&& \\
+        &
+        && {\color{imperialAlertText}s_{j,t}(\tilde{d}_{j,k})} \leq s_{j}^{max}
+        &&& \forall t, j \in J\\
+        &
+        && \makebox[0pt][l]{$\color{imperialAlertText}s_{j,t}$}\phantom{S_{j,t}} =
+        \begin{cases}
+            \makebox[0pt][l]{$\color{imperialAlertText}s_{j,t-1}$}\phantom{S_{j,t-1}} + {\sum\limits_{k \in
+            \mathcal{K}}{x_{j,k,t}\cdot}}
+            \makebox[0pt][l]{$\color{imperialAlertText}\tilde{d}_{j,k}$}\phantom{D_{j,k}}, & \text{if } m_{j,t} = 0\\
+        s_{j}^{0}, & \text{otherwise}
+        \end{cases}
+        &&& \forall t, j \in J\\
+        \end{aligned}
+        \end{equation*}
+        $\forall \tilde{d}_{j,k} \in \mathcal{U}$.
+        \visible<2>{Approximate $s_{j,t}(\tilde{d}_{j,k})$ by linear decision rule.
+        Utilize Robust Optimization reformulation techniques.}
+    \end{overlayarea}
 \end{frame}
 
 
