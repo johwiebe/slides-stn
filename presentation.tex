@@ -479,6 +479,7 @@ London
 \end{frame}
 
 \begin{frame}{How does robust optimization work?}
+    \small
 \begin{block}{General idea}
     \begin{itemize}
         \item Make constraints hold for all values in $\mathcal{U}$: $\sum_{j}{\tilde{a}_{ij}x_j} \leq b_i,
@@ -490,7 +491,8 @@ London
 \end{block}
 
     \begin{exampleblock}{Example: Soyster's method (worst case) [1973]}
-        \vspace{-10pt}
+        \scriptsize
+        \vspace{-0pt}
         \begin{minipage}[t]{.4\linewidth}
             \begin{equation*}
             \begin{aligned}
@@ -504,7 +506,7 @@ London
             \end{equation*}
         \end{minipage}
         \hfill\vline\hfill
-        \begin{minipage}[t]{.58\linewidth}
+        \begin{minipage}[t]{.50\linewidth}
             \begin{equation*}
             \begin{aligned}
             & \max_{x_1,x_2}
@@ -522,8 +524,9 @@ London
 \end{frame}
 
 \begin{frame}{Formulation}
+    \footnotesize
 \begin{block}{Scheduling}
-    \vspace{-20pt}
+    \vspace{0pt}
     \begin{equation*}
     \begin{aligned}
     & M_{j,t} S_{j,0} \leq S_{j,t} \leq S_{j,max} + M_{j,t} \cdot (S_{j,0} - S_{j,max})
@@ -534,10 +537,10 @@ London
     && \forall t, j \in J, D \in \mathcal{D}\\
     \end{aligned}
     \end{equation*}
-    \vspace{-10pt}
+    \vspace{0pt}
 \end{block}
 \begin{block}{Planning}
-    \vspace{-20pt}
+    \vspace{0pt}
     \begin{equation*}
     \begin{aligned}
     & S_{j,t} \leq S_{j,max}
@@ -594,25 +597,25 @@ S_{j,t} = [S_{j,t}]_{0} + \sum_{k}\sum_{t'=0}^t{[S_{j,t}]_{k,t'}D_{j,k,t'}}.
     \end{tabular}
 \end{frame}
 
-\begin{frame}{How do we choose $\mathcal{U}$?}
-    \vspace{-10pt}
-    \begin{block}{Choose $\mathcal{U}$ from distribution}
-        \begin{minipage}[t]{.47\textwidth}
-            \begin{itemize}
-                \item Choose parameter $\alpha$
-                \item Choose $D_{min}$ such that $P(D \leq D_{min}) = \alpha$
-                \item Choose $D_{max}$ such that $P(D \geq D_{max}) = \alpha$
-                \item $\mathcal{U} = \{D|D_{min} \leq D \leq D_{max}\}$
-            \end{itemize}
-        \end{minipage}
-        \hfill\hfill
-        \begin{minipage}[t]{.47\textwidth}
-            \begin{center}
-                \includegraphics[scale=0.45]{uncertainty-set.pdf} \\
-            \end{center}
-        \end{minipage}
-    \end{block}
-\end{frame}
+%\begin{frame}{How do we choose $\mathcal{U}$?}
+%    \vspace{-10pt}
+%    \begin{block}{Choose $\mathcal{U}$ from distribution}
+%        \begin{minipage}[t]{.47\textwidth}
+%            \begin{itemize}
+%                \item Choose parameter $\alpha$
+%                \item Choose $D_{min}$ such that $P(D \leq D_{min}) = \alpha$
+%                \item Choose $D_{max}$ such that $P(D \geq D_{max}) = \alpha$
+%                \item $\mathcal{U} = \{D|D_{min} \leq D \leq D_{max}\}$
+%            \end{itemize}
+%        \end{minipage}
+%        \hfill\hfill
+%        \begin{minipage}[t]{.47\textwidth}
+%            \begin{center}
+%                \includegraphics[scale=0.45]{uncertainty-set.pdf} \\
+%            \end{center}
+%        \end{minipage}
+%    \end{block}
+%\end{frame}
 
 \begin{frame}{Deriving a robust counterpart}
 %\begin{block}{Random variables can be replaced by uncertain parameters}
