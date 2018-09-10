@@ -4,6 +4,7 @@
 \usecolortheme{metropolis}
 \usecolortheme{imperial}
 \usepackage{bm}
+\usepackage{bbm}         % Blackboard fonts
 \usepackage{amsmath}
 \usepackage{ulem}  % for crossing out text
 \usepackage{makecell}
@@ -45,7 +46,7 @@
 \colorlet{myGreen}{green!80!black}
         \colorlet{smtGreen}{green!70!black}
 
-        \newdate{date}{01}{08}{2018}
+        \newdate{date}{11}{09}{2018}
 
 \newcommand{\isoSpacing}{\ \ \ \ \ \ \ \ \ \ }
 \setlength{\abovedisplayskip}{-5pt}
@@ -85,7 +86,7 @@
     \end{beamercolorbox}%
     \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,right]{date}%
         \usebeamerfont{date in
-        head/foot}\hspace*{3ex}\phantom{10}\makebox[0pt][r]{\insertframenumber{}} /
+        head/foot}\insertshortinstitute\hspace*{3ex}\phantom{10}\makebox[0pt][r]{\insertframenumber{}} /
     \insertmainframenumber\hspace*{1ex}
     \end{beamercolorbox}}%
     \vskip0pt%

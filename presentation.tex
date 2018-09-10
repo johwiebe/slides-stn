@@ -6,13 +6,14 @@
 \title[Data-driven optimization \& degradation]{Data-driven optimization of processes with degrading equipment \vspace{-10pt}}
 
 % Ines and Ruth as co-authors
-\author[J. Wiebe, I. Cec\'ilio, R. Misener]{Johannes Wiebe\inst{1}, In\^{e}s
+\author[J. Wiebe et al.]{Johannes Wiebe\inst{1}, In\^{e}s
 Cec\'{i}lio\inst{2}, Ruth Misener\inst{1}}
 \institute[Imperial College London]{
     \inst{1} Department of Computing, Imperial College London, London, UK \and
     \inst{2} Schlumberger Research Cambridge, Cambridge, UK
 London
 }
+
 % Ines and Ruth as supervisors
 %\author[J. Wiebe]{Johannes Wiebe\inst{1}}
 %\institute[Imperial College London]{Supervisors: Ruth Misener\inst{1}, Ines
@@ -92,8 +93,8 @@ London
     \visible<3>{
         \begin{block}{Related Work}
             \small
-            Vassiliads and Pistikopoulos (2001); Liu, Yahia and Papageorgiou
-            (2014); Xenos, et int., Thornhill (2016); Aguirre and Papageorgiou
+            Vassiliadis and Pistikopoulos (2001); Liu, Yahia and Papageorgiou
+            (2014); Xenos, et int, Thornhill (2016); Aguirre and Papageorgiou
             (2018); Biondi, Sand and Harjunkoski (2017); Yildirim, Gebraeel and
             Sun (2017); Ba\c{s}\c{c}iftci, Ahmed, Gebraeel and Yildirim (2018)
             \nocite{Vassiliadis2001,Liu2014,Xenos2016,Aguirre2018,Biondi2017,Yildirim2017,Basciftci2018}
@@ -138,11 +139,11 @@ London
         %\end{equation*}
 }
 }
-\only<5>{
+\end{frame}
+\begin{frame}{Calculating failure probabilities}
     \centering
     \tikzsetnextfilename{deg-sig2}
     \input{deg-sig2.tex}
-}
 \end{frame}
 
 \begin{frame}{A health model based on L\'evy processes}
@@ -229,11 +230,19 @@ London
 \begin{frame}{Deriving a robust counterpart \citep{Lappas2016}}
     \begin{overlayarea}{\textwidth}{0.25\textheight}
         \vspace{-10pt}
-        \begin{exampleblock}{Idea}
-            Replace random variables $D_{j,k}$ and $S_{j,t}$ by uncertain parameter
-            $\tilde{d}_{j,k} \in \mathcal{U}$ and second stage variable
-            $s_{j,t}(\tilde{d}_{j,k})$.
-        \end{exampleblock}
+        \only<1-2>{
+            \begin{exampleblock}{Idea}
+                Replace random variables $D_{j,k}$ and $S_{j,t}$ by uncertain parameter
+                $\tilde{d}_{j,k} \in \mathcal{U}$ and second stage variable
+                $s_{j,t}(\tilde{d}_{j,k})$.
+            \end{exampleblock}
+        }
+        \only<3>{
+            \begin{alertblock}{In special cases}
+                Solve an approximate deterministic model
+                with an order of magnitude fewer variables/constraints.
+            \end{alertblock}
+        }
     \end{overlayarea}
     \begin{overlayarea}{\textwidth}{0.75\textheight}
         \vspace{-25pt}
@@ -262,7 +271,7 @@ London
         \end{aligned}
         \end{equation*}
         $\forall \tilde{d}_{j,k} \in \mathcal{U}$.
-        \visible<2>{Approximate $s_{j,t}(\tilde{d}_{j,k})$ by linear decision rule.
+        \visible<2->{Approximate $s_{j,t}(\tilde{d}_{j,k})$ by linear decision rule.
         Utilize Robust Optimization reformulation techniques.}
     \end{overlayarea}
 \end{frame}
@@ -286,7 +295,8 @@ London
                 \quad
             \end{column}
             \begin{column}{0.47\textwidth}
-                Choose $\epsilon_{j,k}$ from distribution $\mathcal{D}_{j,k}$:
+                Choose $\epsilon_{j,k}$ from distribution $\mathcal{D}_{j,k}$
+                \citep{Ning2017}:
                 \begin{equation*}
                     \epsilon_{j,k}= 1 - F^{-1}(\alpha)/\bar{d}_{j,k}
                 \end{equation*}
@@ -309,21 +319,22 @@ London
         \vspace{20pt}
         %\begin{block}{Extension for degradation [Biondi et al.~2017]}
         %\citet{Biondi2017}
-        Biondi, Sand and Harjunkoski (2017) extend the STN to include...
+        Biondi, Sand and Harjunkoski (2017) extend the STN to include\ldots
             \begin{itemize}
-                \item ...unit health and maintenance scheduling
-                \item ...integrated scheduling and planning
-                \item ...multiple operating modes per task
+                \item \ldots unit health and maintenance scheduling,
+                \item \ldots integrated scheduling and planning,
+                \item \ldots multiple operating modes per task.
             \end{itemize}
     }
     \only<3>{%
         \vspace{20pt}
-        This work...
+        This work\ldots
             \begin{itemize}
-                \item ...replaces their deterministic health model by the
-                    proposed approach based on degradation modelling.
-                \item ...utilizes robust optimization to obtain a solution that
-                    is likely to remain feasible.
+                \item \ldots replaces their deterministic health model by the
+                    proposed approach based on degradation modelling,
+                \item \ldots utilizes robust optimization to obtain a solution that
+                    is likely to remain feasible,
+                \item \ldots analyzes the price of robustness.
             \end{itemize}
         %\end{block}
     }
@@ -343,8 +354,8 @@ London
 \end{frame}
 
 
-\begin{frame}{Choosing $\alpha$ is its own optimization problem}
-     We optimize $\alpha$ by solving
+\begin{frame}{Choosing $\alpha$ is its own optimization problem }
+    We optimize $\alpha$ by solving
     \begin{equation*}
     \min_{\alpha} c^*(\alpha) + \sum_{j} p^f_{j}(\alpha)\cdot c_{j}^f
     \end{equation*}
@@ -354,6 +365,7 @@ London
             unit $j$).
         \item $c_j^f$ is the cost of an unexpected failure.
     \end{itemize}
+    Alternative objective: \citet{Li2015_2}
     \visible<2->{
         \begin{exampleblock}{Idea: Use Bayesian Optimization (BO)}
             Both $c^*$ and $p^f_j$ can be viewed as expensive black box functions.
@@ -363,43 +375,6 @@ London
 \end{frame}
 
 
-\begin{frame}{Saving time: a deterministic approximation}
-\only<1>{
-    \begin{alertblock}{Assumption}
-        Only the health model depends on $\tilde{d}_{j,k}$ and $\tilde{d}_{j,k} \geq 0.$
-    \end{alertblock}
-    Then we can prove that a solution to
-    \begin{equation*}
-    \label{eq:bigD}
-    \begin{aligned}
-    & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
-    && \text{cost}(\bm{x},
-        \bm{m},{\color{imperialAlertText}\text{\sout{$\bm{h}$}}})\\
-    & \text{s.t.}
-    && \text{process model, maint. model}(\bm{x}, \bm{m},{\color{imperialAlertText}\text{\sout{$\bm{h}$}}})
-    &&& \\
-    &
-    && s_{j,t} \leq s_{j}^{max}
-    &&& \forall t, j \in J\\
-    &
-    && s_{j,t} =
-    \begin{cases}
-        s_{j,t-1} + {\sum\limits_{k \in
-        \mathcal{K}}{x_{j,k,t}\cdot}}
-        {\color{imperialAlertText}{d}^{max}_{j,k}}, & \text{if } m_{j,t} = 0\\
-    s_{j}^{0}, & \text{otherwise}
-    \end{cases}
-    &&& \forall t, j \in J\\
-    \end{aligned}
-    \end{equation*}
-    with $d_{j,k}^{max} = \max_{\mathcal{U}} \tilde{d}_{j,k}$ is also feasible in the robust problem.
-}
-\only<2>{
-    \tikzsetnextfilename{det-vs-rob}
-    \input{biondi-det-vs-rob.tex}
-}
-
-\end{frame}
 \begin{frame}{Saving time: data-driven approximations}
 \only<1>{
     An upper bound on the probability of failure $p^f_j$ can be estimated from
@@ -426,9 +401,12 @@ London
 
 
 \begin{frame}[t]{Conclusion}
+        \vspace{-15pt}
     \tikzsetnextfilename{flowchart}
     \input{flowchart-big.tex}
         \centering
+%        \vspace{-5pt}
+%    \small Preprint soon available: http://www.imperial.ac.uk/people/j.wiebe17
         \visible<2>{
         {\huge Thank You!\\}
             {\tiny Funding: EP/L016796/1, EP/R511961/1 no.~17000145, and
@@ -473,17 +451,55 @@ London
     \bibliography{lit_manual,lit}
 \end{frame}
 
-\begin{frame}{Degradation modelling}
-    \centering
-    \tikzsetnextfilename{deg-sig2}
-    \input{deg-sig2.tex}
-\end{frame}
+%\begin{frame}{Degradation modelling}
+%    \centering
+%    \tikzsetnextfilename{deg-sig2}
+%    \input{deg-sig2.tex}
+%\end{frame}
 
 
 \begin{frame}{Degradation modelling with multiple operating modes}
 \begin{center}
     \includegraphics[scale=0.42]{example-wiener-om.pdf} \\
 \end{center}
+\end{frame}
+
+\begin{frame}{Saving time: a deterministic approximation}
+\only<1>{
+    \begin{alertblock}{Assumption}
+        Only the health model depends on $\tilde{d}_{j,k}$ and $\tilde{d}_{j,k} \geq 0.$
+    \end{alertblock}
+    Then we can prove that a solution to
+    \begin{equation*}
+    \label{eq:bigD}
+    \begin{aligned}
+    & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
+    && \text{cost}(\bm{x},
+        \bm{m},{\color{imperialAlertText}\text{\sout{$\bm{h}$}}})\\
+    & \text{s.t.}
+    && \text{process model, maint. model}(\bm{x}, \bm{m},{\color{imperialAlertText}\text{\sout{$\bm{h}$}}})
+    &&& \\
+    &
+    && s_{j,t} \leq s_{j}^{max}
+    &&& \forall t, j \in J\\
+    &
+    && s_{j,t} =
+    \begin{cases}
+        s_{j,t-1} + {\sum\limits_{k \in
+        \mathcal{K}}{x_{j,k,t}\cdot}}
+        {\color{imperialAlertText}{d}^{max}_{j,k}}, & \text{if } m_{j,t} = 0\\
+    s_{j}^{0}, & \text{otherwise}
+    \end{cases}
+    &&& \forall t, j \in J\\
+    \end{aligned}
+    \end{equation*}
+    with $d_{j,k}^{max} = \max_{\mathcal{U}} \tilde{d}_{j,k}$ is also feasible in the robust problem.
+}
+\only<2>{
+    \tikzsetnextfilename{det-vs-rob}
+    \input{biondi-det-vs-rob.tex}
+}
+
 \end{frame}
 
 \begin{frame}{How does robust optimization work?}
@@ -662,30 +678,208 @@ Replace $s_{j,t}$ by linear decision rule $s_{j,t} = [s_{j,t}]_{0} + \sum_{k}{[s
 \end{frame}
 
 
-\begin{frame}{Results: metrics data-driven approximation}
-    \begin{table}[ht]
-        \label{tab:metrics-inst}
+\begin{frame}{Case study: model}
+    \only<1>{
+        \begin{align*}
+            &\text{Objective function:} \nonumber \\
+            \begin{split}
+            \text{cost} = \sum_{j \in J} c_j^{maint}\left(s_j^{fin}/s_j^{max} + \sum_{t \in
+            T} m_{j,t}\right)\\ + c_s^{storage}\left(q_s^{fin} + \sum_{t \in T_p}
+            q_{s,t}\right) \\
+            + U\left(\sum_{s \in S} \phi^d_s + \sum_{t \in T_S} \phi^q_{s,t}\right)
+            \end{split} \label{stn:obj}
+        \end{align*}
+    }
+    \only<2>{
+        \tiny
+        \begin{subequations}
+        \begin{align}
+            & \text{Constraints scheduling horizon:} \nonumber\\
+            & \sum_{k \in K_j} \sum_{i\in I_j} \sum_{t'=t-p_{i,j,k}+\Delta t_S}^t w_{i,j,k,t'} + \sum_{t'=t-\tau_j+\Delta t_s}^t m_{j,t'} \leq 1
+            &
+            & \forall J, t \in T_S                                                    \\
+            & v^{min}_{i,j}w_{i,j,k,t} \leq b_{i,j,k,t} \leq v^{max}_{i,j}w_{i,j,k,t}
+            &
+            & \forall J, i \in I_j, k \in K_j, t \in T_S                            \\
+            \begin{split}
+                q_{s,t} = q_{s,t-1} + \sum_{i \in \bar{I}_s} \bar{\rho}_{i,s}\sum_{j \in
+                J_i}\sum_{k \in K_j} b_{i,j,k,t-p_{i,j,k}}                    \\
+                - \sum_{i \in I_s}\rho_{i,s}\sum_{j\in J_i}\sum_{k\in K_j}b_{i,j,k,t}
+            \end{split}
+            &
+            & \forall s, t \in T_S                                                    \\ \label{eq:slack1}
+            & 0 \leq q_{s,t} - \phi^q_{s,t}\leq c_s
+            &
+            & \forall s, t \in T_S                                                    \\
+            & m_{j,t} s_{j}^{0} \leq s_{j,t} \leq s_{j}^{max} + m_{j,t} \cdot (s_{j}^{0} -
+            s_{j}^{max})
+            &
+            & \forall t, j \in J, D \in \mathcal{U}                                    \\
+            & s_{j,t} \geq s_{j,t-\Delta t_S} + \sum_{i}\sum_{k}{w_{i,j,k,t}\tilde{d}_{j,k}}
+            + m_{j,t} \cdot (s_{j}^{0} - s_{j}^{max})
+            &
+            & \forall t, j \in J, D \in
+            \mathcal{U}                                            \\
+            & s_{j,t} \leq s_{j,t-\Delta t_S} + \sum_{i}\sum_{k}{w_{i,j,k,t}\tilde{d}_{j,k}}
+            &
+            & \forall t, j \in J, D \in \mathcal{U},
+        \end{align}
+        \end{subequations}
+    }
+    \only<3>{
+        \tiny
+        \begin{subequations}
+        \begin{align}
+            &\text{Constraints planning horizon:}\nonumber\\
+            &\sum_{i \in I_j}\sum_{k \in K_j} p_{i,j,k} n_{i,j,k,t} + \tau_j m_{j,t} \leq \Delta t_P
+            &
+            & \forall J, t \in T_{P}\backslash{\{\bar{t}_P\}} \\
+            &v_{i,j}^{min}\sum_{k\in K_j} n_{i,j,k,t} \leq a_{i,j,t} \leq
+            v_{i,j}^{max}\sum_{k\in K_j} n_{i,j,k,t}
+            &
+            & \forall J, i \in I_j, k \in
+            K_j, t \in T_P\\
+            &q_{s,t} = q_{s,t-1} + \sum_{i \in \bar{I}_s}\bar{\rho}_{i,s} \sum_{j \in
+            J_i}a_{i,j,t} - \sum_{i \in I_s} \rho_{i,s} \sum_{j \in J_i} a_{i,j,t}
+            - \delta_{s,t}
+            &
+            & \forall s, t \in T_P \backslash\{\bar{t}_P\}    \\
+            & 0 \leq q_{s,t} \leq c_s
+            &
+            & \forall s, t \in T_P                            \\
+            & n_{i,j,k,t} \leq U \cdot \omega_{j,k,t}
+            &
+            & \forall J, i \in I_j, k \in K_j, t \in T_P      \\
+            &\sum_{k \in K_j} \omega_{j,k,t} = 1
+            &
+            & \forall J, t \in T_P                            \\
+            & s_{j,t} \leq s_{j}^{max}
+            &
+            & \forall t, j \in J                              \\
+            & s_{j}^{t} \geq s_{j,t-\Delta t_P} + \sum_{k}{n_{j,k,t}\tilde{d}_{j,k,t}} +
+            m_{j,t} \cdot (s_{j}^{0} - s_{j}^{max})
+            &
+            & \forall t, j \in J                              \\
+            & s_{j,t} \leq s_{j,t-\Delta t_P} + \sum_{k}{n_{j,k,t}\tilde{d}_{j,k,t}}
+            &
+            & \forall t, j \in J
+        \end{align}
+        \end{subequations}
+    }
+    \only<4>{
+        \tiny
+        \begin{subequations}
+        \begin{align}
+            &\text{Constraints interface between scheduling and planning:} \nonumber\\
+            \begin{split}\label{eq:int1}
+                \sum_{k \in K_j} \sum_{i \in I_j} \sum_{t'=\bar{t}_S+2\Delta t_S-p_{i,j,k}}^{\bar{t}_S} w_{i,j,k,t'} \left[p_{i,j,k} - (\bar{t}_S - t' + \Delta t_S)\right]    \\
+                + \sum_{t'=\bar{t}_S+2\Delta t_S-\tau_j}^{\bar{t}_S} m_{j,t'}\left[\tau_{j} - (\bar{t}_S - t' + \Delta t_S)\right]    \\
+                + \sum_{i \in I_j} \sum_{k \in K_j} p_{i,j,k}n_{i,j,k,\bar{t}_P} + \tau_jm_{j,\bar{t}_P} \leq \Delta t_P,
+            \end{split}
+            &
+            & \forall J                                       \\
+            \begin{split}\label{eq:slack2}
+            q^{fin}_s = q_{s,\bar{t}_S} + \sum_{i\in \bar{I}_s} \bar{\rho}_{i,s}\sum_{j \in
+            J_i}\sum_{k \in K_j}b_{i,j,k,\bar{t}_S+1-p_{i,j,k}}\\ - d_{s,\bar{t}_S}
+            + \phi^d_{s}
+            \end{split}
+            &
+            & \forall s                                       \\
+            & 0 \leq q^{fin}_s \leq c_s
+            &
+            & \forall s                                       \\
+            \begin{split}q_{s,\bar{t}_P} = q^{fin}_s + \sum_{i \in \bar{I}_S}
+            \bar{\rho}_{i,s} \sum_{j \in J_i} \sum_{k \in K_j} \sum_{t'=\bar{t}_s +
+            2 - p_{i,j,k}}^{\bar{t}_S} b_{i,j,k,t'} \\ + \sum_{i \in \bar{I}_S}
+            \bar{\rho}_{i,s}\sum_{j,J_i}a_{i,j,\bar{t}_P}\\
+            - \sum_{i,I_s}\rho_{i,s}\sum_{j \in J_i}a_{i,j,\bar{t}_P} - d_{s,\bar{t}_P}
+            \end{split}
+            &
+            & \forall s              \label{stn:last}
+        \end{align}
+        \end{subequations}
+    }
+\end{frame}
+
+\begin{frame}{Results: instances}
+    \begin{table}[htb]
         \centering
-        \begin{tabular}{llrrr}
+        \begin{tabular}{l r r r r r}
             \hline
-            instance & bound & rms\_all & rms\_max & p\_out \\
-            \hline
-            toy & freq & 8.00 & 1.53 & 29.40 \\
-            toy & mc & 10.41 & 3.08 & 21.27 \\
-            P1 & freq & 12.61 & 3.52 & 17.54 \\
-            P1 & mc & 17.25 & 4.39 & 9.62 \\
-            P2 & freq & 7.40 & 2.31 & 18.08 \\
-            P2 & mc & 13.68 & 4.98 & 10.13 \\
-            P4 & freq & 9.17 & 3.27 & 47.78 \\
-            P4 & mc & 11.43 & 2.84 & 32.50 \\
-            P6 & freq & 18.75 & 8.94 & 12.17 \\
-            P6 & mc & 20.84 & 10.09 & 10.98 \\
-            \hline
-            all & freq & 11.19 & 3.91 & 24.99 \\
-            all & mc & 14.72 & 5.08 & 16.90 \\
+            Instance            & Toy  & P1 & P2   & P4   & P6   \\ \hline
+            Units               & 2    & 4    & 5    & 3    & 6    \\
+            Tasks               & 3    & 5    & 3    & 4    & 8    \\
+            Op.~modes           & 2    & 3    & 3    & 2    & 2    \\
+            Products            & 2    & 2    & 1    & 2    & 4    \\ \hline
+            Discrete vars       & 518  & 2492 & 1930 & 1869 & 1993 \\
+            Continuous vars     & 1033 & 3630 & 2371 & 2777 & 4084 \\
+            Constraints         & 1860 & 7332 & 5705 & 5699 & 7994 \\
+            Avg.~MIP gap [\%]   & 0.0  & 3.0  & 5.8  & 10.9 & 1.02 \\
             \hline
         \end{tabular}
+        \caption{Evaluated STN instances}
+        \label{tab:instances}
     \end{table}
+    \scriptsize
+    P1: \citet{Kondili1993}, P2: \citet{Karimi1997}, P4: \citet{Maravelias2003},
+    P6: \citet{Ierapetritou1998}
+
+\end{frame}
+
+\begin{frame}{Results: metrics data-driven approximation}
+    \only<1>{
+        \scriptsize
+        \begin{subequations}
+            \begin{align}
+                \textrm{rms}^2_{all} &= \frac{1}{N\cdot|A|}\sum_{n \in \{1..N\}, \alpha
+                \in A} \left(\left[p^f_j\right]_{n, \alpha} - \bar{p}^f_j\right)^2,\\
+                p_{out} &= \frac{1}{N\cdot|A|}\sum_{n \in \{1..N\}, \alpha \in A}
+                \mathbbm{1}\left(\left[p^f_j\right]_{n, \alpha} > \bar{p}^f_j\right)\label{eq:p-out},\textrm{~and}\\
+                \textrm{rms}^2_{out}
+                &= \frac{1}{p_{out} \cdot N \cdot |A|}
+                \sum_{n \in \{1..N\}, \alpha \in A}
+                \mathbbm{1}\left( \left[ p^f_j \right]_{n, \alpha} > \bar{p}^f_j \right)
+                \left( \left[ p^f_j \right]_{n, \alpha} - \bar{p}^f_j \right)^2,
+            \end{align}
+        \end{subequations}
+    }
+    \only<2>{
+        \small
+        \begin{table}[ht]
+            \label{tab:metrics-inst}
+            \centering
+            \begin{tabular}{llrrr}
+                \hline
+                instance & bound & rms\_all & rms\_max & p\_out \\
+                \hline
+                toy & freq & 8.00 & 1.53 & 29.40 \\
+                toy & mc & 10.41 & 3.08 & 21.27 \\
+                P1 & freq & 12.61 & 3.52 & 17.54 \\
+                P1 & mc & 17.25 & 4.39 & 9.62 \\
+                P2 & freq & 7.40 & 2.31 & 18.08 \\
+                P2 & mc & 13.68 & 4.98 & 10.13 \\
+                P4 & freq & 9.17 & 3.27 & 47.78 \\
+                P4 & mc & 11.43 & 2.84 & 32.50 \\
+                P6 & freq & 18.75 & 8.94 & 12.17 \\
+                P6 & mc & 20.84 & 10.09 & 10.98 \\
+                \hline
+                all & freq & 11.19 & 3.91 & 24.99 \\
+                all & mc & 14.72 & 5.08 & 16.90 \\
+                \hline
+            \end{tabular}
+        \end{table}
+        \scriptsize
+        P1: \citet{Kondili1993}, P2: \citet{Karimi1997}, P4: \citet{Maravelias2003},
+        P6: \citet{Ierapetritou1998}
+    }
+    \only<3>{
+        \input{biondi-r1-p-vs-alpha.tex}
+    }
+    \only<4>{
+
+        \tikzsetnextfilename{logreg-toy-H-HN}
+        \input{logreg-toy-H-HN}
+    }
 \end{frame}
 
 \end{document}

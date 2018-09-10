@@ -31,10 +31,24 @@ Biondi, M., Sand, G., and Harjunkoski, I. (2017).
   multi-time-scale maintenance and production scheduling approach}.
 \newblock {\em Computers and Chemical Engineering}, 99:325--339.
 
+\bibitem[Ierapetritou and Floudas, 1998]{Ierapetritou1998}
+Ierapetritou, M.~G. and Floudas, C.~A. (1998).
+\newblock {Effective continuous-time formulation for short-term scheduling. 1.
+  Multipurpose batch processes}.
+\newblock {\em Industrial {\&} Engineering Chemistry Research},
+  37(11):4341--4359.
+
 \bibitem[Jones et~al., 1998]{Jones1998}
 Jones, D.~R., Schonlau, M., and Welch, W.~J. (1998).
 \newblock {Efficient Global Optimization of Expensive Black-Box Functions}.
 \newblock {\em Journal of Global Optimization}, 13:455--492.
+
+\bibitem[Karimi and McDonald, 1997]{Karimi1997}
+Karimi, I.~A. and McDonald, C.~M. (1997).
+\newblock {Planning and Scheduling of Parallel Semicontinuous Processes. 2.
+  Short-Term Scheduling}.
+\newblock {\em Industrial {\&} Engineering Chemistry Research},
+  36(7):2701--2714.
 
 \bibitem[Kondili et~al., 1993]{Kondili1993}
 Kondili, E., Pantelides, C., and Sargent, R. (1993).
@@ -48,6 +62,12 @@ Lappas, N.~H. and Gounaris, C.~E. (2016).
   under uncertainty}.
 \newblock {\em AIChE Journal}, 62(5):1646--1667.
 
+\bibitem[Li and Li, 2015]{Li2015_2}
+Li, Z. and Li, Z. (2015).
+\newblock {Optimal robust optimization approximation for chance constrained
+  optimization problem}.
+\newblock {\em Computers and Chemical Engineering}, 74:89--99.
+
 \bibitem[Liao and Tian, 2013]{Liao2013}
 Liao, H. and Tian, Z. (2013).
 \newblock {A framework for predicting the remaining useful life of a single
@@ -60,6 +80,19 @@ Liu, S., Yahia, A., and Papageorgiou, L.~G. (2014).
   Manufacturing under Performance Decay}.
 \newblock {\em Industrial {\&} Engineering Chemistry Research},
   53(44):17075--17091.
+
+\bibitem[Maravelias and Grossmann, 2003]{Maravelias2003}
+Maravelias, C.~T. and Grossmann, I.~E. (2003).
+\newblock {New general continuous-time state - Task network formulation for
+  short-term scheduling of multipurpose batch plants}.
+\newblock {\em Industrial {\&} Engineering Chemistry Research},
+  42(13):3056--3074.
+
+\bibitem[Ning and You, 2017]{Ning2017}
+Ning, C. and You, F. (2017).
+\newblock {A data-driven multistage adaptive robust optimization framework for
+  planning and scheduling under uncertainty}.
+\newblock {\em AIChE Journal}, 63(10):4343--4369.
 
 \bibitem[Vassiliadis and Pistikopoulos, 2001]{Vassiliadis2001}
 Vassiliadis, C. and Pistikopoulos, E. (2001).
