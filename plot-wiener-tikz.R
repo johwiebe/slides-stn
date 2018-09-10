@@ -188,11 +188,11 @@ ggplot(df) +
   geom_line(aes(x,y), color=rgb(0, 52/255, 92/255))+
   geom_segment(aes(x=lower, y=0, xend=lower, yend=dnorm(lower, mean=5, sd=1.5)), color=rgb(0, 52/255, 92/255), linetype=2) +
   geom_segment(aes(x=upper, y=0, xend=upper, yend=dnorm(upper, mean=5, sd=1.5)), color=rgb(0, 52/255, 92/255), linetype=2) +
-  geom_text(aes(x = upper, y = -0.015), label = "$\\bar{d}_{j,k}(1+\\epsilon)$", color = rgb(0, 52/255, 92/255), size=2) +
-  geom_text(aes(x = lower, y = -0.015), label = "$\\bar{d}_{j,k}(1-\\epsilon)$", color = rgb(0, 52/255, 92/255), size=2) +
-  geom_text(aes(x = mu, y = 0.02), label = "$P(D_{j,k} \\in \\mathcal{U}) = 1 - 2\\alpha$", color = rgb(0, 52/255, 92/255), size=2)
+  #geom_text(aes(x = upper, y = -0.015), label = "{\\tiny $\\bar{d}_{j,k}(1+\\epsilon)$}", color = rgb(0, 52/255, 92/255)) +
+  #geom_text(aes(x = lower, y = -0.015), label = "$\\bar{d}_{j,k}(1-\\epsilon)$", color = rgb(0, 52/255, 92/255), size=2) +
+  #geom_text(aes(x = mu, y = 0.02), label = "$P(D_{j,k} \\in \\mathcal{U}) = 1 - 2\\alpha$", color = rgb(0, 52/255, 92/255), size=2)
+  geom_text(aes(x = mu, y = 0.02), label = "$1 - 2\\alpha$", color = rgb(0, 52/255, 92/255))
 dev.off()
-
 
 
 Rmax = 100
