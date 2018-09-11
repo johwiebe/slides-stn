@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.7.25)  10 SEP 2018 16:39
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.7.25)  11 SEP 2018 08:52
  system commands enabled.
  file:line:error style messages enabled.
 **presentation.tex
@@ -23,7 +23,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.094 seconds
+luaotfload | main : initialization completed in 0.097 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2018/02/20 v3.50 A class for typesetting presentations
@@ -2067,6 +2067,20 @@ Overfull \vbox (6.8803pt too high) detected at line 494
 
 ] [40
 
+] [41
+
+] [42
+
+] [43
+
+] [44
+
+]
+Overfull \vbox (1.68567pt too high) detected at line 793
+ []
+
+[45
+
 ]
 .................................................
 . fontspec info: "defining-font"
@@ -2094,50 +2108,22 @@ Overfull \vbox (6.8803pt too high) detected at line 494
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
 . <->"FiraSansItalic:mode=node;script=latn;language=DFLT;+tlig;+tnum;+smcp;"
 .................................................
-LaTeX Font Info:    Try loading font information for T1+FiraSansLight(1) on input line 597.
-LaTeX Font Info:    No file T1FiraSansLight(1).fd. on input line 597.
+LaTeX Font Info:    Try loading font information for T1+FiraSansLight(1) on input line 818.
+LaTeX Font Info:    No file T1FiraSansLight(1).fd. on input line 818.
 
 
 LaTeX Font Warning: Font shape `T1/FiraSansLight(1)/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 597.
+(Font)              using `T1/cmr/m/n' instead on input line 818.
 
-
-Overfull \hbox (0.43088pt too wide) in paragraph at lines 597--597
- [][] 
- []
-
-[41
-
-]
-Overfull \hbox (0.43088pt too wide) in paragraph at lines 613--613
- [][] 
- []
-
-[42
-
-] [43
-
-] [44
-
-] [45
-
-] [46
-
-]
-Overfull \vbox (1.68567pt too high) detected at line 793
- []
-
-[47
-
-] [48
+[46
 
 ]
 LaTeX Font Info:    Try loading font information for U+bbm on input line 874.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [49
+) [47
 
-] [50
+] [48
 
 ] (./biondi-r1-p-vs-alpha.tex
 ===== Image 'tikz/presentation-figure1' is up-to-date. ======
@@ -2150,7 +2136,7 @@ Overfull \hbox (1.30003pt too wide) in paragraph at lines 3--874
 Overfull \vbox (6.8803pt too high) detected at line 874
  []
 
-[51
+[49
 
 <./tikz/presentation-figure1.pdf>] (./logreg-toy-H-HN.tex
 ===== Image 'tikz/logreg-toy-H-HN' is up-to-date. ======
@@ -2158,7 +2144,7 @@ Overfull \vbox (6.8803pt too high) detected at line 874
 Overfull \vbox (12.92036pt too high) detected at line 874
  []
 
-[52
+[50
 
 <./tikz/logreg-toy-H-HN.pdf>]
 \tf@nav=\write6
@@ -2184,20 +2170,20 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 )
 
 Here is how much of LuaTeX's memory you used:
- 51409 strings out of 494480
+ 51388 strings out of 494480
  100000,7087374 words of node,token memory allocated
  4858 words of node memory still in use:
    129 hlist, 36 vlist, 9 rule, 7 disc, 2 local_par, 8 math, 85 glue, 77 kern, 10 penalty, 191 glyph, 120 attribute, 79 glue_spec, 120 attribute_list, 3 write, 2 pdf_action, 10 pdf_colorstack nodes
    avail lists: 1:12,2:1269,3:517,4:116,5:619,6:5123,7:1606,8:332,9:1280,10:20,11:594
- 52778 multiletter control sequences out of 65536+600000
- 167 fonts using 24117559 bytes
+ 52772 multiletter control sequences out of 65536+600000
+ 163 fonts using 22382423 bytes
  69i,24n,101p,1857b,832s stack positions out of 5000i,500n,10000p,200000b,100000s
-<</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm8.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk>>{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}<</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk>></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraSans-Book.otf><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk>></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraSans-Light.otf><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk>></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb>
-Output written on presentation.pdf (52 pages, 1819794 bytes).
+<</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm8.600pk>>{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}<</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk>></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraSans-Book.otf><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk>></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraSans-Light.otf><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk>></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb>
+Output written on presentation.pdf (50 pages, 1807458 bytes).
 
-PDF statistics: 1791 PDF objects out of 2073 (max. 8388607)
- 866 compressed objects within 9 object streams
- 129 named destinations out of 1000 (max. 131072)
+PDF statistics: 1740 PDF objects out of 2073 (max. 8388607)
+ 852 compressed objects within 9 object streams
+ 125 named destinations out of 1000 (max. 131072)
  32 words of extra memory for PDF output out of 10000 (max. 100000000)
 

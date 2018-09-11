@@ -580,37 +580,37 @@ S_{j,t} = [S_{j,t}]_{0} + \sum_{k}\sum_{t'=0}^t{[S_{j,t}]_{k,t'}D_{j,k,t'}}.
 \end{frame}
 
 
-\begin{frame}{Size of toy problem}
-    \footnotesize
-    \centering
-    \begin{tabular}{|l|c|c|c|} \hline
-         & deterministic & robust $D \neq f(t)$ & robust $D = f(t)$ \\ \hline
-        \# vars & 913 & 3011 & 27719\\
-        \# binaries & 338 & 338 & 338\\
-        \# constraints & 1198 & 2356 & 13300\\ \hline
-        time to solve [s] & 2 & 0.3-10 & 0.3-10\\
-        gap [\%] & 0 & 0 & 0 \\ \hline
-        scheduling periods & 30 & 30 & 30\\
-        planning periods & 8 & 8 & 8\\
-        \makecell[l]{task-unit-op. mode\\ combinations} & 6 & 6 & 6\\\hline
-    \end{tabular}
-\end{frame}
-
-\begin{frame}{Size of realistic problem}
-    \footnotesize
-    \centering
-    \begin{tabular}{|l|c|c|c|} \hline
-        & deterministic & robust $D \neq f(t)$ & robust $D = f(t)$ \\ \hline
-        \# vars & 5389 &  & 397361\\
-        \# binaries & 2492 &  & 2492\\
-        \# constraints & 6798 & & 180858\\ \hline
-        time to solve [s] & 7883 &  & 16756\\
-        gap [\%] & 3.62 &  & 31.02\\ \hline
-        scheduling periods & 56 & 56 & 56\\
-        planning periods & 24 & 24 & 24\\
-        \makecell[l]{task-unit-op. mode\\ combinations} & 24 & 24 & 24\\ \hline
-    \end{tabular}
-\end{frame}
+%\begin{frame}{Size of toy problem}
+%    \footnotesize
+%    \centering
+%    \begin{tabular}{|l|c|c|c|} \hline
+%         & deterministic & robust $D \neq f(t)$ & robust $D = f(t)$ \\ \hline
+%        \# vars & 913 & 3011 & 27719\\
+%        \# binaries & 338 & 338 & 338\\
+%        \# constraints & 1198 & 2356 & 13300\\ \hline
+%        time to solve [s] & 2 & 0.3-10 & 0.3-10\\
+%        gap [\%] & 0 & 0 & 0 \\ \hline
+%        scheduling periods & 30 & 30 & 30\\
+%        planning periods & 8 & 8 & 8\\
+%        \makecell[l]{task-unit-op. mode\\ combinations} & 6 & 6 & 6\\\hline
+%    \end{tabular}
+%\end{frame}
+%
+%\begin{frame}{Size of realistic problem}
+%    \footnotesize
+%    \centering
+%    \begin{tabular}{|l|c|c|c|} \hline
+%        & deterministic & robust $D \neq f(t)$ & robust $D = f(t)$ \\ \hline
+%        \# vars & 5389 &  & 397361\\
+%        \# binaries & 2492 &  & 2492\\
+%        \# constraints & 6798 & & 180858\\ \hline
+%        time to solve [s] & 7883 &  & 16756\\
+%        gap [\%] & 3.62 &  & 31.02\\ \hline
+%        scheduling periods & 56 & 56 & 56\\
+%        planning periods & 24 & 24 & 24\\
+%        \makecell[l]{task-unit-op. mode\\ combinations} & 24 & 24 & 24\\ \hline
+%    \end{tabular}
+%\end{frame}
 
 %\begin{frame}{How do we choose $\mathcal{U}$?}
 %    \vspace{-10pt}
