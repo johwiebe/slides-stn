@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.7.25)  11 SEP 2018 08:52
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.7.25)  24 SEP 2018 08:53
  system commands enabled.
  file:line:error style messages enabled.
 **presentation.tex
@@ -23,7 +23,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.097 seconds
+luaotfload | main : initialization completed in 0.090 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2018/02/20 v3.50 A class for typesetting presentations
@@ -1540,12 +1540,12 @@ LaTeX Font Info:    ... okay on input line 19.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
-* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
-* \paperwidth=364.19536pt
-* \paperheight=273.14662pt
-* \textwidth=307.28987pt
-* \textheight=244.6939pt
+* h-part:(L,W,R)=(28.45274pt, 398.3386pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 256.0748pt, 0.0pt)
+* \paperwidth=455.24408pt
+* \paperheight=256.0748pt
+* \textwidth=398.3386pt
+* \textheight=227.62207pt
 * \oddsidemargin=-43.81725pt
 * \evensidemargin=-43.81725pt
 * \topmargin=-72.26999pt
@@ -1690,17 +1690,17 @@ Package epstopdf Info: Output file is already uptodate.
 File: Imperial_1_Pantone_solid-eps-converted-to.pdf Graphic file (type pdf)
 <use Imperial_1_Pantone_solid-eps-converted-to.pdf>
 Package luatex.def Info: Imperial_1_Pantone_solid-eps-converted-to.pdf  used on input line 52.
-(luatex.def)             Requested size: 89.112pt x 23.4505pt.
+(luatex.def)             Requested size: 115.5155pt x 30.39821pt.
 <COG_logo.png, id=23, 1068.99374pt x 395.4775pt>
 File: COG_logo.png Graphic file (type png)
 <use COG_logo.png>
 Package luatex.def Info: COG_logo.png  used on input line 52.
-(luatex.def)             Requested size: 70.67535pt x 26.14142pt.
+(luatex.def)             Requested size: 91.61617pt x 33.88971pt.
 <logo_hipeds_v3.pdf, id=24, 2007.5pt x 467.7475pt>
 File: logo_hipeds_v3.pdf Graphic file (type pdf)
 <use logo_hipeds_v3.pdf>
 Package luatex.def Info: logo_hipeds_v3.pdf  used on input line 52.
-(luatex.def)             Requested size: 70.67535pt x 16.4656pt.
+(luatex.def)             Requested size: 91.61617pt x 21.34035pt.
 Package epstopdf Info: Source file: <Schlumberger.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 8424 bytes
@@ -1714,7 +1714,7 @@ Package epstopdf Info: Output file is already uptodate.
 File: Schlumberger-eps-converted-to.pdf Graphic file (type pdf)
 <use Schlumberger-eps-converted-to.pdf>
 Package luatex.def Info: Schlumberger-eps-converted-to.pdf  used on input line 52.
-(luatex.def)             Requested size: 70.67535pt x 16.08862pt.
+(luatex.def)             Requested size: 91.61617pt x 20.85568pt.
 
 
 LaTeX Font Warning: Font shape `T1/FiraSansLight(0)/bx/n' undefined
@@ -1746,29 +1746,35 @@ File: schedule.pdf Graphic file (type pdf)
 Package luatex.def Info: schedule.pdf  used on input line 61.
 (luatex.def)             Requested size: 308.71109pt x 81.84636pt.
 
-Overfull \hbox (1.42122pt too wide) in paragraph at lines 61--61
- [][] 
+Overfull \vbox (9.10876pt too high) detected at line 61
  []
 
 [2
 
-<./tikz/p2.pdf><./schedule.pdf>] [3
+<./tikz/p2.pdf><./schedule.pdf>]
+Overfull \vbox (15.01726pt too high) detected at line 101
+ []
 
-] [4
+[3
 
-] [5
+]
+Overfull \vbox (15.01726pt too high) detected at line 101
+ []
+
+[4
+
+]
+Overfull \vbox (15.01726pt too high) detected at line 101
+ []
+
+[5
 
 ] [6
 
 ] (./deg-sig.tex
 ===== Image 'tikz/deg-sig' is up-to-date. ======
 )
-Overfull \hbox (1.30003pt too wide) in paragraph at lines 3--133
- [][] 
- []
-
-
-Overfull \vbox (6.8803pt too high) detected at line 133
+Overfull \vbox (8.3122pt too high) detected at line 133
  []
 
 [7
@@ -1782,48 +1788,51 @@ Overfull \vbox (6.8803pt too high) detected at line 133
 ] (./deg-sig2.tex
 ===== Image 'tikz/deg-sig2' is up-to-date. ======
 )
-Overfull \hbox (1.30003pt too wide) in paragraph at lines 3--138
- [][] 
- []
-
-
-Overfull \vbox (6.8803pt too high) detected at line 138
+Overfull \vbox (8.3122pt too high) detected at line 138
  []
 
 [11
 
 <./tikz/deg-sig2.pdf>]
-Overfull \vbox (28.9035pt too high) detected at line 181
+Overfull \vbox (28.90349pt too high) detected at line 181
  []
 
 [12
 
 ]
-Overfull \vbox (28.9035pt too high) detected at line 181
+Overfull \vbox (28.90349pt too high) detected at line 181
  []
 
 [13
 
 ]
-Overfull \vbox (28.9035pt too high) detected at line 219
+Overfull \vbox (28.90349pt too high) detected at line 219
  []
 
 [14
 
 ]
-Overfull \vbox (28.9035pt too high) detected at line 268
+Overfull \vbox (0.19377pt too high) detected at line 268
+ []
+
+
+Overfull \vbox (28.90349pt too high) detected at line 268
  []
 
 [15
 
 ]
-Overfull \vbox (28.9035pt too high) detected at line 268
+Overfull \vbox (0.19377pt too high) detected at line 268
+ []
+
+
+Overfull \vbox (28.90349pt too high) detected at line 268
  []
 
 [16
 
 ]
-Overfull \vbox (28.9035pt too high) detected at line 268
+Overfull \vbox (28.90349pt too high) detected at line 268
  []
 
 [17
@@ -1839,13 +1848,15 @@ Overfull \vbox (28.9035pt too high) detected at line 268
 <./tikz/alpha.pdf>] (./p2.tex
 ===== Image 'tikz/p2' is up-to-date. ======
 )
+Overfull \vbox (5.85556pt too high) detected at line 333
+ []
+
 File: schedule.pdf Graphic file (type pdf)
 <use schedule.pdf>
 Package luatex.def Info: schedule.pdf  used on input line 333.
 (luatex.def)             Requested size: 308.71109pt x 81.84636pt.
 
-Overfull \hbox (1.42122pt too wide) in paragraph at lines 333--333
-[][]  
+Overfull \vbox (0.12526pt too high) detected at line 333
  []
 
 [20
@@ -1856,37 +1867,37 @@ File: schedule.pdf Graphic file (type pdf)
 Package luatex.def Info: schedule.pdf  used on input line 333.
 (luatex.def)             Requested size: 308.71109pt x 81.84636pt.
 
-Overfull \hbox (1.42122pt too wide) in paragraph at lines 333--333
-[][]  
+Overfull \vbox (0.12526pt too high) detected at line 333
  []
 
 [21
 
 ]
+Overfull \vbox (2.04092pt too high) detected at line 333
+ []
+
 File: schedule.pdf Graphic file (type pdf)
 <use schedule.pdf>
 Package luatex.def Info: schedule.pdf  used on input line 333.
 (luatex.def)             Requested size: 308.71109pt x 81.84636pt.
 
-Overfull \hbox (1.42122pt too wide) in paragraph at lines 333--333
-[][]  
+Overfull \vbox (0.12526pt too high) detected at line 333
  []
 
 [22
 
 ] (./calcp.tex
 ===== Image 'tikz/calcp' is up-to-date. ======
-) [23
+)
+Overfull \vbox (6.60783pt too high) detected at line 339
+ []
+
+[23
 
 <./tikz/calcp.pdf>] (./biondi-price-of-rob.tex
 ===== Image 'tikz/price-of-rob' is up-to-date. ======
 )
-Overfull \hbox (1.30003pt too wide) in paragraph at lines 3--345
- [][] 
- []
-
-
-Overfull \vbox (6.8803pt too high) detected at line 345
+Overfull \vbox (8.3122pt too high) detected at line 345
  []
 
 [24
@@ -1898,12 +1909,7 @@ Overfull \vbox (6.8803pt too high) detected at line 345
 ] (./freq.tex
 ===== Image 'tikz/freq' is up-to-date. ======
 )
-Overfull \hbox (4.17877pt too wide) in paragraph at lines 379--379
-[] 
- []
-
-
-Overfull \vbox (3.1408pt too high) detected at line 379
+Overfull \vbox (2.72798pt too high) detected at line 379
  []
 
 [27
@@ -1911,12 +1917,7 @@ Overfull \vbox (3.1408pt too high) detected at line 379
 <./tikz/freq.pdf>] (./biondi-r1-p-vs-alpha.tex
 ===== Image 'tikz/presentation-figure0' is up-to-date. ======
 )
-Overfull \hbox (1.30003pt too wide) in paragraph at lines 3--379
-[][] 
- []
-
-
-Overfull \vbox (6.8803pt too high) detected at line 379
+Overfull \vbox (8.3122pt too high) detected at line 379
  []
 
 [28
@@ -1924,12 +1925,7 @@ Overfull \vbox (6.8803pt too high) detected at line 379
 <./tikz/presentation-figure0.pdf>] (./biondi-bo-vs-alpha.tex
 ===== Image 'tikz/biondi-bo-vs-alpha' is up-to-date. ======
 )
-Overfull \hbox (1.30003pt too wide) in paragraph at lines 3--391
-[][] 
- []
-
-
-Overfull \vbox (6.8803pt too high) detected at line 391
+Overfull \vbox (8.3122pt too high) detected at line 391
  []
 
 [29
@@ -1937,12 +1933,7 @@ Overfull \vbox (6.8803pt too high) detected at line 391
 <./tikz/biondi-bo-vs-alpha.pdf>] (./biondi-bo-vs-iter-mean.tex
 ===== Image 'tikz/biondi-bo-vs-iter' is up-to-date. ======
 )
-Overfull \hbox (1.30003pt too wide) in paragraph at lines 3--391
-[][] 
- []
-
-
-Overfull \vbox (6.8803pt too high) detected at line 391
+Overfull \vbox (8.3122pt too high) detected at line 391
  []
 
 [30
@@ -1950,10 +1941,6 @@ Overfull \vbox (6.8803pt too high) detected at line 391
 <./tikz/biondi-bo-vs-iter.pdf>] (./flowchart-big.tex
 ===== Image 'tikz/flowchart' is up-to-date. ======
 )
-Overfull \hbox (6.32782pt too wide) in paragraph at lines 1--436
- [][] 
- []
-
 Package epstopdf Info: Source file: <Imperial_1_Pantone_solid.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 310981 bytes
@@ -1966,15 +1953,15 @@ Package epstopdf Info: Output file is already uptodate.
 File: Imperial_1_Pantone_solid-eps-converted-to.pdf Graphic file (type pdf)
 <use Imperial_1_Pantone_solid-eps-converted-to.pdf>
 Package luatex.def Info: Imperial_1_Pantone_solid-eps-converted-to.pdf  used on input line 436.
-(luatex.def)             Requested size: 89.112pt x 23.4505pt.
+(luatex.def)             Requested size: 115.5155pt x 30.39821pt.
 File: COG_logo.png Graphic file (type png)
 <use COG_logo.png>
 Package luatex.def Info: COG_logo.png  used on input line 436.
-(luatex.def)             Requested size: 70.67535pt x 26.14142pt.
+(luatex.def)             Requested size: 91.61617pt x 33.88971pt.
 File: logo_hipeds_v3.pdf Graphic file (type pdf)
 <use logo_hipeds_v3.pdf>
 Package luatex.def Info: logo_hipeds_v3.pdf  used on input line 436.
-(luatex.def)             Requested size: 70.67535pt x 16.4656pt.
+(luatex.def)             Requested size: 91.61617pt x 21.34035pt.
 Package epstopdf Info: Source file: <Schlumberger.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 8424 bytes
@@ -1987,16 +1974,12 @@ Package epstopdf Info: Output file is already uptodate.
 File: Schlumberger-eps-converted-to.pdf Graphic file (type pdf)
 <use Schlumberger-eps-converted-to.pdf>
 Package luatex.def Info: Schlumberger-eps-converted-to.pdf  used on input line 436.
-(luatex.def)             Requested size: 70.67535pt x 16.08862pt.
-[31
+(luatex.def)             Requested size: 91.61617pt x 20.85568pt.
+ [31
 
 <./tikz/flowchart.pdf>] (./flowchart-big.tex
 ===== Image 'tikz/flowchart' is up-to-date. ======
 )
-Overfull \hbox (6.32782pt too wide) in paragraph at lines 1--436
- [][] 
- []
-
 Package epstopdf Info: Source file: <Imperial_1_Pantone_solid.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 310981 bytes
@@ -2009,15 +1992,15 @@ Package epstopdf Info: Output file is already uptodate.
 File: Imperial_1_Pantone_solid-eps-converted-to.pdf Graphic file (type pdf)
 <use Imperial_1_Pantone_solid-eps-converted-to.pdf>
 Package luatex.def Info: Imperial_1_Pantone_solid-eps-converted-to.pdf  used on input line 436.
-(luatex.def)             Requested size: 89.112pt x 23.4505pt.
+(luatex.def)             Requested size: 115.5155pt x 30.39821pt.
 File: COG_logo.png Graphic file (type png)
 <use COG_logo.png>
 Package luatex.def Info: COG_logo.png  used on input line 436.
-(luatex.def)             Requested size: 70.67535pt x 26.14142pt.
+(luatex.def)             Requested size: 91.61617pt x 33.88971pt.
 File: logo_hipeds_v3.pdf Graphic file (type pdf)
 <use logo_hipeds_v3.pdf>
 Package luatex.def Info: logo_hipeds_v3.pdf  used on input line 436.
-(luatex.def)             Requested size: 70.67535pt x 16.4656pt.
+(luatex.def)             Requested size: 91.61617pt x 21.34035pt.
 Package epstopdf Info: Source file: <Schlumberger.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 8424 bytes
@@ -2030,8 +2013,8 @@ Package epstopdf Info: Output file is already uptodate.
 File: Schlumberger-eps-converted-to.pdf Graphic file (type pdf)
 <use Schlumberger-eps-converted-to.pdf>
 Package luatex.def Info: Schlumberger-eps-converted-to.pdf  used on input line 436.
-(luatex.def)             Requested size: 70.67535pt x 16.08862pt.
-[32
+(luatex.def)             Requested size: 91.61617pt x 20.85568pt.
+ [32
 
 <./tikz/flowchart.pdf>] (./presentation.bbl) [33
 
@@ -2051,12 +2034,7 @@ Package luatex.def Info: example-wiener-om.pdf  used on input line 456.
 ] (./biondi-det-vs-rob.tex
 ===== Image 'tikz/det-vs-rob' is up-to-date. ======
 )
-Overfull \hbox (1.30003pt too wide) in paragraph at lines 3--494
-[][] 
- []
-
-
-Overfull \vbox (6.8803pt too high) detected at line 494
+Overfull \vbox (8.3122pt too high) detected at line 494
  []
 
 [37
@@ -2076,7 +2054,7 @@ Overfull \vbox (6.8803pt too high) detected at line 494
 ] [44
 
 ]
-Overfull \vbox (1.68567pt too high) detected at line 793
+Overfull \vbox (18.75749pt too high) detected at line 793
  []
 
 [45
@@ -2123,17 +2101,16 @@ LaTeX Font Info:    Try loading font information for U+bbm on input line 874.
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [47
 
-] [48
+]
+Overfull \vbox (9.899pt too high) detected at line 874
+ []
+
+[48
 
 ] (./biondi-r1-p-vs-alpha.tex
 ===== Image 'tikz/presentation-figure1' is up-to-date. ======
 )
-Overfull \hbox (1.30003pt too wide) in paragraph at lines 3--874
-[][] 
- []
-
-
-Overfull \vbox (6.8803pt too high) detected at line 874
+Overfull \vbox (8.3122pt too high) detected at line 874
  []
 
 [49
@@ -2141,7 +2118,7 @@ Overfull \vbox (6.8803pt too high) detected at line 874
 <./tikz/presentation-figure1.pdf>] (./logreg-toy-H-HN.tex
 ===== Image 'tikz/logreg-toy-H-HN' is up-to-date. ======
 )
-Overfull \vbox (12.92036pt too high) detected at line 874
+Overfull \vbox (29.99219pt too high) detected at line 874
  []
 
 [50
@@ -2170,20 +2147,20 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 )
 
 Here is how much of LuaTeX's memory you used:
- 51388 strings out of 494480
+ 51389 strings out of 494480
  100000,7087374 words of node,token memory allocated
- 4858 words of node memory still in use:
-   129 hlist, 36 vlist, 9 rule, 7 disc, 2 local_par, 8 math, 85 glue, 77 kern, 10 penalty, 191 glyph, 120 attribute, 79 glue_spec, 120 attribute_list, 3 write, 2 pdf_action, 10 pdf_colorstack nodes
-   avail lists: 1:12,2:1269,3:517,4:116,5:619,6:5123,7:1606,8:332,9:1280,10:20,11:594
- 52772 multiletter control sequences out of 65536+600000
+ 4838 words of node memory still in use:
+   129 hlist, 36 vlist, 9 rule, 7 disc, 2 local_par, 8 math, 85 glue, 77 kern, 10 penalty, 191 glyph, 118 attribute, 79 glue_spec, 118 attribute_list, 3 write, 10 pdf_colorstack nodes
+   avail lists: 1:12,2:1273,3:520,4:116,5:619,6:5206,7:1710,8:360,9:1280,10:22,11:591
+ 52773 multiletter control sequences out of 65536+600000
  163 fonts using 22382423 bytes
  69i,24n,101p,1857b,832s stack positions out of 5000i,500n,10000p,200000b,100000s
 <</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm8.600pk>>{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}<</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk>></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraSans-Book.otf><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk>></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraSans-Light.otf><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk>></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb>
-Output written on presentation.pdf (50 pages, 1807458 bytes).
+Output written on presentation.pdf (50 pages, 1807688 bytes).
 
-PDF statistics: 1740 PDF objects out of 2073 (max. 8388607)
- 852 compressed objects within 9 object streams
+PDF statistics: 1738 PDF objects out of 2073 (max. 8388607)
+ 850 compressed objects within 9 object streams
  125 named destinations out of 1000 (max. 131072)
  32 words of extra memory for PDF output out of 10000 (max. 100000000)
 
