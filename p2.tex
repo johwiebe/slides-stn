@@ -4,7 +4,7 @@
 
 
 %\begin{document}
-	\begin{tikzpicture}[node distance=0.45cm and 0.65cm,>=stealth',bend angle=45,auto]
+	\begin{tikzpicture}[node distance=0.35cm and 1.25cm,>=stealth',bend angle=45,auto]
     \scriptsize
 	
 	\tikzstyle{state}=[circle,thick,draw=imperialExampleText,fill=imperialExampleText!20,minimum size=4mm]
@@ -21,19 +21,19 @@
 	\node[label=Hot A] [state] (ha) [right= of h]		{}
 	edge [pre]				(h);
 	
-	\node [task] (r1) [right= of ha] 					{Reac. 1}
+	\node [task] (r1) [right= of ha] 					{Reaction 1}
 	edge [pre]	node [below] 	{40\%}			(ha);
 	
 	\node [label=Int. AB] [state] (iab) [right= of r1]	{}
 	edge [pre]	node [below] 	{60\%}			(r1);
 	
-	\node [label=Prod. 1] [state] (p1) [above= of r1]	{}
+	\node [label=Product 1] [state] (p1) [above= of r1]	{}
 	edge [pre]	node [right] 	{40\%}			(r1);
 	
 	\node [label=left:{Int. BC}] [state] (ibc) [below= of r1]	{}
 	edge [post]	node [right]		{60\%}			(r1);
 	
-	\node [task] (r2) [below= of ibc]					{Reac. 2}
+	\node [task] (r2) [below= of ibc]					{Reaction 2}
 	edge [post]				(ibc);
 	
 	\node [label=Feed B] [state] (fb) [left= of r2]		{}
@@ -42,7 +42,7 @@
 	\node [label=Feed C] [state] (fc) [below right= of r2] {}
 	edge [post, bend left]	node [below left]	{50\%}		(r2);
 	
-	\node [task] (r3) [above right= of fc] 				{Reac. 3}
+	\node [task] (r3) [above right= of fc] 				{Reaction 3}
 	edge [pre, bend left]	node [below right]	{20\%}	(fc)
 	edge [pre, bend left]	node [below left]		{80\%}	(iab);
 	
@@ -53,7 +53,7 @@
 	edge [pre]							(ie)
 	edge [post, bend right]	node [above right]	{10\%}		(iab);
 	
-	\node [label=below:{Prod. 2}] [state] (p2) [below= of s]			{}
+	\node [label=below:{Product 2}] [state] (p2) [below= of s]			{}
 	edge [pre]	node [right]	{90\%}						(s);
 
     \node [below left] at (current bounding box.north east)
