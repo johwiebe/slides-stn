@@ -81,51 +81,51 @@ London
     variables\visible<2->{, and {\color{icOrange}$\bm{h}$ are health related variables}.}
     \vspace{5pt}
 \end{overlayarea}
-\only<1-3>{
-    \visible<3>{
+\only<1-3>{%
+    \visible<3>{%
         \begin{block}{Related Work}
             \small Vassiliadis and Pistikopoulos~(2001); Liu, Yahia and Papageorgiou~(2014); Xenos, et int, Thornhill (2016); Aguirre and Papageorgiou~ (2018); Biondi, Sand and Harjunkoski~(2017); Yildirim, Gebraeel and Sun~(2017); Ba\c{s}\c{c}iftci, Ahmed, Gebraeel and Yildirim~(2018)
             \nocite{Vassiliadis2001,Liu2014,Xenos2016,Aguirre2018,Biondi2017,Yildirim2017,Basciftci2018}
         \end{block}
-    }
-}
-\only<4->{
+    }%
+}%
+\only<4->{%
     \begin{exampleblock}{Idea}
         Combine process level \textbf{MI(N)LP scheduling \& planning} with more sophisticated (stochastic) \textbf{degradation modelling} and \textbf{robust optimization}.
     \end{exampleblock}
-}
+}%
 \end{frame}
 
 \begin{frame}{What is degradation modelling?}
-\only<1>{
+\only<1>{%
     \centering
     \tikzsetnextfilename{deg-sig}
     \input{deg-sig.tex}
-}
-\only<2-4>{
+}%
+\only<2-4>{%
     The degradation signal $s^{meas}(t)$ can be modelled by a stochastic process :
     \begin{equation*}
         S(t) = \{S_t : t \in T\},
     \end{equation*}
     where $S_t$ is a random variable \citep{Alaswad2016}.
-\visible<3->{
-    \begin{block}{Often used: L\'evy type processes \citep{Applebaum2004}}
-    \begin{itemize}
-        \item Independent increments: $S_{t_2} - S_{t_1}, ..., S_{t_n} - S_{t_{n-1}}$ are independent for any $0 < t_1 < t_2 < ... < t_n < \infty$
-        \item Stationary increments: $S_t - S_s$ and $S_{t-s}$ have the same distribution for any $s<t$
-        %\item Continuity in probability: $\lim_{h \rightarrow 0} P(|{S_{t+h} - S_t}| > \epsilon) = 0$ for any $\epsilon > 0$, $t \geq 0$.
-    \end{itemize}
-    \end{block}
-}
-\visible<4>{
-    Therefore
-        %\begin{equation*}
-           $S_{t} - S_{t-\Delta t} = D \sim
-           \mathcal{D}(\boldsymbol{\Theta}, \Delta t)$, where
-           $\boldsymbol{\Theta}$ are parameters of distribution $\mathcal{D}$.
-        %\end{equation*}
-}
-}
+    \visible<3->{%
+        \begin{block}{Often used: L\'evy type processes \citep{Applebaum2004}}
+        \begin{itemize}
+            \item Independent increments: $S_{t_2} - S_{t_1}, ..., S_{t_n} - S_{t_{n-1}}$ are independent for any $0 < t_1 < t_2 < ... < t_n < \infty$
+            \item Stationary increments: $S_t - S_s$ and $S_{t-s}$ have the same distribution for any $s<t$
+            %\item Continuity in probability: $\lim_{h \rightarrow 0} P(|{S_{t+h} - S_t}| > \epsilon) = 0$ for any $\epsilon > 0$, $t \geq 0$.
+        \end{itemize}
+        \end{block}
+    }%
+    \visible<4>{
+        Therefore
+            %\begin{equation*}
+               $S_{t} - S_{t-\Delta t} = D \sim
+               \mathcal{D}(\boldsymbol{\Theta}, \Delta t)$, where
+               $\boldsymbol{\Theta}$ are parameters of distribution $\mathcal{D}$.
+            %\end{equation*}
+    }%
+}%
 \end{frame}
 \begin{frame}{Calculating failure probabilities}
     \centering
@@ -143,7 +143,7 @@ London
         \end{alertblock}
     \end{overlayarea}
     \begin{overlayarea}{\textwidth}{0.70\textheight}
-        \visible<2>{
+        \visible<2>{%
             \vspace{-25pt}
         \begin{equation*}
         \begin{aligned}
@@ -172,7 +172,7 @@ London
         \end{aligned}
         \end{equation*}
             where $m_{j,t} = 1$ if maintenance is performed on unit $j$ at time $t$.
-        }
+        }%
     \end{overlayarea}
 \end{frame}
 
@@ -186,28 +186,27 @@ London
     \begin{overlayarea}{\textwidth}{0.70\textheight}
         \vspace{-25pt}
         \begin{equation*}
-        \begin{aligned}
-        & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
-        && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
-        & \text{s.t.}
-        && \text{process model}(\bm{x}, \bm{m},\bm{h})
-        &&& \\
-        &
-        && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
-        &&& \\
-        &
-        && S_{j,t} \leq s_{j}^{max}
-        &&& \forall t, j \in J\\
-        &
-        && S_{j,t} =
-        \begin{cases}
-            S_{j,t-1} + {\color{imperialAlertText}{\sum\limits_{k \in
-            \mathcal{K}}{x_{j,k,t}\cdot}}}
-            D_{j{\color{imperialAlertText}{,k}}}, & \text{if } m_{j,t} = 0\\
-        s_{j}^{0}, & \text{otherwise}
-        \end{cases}
-        &&& \forall t, j \in J\\
-        \end{aligned}
+            \begin{aligned}
+                & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
+                && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
+                & \text{s.t.}
+                && \text{process model}(\bm{x}, \bm{m},\bm{h})
+                &&& \\
+                &
+                && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
+                &&& \\
+                &
+                && S_{j,t} \leq s_{j}^{max}
+                &&& \forall t, j \in J\\
+                &
+                && S_{j,t} =
+                \begin{cases}
+                    S_{j,t-1} + {\color{imperialAlertText}{\sum\limits_{k \in
+                    \mathcal{K}}{x_{j,k,t}\cdot}}}
+                    D_{j{\color{imperialAlertText}{,k}}}, & \text{if } m_{j,t} = 0\\ s_{j}^{0}, & \text{otherwise}
+                \end{cases}
+            &&& \forall t, j \in J\\
+            \end{aligned}
         \end{equation*}
         where $x_{j,k,t} = 1$ if unit $j$ operates in mode $k$ at time $t$.
     \end{overlayarea}
@@ -217,45 +216,45 @@ London
 \begin{frame}{Deriving a robust counterpart \citep{Lappas2016}}
     \begin{overlayarea}{\textwidth}{0.30\textheight}
         \vspace{-10pt}
-        \only<1-2>{
+        \only<1-2>{%
             \begin{exampleblock}{Idea}
                 Replace random variables $D_{j,k}$ and $S_{j,t}$ by uncertain parameter
                 $\tilde{d}_{j,k} \in \mathcal{U}$ and second stage variable
                 $s_{j,t}(\tilde{d}_{j,k})$.
             \end{exampleblock}
-        }
-        \only<3>{
+        }%
+        \only<3>{%
             \begin{alertblock}{In special cases}
                 Solve an approximate deterministic model
                 with an order of magnitude fewer variables/constraints.
             \end{alertblock}
-        }
+        }%
     \end{overlayarea}
     \begin{overlayarea}{\textwidth}{0.70\textheight}
         \vspace{-25pt}
         \begin{equation*}
-        \begin{aligned}
-        & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
-        && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
-        & \text{s.t.}
-        && \text{process model}(\bm{x}, \bm{m},\bm{h})
-        &&& \\
-        &
-        && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
-        &&& \\
-        &
-        && {\color{imperialAlertText}s_{j,t}(\tilde{d}_{j,k})} \leq s_{j}^{max}
-        &&& \forall t, j \in J, \tilde{d}_{j,k} \in \mathcal{U}\\
-        &
-        && \makebox[0pt][l]{$\color{imperialAlertText}s_{j,t}$}\phantom{S_{j,t}} =
-        \begin{cases}
-            \makebox[0pt][l]{$\color{imperialAlertText}s_{j,t-1}$}\phantom{S_{j,t-1}} + {\sum\limits_{k \in
-            \mathcal{K}}{x_{j,k,t}\cdot}}
-            \makebox[0pt][l]{$\color{imperialAlertText}\tilde{d}_{j,k}$}\phantom{D_{j,k}}, & \text{if } m_{j,t} = 0\\
-        s_{j}^{0}, & \text{otherwise}
-        \end{cases}
-        &&& \forall t, j \in J, \tilde{d}_{j,k} \in \mathcal{U}.\\
-        \end{aligned}
+            \begin{aligned}
+                & \underset{\bm{x},\bm{m}, \bm{h}}{\text{min}}
+                && \text{cost}(\bm{x}, \bm{m},\bm{h})\\
+                & \text{s.t.}
+                && \text{process model}(\bm{x}, \bm{m},\bm{h})
+                &&& \\
+                &
+                && \text{maintenance model}(\bm{x}, \bm{m} ,\bm{h})
+                &&& \\
+                &
+                && {\color{imperialAlertText}s_{j,t}(\tilde{d}_{j,k})} \leq s_{j}^{max}
+                &&& \forall t, j \in J, \tilde{d}_{j,k} \in \mathcal{U}\\
+                &
+                && \makebox[0pt][l]{$\color{imperialAlertText}s_{j,t}$}\phantom{S_{j,t}} =
+                \begin{cases}
+                    \makebox[0pt][l]{$\color{imperialAlertText}s_{j,t-1}$}\phantom{S_{j,t-1}} + {\sum\limits_{k \in
+                    \mathcal{K}}{x_{j,k,t}\cdot}}
+                    \makebox[0pt][l]{$\color{imperialAlertText}\tilde{d}_{j,k}$}\phantom{D_{j,k}}, & \text{if } m_{j,t} = 0\\
+                s_{j}^{0}, & \text{otherwise}
+                \end{cases}
+                &&& \forall t, j \in J, \tilde{d}_{j,k} \in \mathcal{U}.\\
+            \end{aligned}
         \end{equation*}
         \visible<2->{Approximate $s_{j,t}(\tilde{d}_{j,k})$ by linear decision rule.
         Utilize robust opt.~reformulation.}
@@ -272,7 +271,7 @@ London
             \leq \bar{d}_{j,k}(1+\epsilon_{j,k})\}
         \end{equation*}
     \end{alertblock}
-    \visible<2>{
+    \visible<2>{%
         \begin{columns}
             \begin{column}{0.40\textwidth}
                 \centering
@@ -289,7 +288,7 @@ London
                 Size of $\mathcal{U}$ depends on a single parameter $\alpha$!
             \end{column}
         \end{columns}
-    }
+    }%
 \end{frame}
 
 
@@ -300,7 +299,7 @@ London
         \centering
         \tikzsetnextfilename{p2}
         \input{p2.tex}\\[0.5\baselineskip]
-    }
+    }%
     \only<2>{%
         \vspace{20pt}
         %\begin{block}{Extension for degradation [Biondi et al.~2017]}
@@ -311,7 +310,7 @@ London
                 \item \ldots integrated scheduling and planning,
                 \item \ldots multiple operating modes per task.
             \end{itemize}
-    }
+    }%
     \only<3>{%
         \vspace{20pt}
         This work\ldots
@@ -323,7 +322,7 @@ London
                 \item \ldots analyzes the price of robustness.
             \end{itemize}
         %\end{block}
-    }
+    }%
     \end{overlayarea}
     \centering
     \includegraphics{schedule}
@@ -345,7 +344,7 @@ London
 \begin{frame}{Choosing $\alpha$ is its own optimization problem }
     We optimize $\alpha$ by solving
     \begin{equation*}
-    \min_{\alpha} c^*(\alpha) + \sum_{j} p^f_{j}(\alpha)\cdot c_{j}^f
+        \min_{\alpha} c^*(\alpha) + \sum_{j} p^f_{j}(\alpha)\cdot c_{j}^f
     \end{equation*}
     \begin{itemize}
         \item $c^*(\alpha)$ is the objective value of a MILP solution given $\alpha$.
@@ -354,41 +353,40 @@ London
         \item $c_j^f$ is the cost of an unexpected failure.
     \end{itemize}
     Alternative objective: \citet{Li2015_2}
-    \visible<2->{
+    \visible<2->{%
         \begin{exampleblock}{Idea: Use Bayesian Optimization (BO)}
             Both $c^*$ and $p^f_j$ can be viewed as expensive black box functions.
             BO is very suitable for this setting \citep{Jones1998}.
         \end{exampleblock}
-    }
+    }%
 \end{frame}
 
 
 \begin{frame}{Saving time: data-driven approximations}
-\only<1>{
+\only<1>{%
     An upper bound on the probability of failure $p^f_j$ can be estimated from
     data (using logistic regression).
     \centering
     \tikzsetnextfilename{freq}
     \input{freq.tex}
-}
-\only<2>{
+}%
+\only<2>{%
     \centering
     \input{biondi-r1-p-vs-alpha.tex}
-}
+}%
 \end{frame}
 
 
 \begin{frame}{Bayesian Optimization}
-    \only<1>{
-        \centering
+    \centering
+    \only<1>{%
         \tikzsetnextfilename{biondi-bo-vs-alpha}
         \input{biondi-bo-vs-alpha.tex}
-    }
-    \only<2>{
-        \centering
+    }%
+    \only<2>{%
         \tikzsetnextfilename{biondi-bo-vs-iter}
         \input{biondi-bo-vs-iter-mean.tex}
-    }
+    }%
 \end{frame}
 
 
@@ -399,7 +397,7 @@ London
     \input{flowchart-big.tex}\\
 %        \vspace{-5pt}
 %    \small Preprint soon available: http://www.imperial.ac.uk/people/j.wiebe17
-        \visible<2>{
+        \visible<2>{%
         {\huge Thank You!\\}
             {\tiny Funding: EP/L016796/1, EP/R511961/1 no.~17000145, and
             EP/P016871/1}
@@ -407,33 +405,33 @@ London
     \begin{tikzpicture}[overlay, remember picture]
     \node[anchor=north west, %anchor is upper left corner of the graphic
         xshift=7pt, %shifting around
-        yshift=-196pt]
+        yshift=-201pt]
        at (current page.north west) %left upper corner of the page
        {\includegraphics[width=0.29\textwidth]{Imperial_1_Pantone_solid.eps}};
     \end{tikzpicture}
     \begin{tikzpicture}[overlay, remember picture]
     \node[anchor=north east, %anchor is upper left corner of the graphic
         xshift=-220pt, %shifting around
-        yshift=-194pt]
+        yshift=-199pt]
        at (current page.north east) %left upper corner of the page
        {\includegraphics[width=0.23\textwidth]{COG_logo}};
     \end{tikzpicture}
     \begin{tikzpicture}[overlay, remember picture]
     \node[anchor=north east, %anchor is upper left corner of the graphic
         xshift=-108pt, %shifting around
-        yshift=-200pt]
+        yshift=-205pt]
        at (current page.north east) %left upper corner of the page
        {\includegraphics[width=0.23\textwidth]{logo_hipeds_v3.pdf}};
     \end{tikzpicture}
     \begin{tikzpicture}[overlay, remember picture]
     \node[anchor=north east, %anchor is upper left corner of the graphic
     xshift=-4pt, %shifting around
-    yshift=-203pt]
+    yshift=-208pt]
     at (current page.north east) %left upper corner of the page
     {\includegraphics[width=0.23\textwidth]{Schlumberger}};
     \end{tikzpicture}
     \tikzexternalenable
-}
+}%
 \end{frame}
 
 \appendix
