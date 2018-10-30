@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.7.25)  3 OCT 2018 09:47
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.10.12)  31 OCT 2018 15:28
  system commands enabled.
  file:line:error style messages enabled.
 **presentation.tex
@@ -23,7 +23,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.112 seconds
+luaotfload | main : initialization completed in 0.100 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2018/02/20 v3.50 A class for typesetting presentations
@@ -1159,8 +1159,8 @@ File: switch.def 2018/02/14 3.18 Babel switching mechanism
 \l@dumylang=\language2
 Package babel Info: Non-standard hyphenation setup on input line 113.
 \l@nohyphenation=\language3
-\l@greek=\language4
-\l@ibycus=\language5
+\l@ibycus=\language4
+\l@greek=\language5
 \l@monogreek=\language6
 \l@ancientgreek=\language7
 ) (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
@@ -1510,27 +1510,27 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 ))
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 19.
+(hyperref)                removing `\new@ifnextchar' on input line 21.
 
 (./presentation.aux)
 \openout1 = presentation.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1592,7 +1592,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box131
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 21.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1600,64 +1600,64 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count401
 )
-LaTeX Info: Redefining \ref on input line 19.
-LaTeX Info: Redefining \pageref on input line 19.
-LaTeX Info: Redefining \nameref on input line 19.
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
  (./presentation.out) (./presentation.out)
 \@outlinefile=\write5
 
 \openout5 = presentation.out
 \symnumbers=\mathgroup11
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 19.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 21.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 19.
+(Font)              `pureletters' in the math version `normal' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/mathkerncmss/m/sl --> T1/lmr/m/it on input line 19.
+(Font)                  OT1/mathkerncmss/m/sl --> T1/lmr/m/it on input line 21.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 19.
+(Font)              `pureletters' in the math version `bold' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/lmr/m/it on input line 19.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/lmr/m/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> T1/lmr/m/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 19.
+(Font)                  OT1/cmr/m/n --> T1/lmr/m/n on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/FiraSansLight(0)/m/n on input line 19.
+(Font)                  OT1/cmss/m/n --> T1/FiraSansLight(0)/m/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/FiraSansLight(0)/m/n on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 19.
+(Font)                  OT1/cmss/bx/n --> T1/FiraSansLight(0)/m/n on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/lmr/m/it on input line 19.
+(Font)                  OT1/cmr/m/it --> T1/lmr/m/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/lmr/m/it on input line 19.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 19.
+(Font)                  OT1/cmr/bx/it --> T1/lmr/m/it on input line 21.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/FiraMono(0)/m/n on input line 19.
+(Font)                  OT1/cmtt/m/n --> T1/FiraMono(0)/m/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/FiraMono(0)/m/n on input line 19.
+(Font)                  OT1/cmtt/m/n --> T1/FiraMono(0)/m/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmr/m/n --> T1/lmr/bx/n on input line 19.
+(Font)                  T1/lmr/m/n --> T1/lmr/bx/n on input line 21.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmr/m/it --> T1/lmr/bx/it on input line 19.
+(Font)                  T1/lmr/m/it --> T1/lmr/bx/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/lmr/bx/n on input line 19.
+(Font)                  OT1/cmr/bx/n --> T1/lmr/bx/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmr/bx/n --> T1/lmr/bx/n on input line 19.
+(Font)                  T1/lmr/bx/n --> T1/lmr/bx/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/FiraSansLight(0)/m/n --> T1/FiraSansLight(0)/bx/n on input line 19.
+(Font)                  T1/FiraSansLight(0)/m/n --> T1/FiraSansLight(0)/bx/n on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmr/m/it --> T1/lmr/bx/it on input line 19.
+(Font)                  T1/lmr/m/it --> T1/lmr/bx/it on input line 21.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/FiraMono(0)/m/n --> T1/FiraMono(0)/bx/n on input line 19.
-LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 19.
+(Font)                  T1/FiraMono(0)/m/n --> T1/FiraMono(0)/bx/n on input line 21.
+LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 21.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `boldpureletters' in the math version `normal' on input line 19.
+(Font)              `boldpureletters' in the math version `normal' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `normal'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/lmr/bx/it on input line 19.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/lmr/bx/it on input line 21.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `boldpureletters' in the math version `bold' on input line 19.
+(Font)              `boldpureletters' in the math version `bold' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/lmr/bx/it on input line 19.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/lmr/bx/it on input line 21.
  (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -1673,7 +1673,7 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into your preamble.
- on input line 19.
+ on input line 21.
 
 \c@lstlisting=\count402
 (./presentation.nav)
@@ -1684,22 +1684,22 @@ Package epstopdf Info: Source file: <Imperial_1_Pantone_solid.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 16089 bytes
 (epstopdf)             Command: <epstopdf --outfile=Imperial_1_Pantone_solid-eps-converted-to.pdf Imperial_1_Pantone_solid.eps>
-(epstopdf)             \includegraphics on input line 52.
+(epstopdf)             \includegraphics on input line 54.
 Package epstopdf Info: Output file is already uptodate.
 <Imperial_1_Pantone_solid-eps-converted-to.pdf, id=22, 362.35374pt x 95.35625pt>
 File: Imperial_1_Pantone_solid-eps-converted-to.pdf Graphic file (type pdf)
 <use Imperial_1_Pantone_solid-eps-converted-to.pdf>
-Package luatex.def Info: Imperial_1_Pantone_solid-eps-converted-to.pdf  used on input line 52.
+Package luatex.def Info: Imperial_1_Pantone_solid-eps-converted-to.pdf  used on input line 54.
 (luatex.def)             Requested size: 115.5155pt x 30.39821pt.
 <COG_logo.png, id=23, 1068.99374pt x 395.4775pt>
 File: COG_logo.png Graphic file (type png)
 <use COG_logo.png>
-Package luatex.def Info: COG_logo.png  used on input line 52.
+Package luatex.def Info: COG_logo.png  used on input line 54.
 (luatex.def)             Requested size: 91.61617pt x 33.88971pt.
 <logo_hipeds_v3.pdf, id=24, 2007.5pt x 467.7475pt>
 File: logo_hipeds_v3.pdf Graphic file (type pdf)
 <use logo_hipeds_v3.pdf>
-Package luatex.def Info: logo_hipeds_v3.pdf  used on input line 52.
+Package luatex.def Info: logo_hipeds_v3.pdf  used on input line 54.
 (luatex.def)             Requested size: 91.61617pt x 21.34035pt.
 Package epstopdf Info: Source file: <Schlumberger.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
@@ -1708,31 +1708,31 @@ Package epstopdf Info: Source file: <Schlumberger.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 4536 bytes
 (epstopdf)             Command: <epstopdf --outfile=Schlumberger-eps-converted-to.pdf Schlumberger.eps>
-(epstopdf)             \includegraphics on input line 52.
+(epstopdf)             \includegraphics on input line 54.
 Package epstopdf Info: Output file is already uptodate.
 <Schlumberger-eps-converted-to.pdf, id=25, 493.845pt x 112.42pt>
 File: Schlumberger-eps-converted-to.pdf Graphic file (type pdf)
 <use Schlumberger-eps-converted-to.pdf>
-Package luatex.def Info: Schlumberger-eps-converted-to.pdf  used on input line 52.
+Package luatex.def Info: Schlumberger-eps-converted-to.pdf  used on input line 54.
 (luatex.def)             Requested size: 91.61617pt x 20.85568pt.
 
 
 LaTeX Font Warning: Font shape `T1/FiraSansLight(0)/bx/n' undefined
-(Font)              using `T1/FiraSansLight(0)/m/n' instead on input line 52.
+(Font)              using `T1/FiraSansLight(0)/m/n' instead on input line 54.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 52.
+LaTeX Font Info:    Try loading font information for U+msa on input line 54.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 52.
+LaTeX Font Info:    Try loading font information for U+msb on input line 54.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 52.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 54.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \vbox (16.63992pt too high) detected at line 52
+Overfull \vbox (16.63992pt too high) detected at line 54
  []
 
 [1
@@ -1740,41 +1740,41 @@ Overfull \vbox (16.63992pt too high) detected at line 52
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./Imperial_1_Pantone_solid-eps-converted-to.pdf><./COG_logo.png><./logo_hipeds_v3.pdf><./Schlumberger-eps-converted-to.pdf>] (./p2.tex
 ===== Image 'tikz/p2' is up-to-date. ======
 )
-Overfull \hbox (14.99162pt too wide) in paragraph at lines 7--61
+Overfull \hbox (14.99162pt too wide) in paragraph at lines 7--63
  [][] 
  []
 
 <schedule.pdf, id=60, 308.71185pt x 81.84657pt>
 File: schedule.pdf Graphic file (type pdf)
 <use schedule.pdf>
-Package luatex.def Info: schedule.pdf  used on input line 61.
+Package luatex.def Info: schedule.pdf  used on input line 63.
 (luatex.def)             Requested size: 308.71109pt x 81.84636pt.
 
-Overfull \vbox (4.25363pt too high) detected at line 61
+Overfull \vbox (4.25363pt too high) detected at line 63
  []
 
 [2
 
 <./tikz/p2.pdf><./schedule.pdf>]
-Overfull \vbox (6.19545pt too high) detected at line 97
+Overfull \vbox (6.19545pt too high) detected at line 99
  []
 
 [3
 
 ]
-Overfull \vbox (6.19545pt too high) detected at line 97
+Overfull \vbox (6.19545pt too high) detected at line 99
  []
 
 [4
 
 ]
-Overfull \vbox (6.19545pt too high) detected at line 97
+Overfull \vbox (6.19545pt too high) detected at line 99
  []
 
 [5
 
 ]
-Overfull \vbox (6.19545pt too high) detected at line 97
+Overfull \vbox (6.19545pt too high) detected at line 99
  []
 
 [6
@@ -1794,130 +1794,124 @@ Overfull \vbox (6.19545pt too high) detected at line 97
 ) [11
 
 <./tikz/deg-sig2.pdf>]
-Overfull \vbox (28.90349pt too high) detected at line 177
+Overfull \vbox (28.90349pt too high) detected at line 179
  []
 
 [12
 
 ]
-Overfull \vbox (28.90349pt too high) detected at line 177
+Overfull \vbox (28.90349pt too high) detected at line 179
  []
 
 [13
 
 ]
-Overfull \vbox (28.90349pt too high) detected at line 214
+Overfull \vbox (28.90349pt too high) detected at line 217
  []
 
 [14
 
 ]
-Overfull \vbox (28.90349pt too high) detected at line 262
+Overfull \vbox (28.90349pt too high) detected at line 265
  []
 
 [15
 
 ]
-Overfull \vbox (28.90349pt too high) detected at line 262
+Overfull \vbox (28.90349pt too high) detected at line 265
  []
 
 [16
 
-]
-Overfull \vbox (28.90349pt too high) detected at line 262
- []
-
-[17
-
 ] (./alpha.tex
 ===== Image 'tikz/alpha' is up-to-date. ======
-) [18
+) [17
 
 <./tikz/alpha.pdf>] (./alpha.tex
 ===== Image 'tikz/alpha' is up-to-date. ======
-) [19
+) [18
 
 <./tikz/alpha.pdf>] (./p2.tex
 ===== Image 'tikz/p2' is up-to-date. ======
 )
-Overfull \hbox (14.99162pt too wide) in paragraph at lines 7--329
+Overfull \hbox (14.99162pt too wide) in paragraph at lines 7--332
  [][] 
  []
 
 
-Overfull \vbox (1.00043pt too high) detected at line 329
+Overfull \vbox (1.00043pt too high) detected at line 332
  []
 
 File: schedule.pdf Graphic file (type pdf)
 <use schedule.pdf>
-Package luatex.def Info: schedule.pdf  used on input line 329.
+Package luatex.def Info: schedule.pdf  used on input line 332.
 (luatex.def)             Requested size: 308.71109pt x 81.84636pt.
 
-Overfull \vbox (0.12526pt too high) detected at line 329
+Overfull \vbox (0.12526pt too high) detected at line 332
  []
 
-[20
+[19
 
 <./tikz/p2.pdf>]
 File: schedule.pdf Graphic file (type pdf)
 <use schedule.pdf>
-Package luatex.def Info: schedule.pdf  used on input line 329.
+Package luatex.def Info: schedule.pdf  used on input line 332.
 (luatex.def)             Requested size: 308.71109pt x 81.84636pt.
 
-Overfull \vbox (0.12526pt too high) detected at line 329
+Overfull \vbox (0.12526pt too high) detected at line 332
  []
 
-[21
+[20
 
 ]
-Overfull \vbox (2.04092pt too high) detected at line 329
+Overfull \vbox (2.04092pt too high) detected at line 332
  []
 
 File: schedule.pdf Graphic file (type pdf)
 <use schedule.pdf>
-Package luatex.def Info: schedule.pdf  used on input line 329.
+Package luatex.def Info: schedule.pdf  used on input line 332.
 (luatex.def)             Requested size: 308.71109pt x 81.84636pt.
 
-Overfull \vbox (0.12526pt too high) detected at line 329
+Overfull \vbox (0.12526pt too high) detected at line 332
  []
 
-[22
+[21
 
 ] (./calcp.tex
 ===== Image 'tikz/calcp' is up-to-date. ======
 )
-Overfull \vbox (6.60783pt too high) detected at line 335
+Overfull \vbox (6.60783pt too high) detected at line 338
  []
 
-[23
+[22
 
 <./tikz/calcp.pdf>] (./biondi-price-of-rob.tex
 ===== Image 'tikz/price-of-rob' is up-to-date. ======
-) [24
+) [23
 
-<./tikz/price-of-rob.pdf>] [25
+<./tikz/price-of-rob.pdf>] [24
 
-] [26
+] [25
 
 ] (./freq.tex
 ===== Image 'tikz/freq' is up-to-date. ======
 )
-Overfull \vbox (2.72798pt too high) detected at line 377
+Overfull \vbox (2.72798pt too high) detected at line 380
  []
 
-[27
+[26
 
 <./tikz/freq.pdf>] (./biondi-r1-p-vs-alpha.tex
 ===== Image 'tikz/presentation-figure0' is up-to-date. ======
-) [28
+) [27
 
 <./tikz/presentation-figure0.pdf>] (./biondi-bo-vs-alpha.tex
 ===== Image 'tikz/biondi-bo-vs-alpha' is up-to-date. ======
-) [29
+) [28
 
 <./tikz/biondi-bo-vs-alpha.pdf>] (./biondi-bo-vs-iter-mean.tex
 ===== Image 'tikz/biondi-bo-vs-iter' is up-to-date. ======
-) [30
+) [29
 
 <./tikz/biondi-bo-vs-iter.pdf>] (./flowchart-big.tex
 ===== Image 'tikz/flowchart' is up-to-date. ======
@@ -1929,19 +1923,19 @@ Package epstopdf Info: Source file: <Imperial_1_Pantone_solid.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 16089 bytes
 (epstopdf)             Command: <epstopdf --outfile=Imperial_1_Pantone_solid-eps-converted-to.pdf Imperial_1_Pantone_solid.eps>
-(epstopdf)             \includegraphics on input line 435.
+(epstopdf)             \includegraphics on input line 439.
 Package epstopdf Info: Output file is already uptodate.
 File: Imperial_1_Pantone_solid-eps-converted-to.pdf Graphic file (type pdf)
 <use Imperial_1_Pantone_solid-eps-converted-to.pdf>
-Package luatex.def Info: Imperial_1_Pantone_solid-eps-converted-to.pdf  used on input line 435.
+Package luatex.def Info: Imperial_1_Pantone_solid-eps-converted-to.pdf  used on input line 439.
 (luatex.def)             Requested size: 115.5155pt x 30.39821pt.
 File: COG_logo.png Graphic file (type png)
 <use COG_logo.png>
-Package luatex.def Info: COG_logo.png  used on input line 435.
+Package luatex.def Info: COG_logo.png  used on input line 439.
 (luatex.def)             Requested size: 91.61617pt x 33.88971pt.
 File: logo_hipeds_v3.pdf Graphic file (type pdf)
 <use logo_hipeds_v3.pdf>
-Package luatex.def Info: logo_hipeds_v3.pdf  used on input line 435.
+Package luatex.def Info: logo_hipeds_v3.pdf  used on input line 439.
 (luatex.def)             Requested size: 91.61617pt x 21.34035pt.
 Package epstopdf Info: Source file: <Schlumberger.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
@@ -1950,13 +1944,13 @@ Package epstopdf Info: Source file: <Schlumberger.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 4536 bytes
 (epstopdf)             Command: <epstopdf --outfile=Schlumberger-eps-converted-to.pdf Schlumberger.eps>
-(epstopdf)             \includegraphics on input line 435.
+(epstopdf)             \includegraphics on input line 439.
 Package epstopdf Info: Output file is already uptodate.
 File: Schlumberger-eps-converted-to.pdf Graphic file (type pdf)
 <use Schlumberger-eps-converted-to.pdf>
-Package luatex.def Info: Schlumberger-eps-converted-to.pdf  used on input line 435.
+Package luatex.def Info: Schlumberger-eps-converted-to.pdf  used on input line 439.
 (luatex.def)             Requested size: 91.61617pt x 20.85568pt.
- [31
+ [30
 
 <./tikz/flowchart.pdf>] (./flowchart-big.tex
 ===== Image 'tikz/flowchart' is up-to-date. ======
@@ -1968,19 +1962,19 @@ Package epstopdf Info: Source file: <Imperial_1_Pantone_solid.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 16089 bytes
 (epstopdf)             Command: <epstopdf --outfile=Imperial_1_Pantone_solid-eps-converted-to.pdf Imperial_1_Pantone_solid.eps>
-(epstopdf)             \includegraphics on input line 435.
+(epstopdf)             \includegraphics on input line 439.
 Package epstopdf Info: Output file is already uptodate.
 File: Imperial_1_Pantone_solid-eps-converted-to.pdf Graphic file (type pdf)
 <use Imperial_1_Pantone_solid-eps-converted-to.pdf>
-Package luatex.def Info: Imperial_1_Pantone_solid-eps-converted-to.pdf  used on input line 435.
+Package luatex.def Info: Imperial_1_Pantone_solid-eps-converted-to.pdf  used on input line 439.
 (luatex.def)             Requested size: 115.5155pt x 30.39821pt.
 File: COG_logo.png Graphic file (type png)
 <use COG_logo.png>
-Package luatex.def Info: COG_logo.png  used on input line 435.
+Package luatex.def Info: COG_logo.png  used on input line 439.
 (luatex.def)             Requested size: 91.61617pt x 33.88971pt.
 File: logo_hipeds_v3.pdf Graphic file (type pdf)
 <use logo_hipeds_v3.pdf>
-Package luatex.def Info: logo_hipeds_v3.pdf  used on input line 435.
+Package luatex.def Info: logo_hipeds_v3.pdf  used on input line 439.
 (luatex.def)             Requested size: 91.61617pt x 21.34035pt.
 Package epstopdf Info: Source file: <Schlumberger.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
@@ -1989,38 +1983,40 @@ Package epstopdf Info: Source file: <Schlumberger.eps>
 (epstopdf)                    date: 2018-07-25 08:24:54
 (epstopdf)                    size: 4536 bytes
 (epstopdf)             Command: <epstopdf --outfile=Schlumberger-eps-converted-to.pdf Schlumberger.eps>
-(epstopdf)             \includegraphics on input line 435.
+(epstopdf)             \includegraphics on input line 439.
 Package epstopdf Info: Output file is already uptodate.
 File: Schlumberger-eps-converted-to.pdf Graphic file (type pdf)
 <use Schlumberger-eps-converted-to.pdf>
-Package luatex.def Info: Schlumberger-eps-converted-to.pdf  used on input line 435.
+Package luatex.def Info: Schlumberger-eps-converted-to.pdf  used on input line 439.
 (luatex.def)             Requested size: 91.61617pt x 20.85568pt.
- [32
+ [31
 
-<./tikz/flowchart.pdf>] (./presentation.bbl) [33
+<./tikz/flowchart.pdf>] (./presentation.bbl) [32
 
-] [34
+] [33
 
 
 ]
-<example-wiener-om.pdf, id=973, 722.7pt x 433.62pt>
+<example-wiener-om.pdf, id=967, 722.7pt x 433.62pt>
 File: example-wiener-om.pdf Graphic file (type pdf)
 <use example-wiener-om.pdf>
-Package luatex.def Info: example-wiener-om.pdf  used on input line 455.
+Package luatex.def Info: example-wiener-om.pdf  used on input line 459.
 (luatex.def)             Requested size: 303.53192pt x 182.11916pt.
- [35
+ [34
 
-<./example-wiener-om.pdf>] [36
+<./example-wiener-om.pdf>] [35
 
 ] (./biondi-det-vs-rob.tex
 ===== Image 'tikz/det-vs-rob' is up-to-date. ======
 )
-Overfull \vbox (8.3122pt too high) detected at line 494
+Overfull \vbox (8.3122pt too high) detected at line 498
  []
 
-[37
+[36
 
-<./tikz/det-vs-rob.pdf>] [38
+<./tikz/det-vs-rob.pdf>] [37
+
+] [38
 
 ] [39
 
@@ -2032,13 +2028,11 @@ Overfull \vbox (8.3122pt too high) detected at line 494
 
 ] [43
 
-] [44
-
 ]
-Overfull \vbox (18.75749pt too high) detected at line 793
+Overfull \vbox (18.75749pt too high) detected at line 797
  []
 
-[45
+[44
 
 ]
 .................................................
@@ -2067,38 +2061,38 @@ Overfull \vbox (18.75749pt too high) detected at line 793
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
 . <->"FiraSansItalic:mode=node;script=latn;language=DFLT;+tlig;+tnum;+smcp;"
 .................................................
-LaTeX Font Info:    Try loading font information for T1+FiraSansLight(1) on input line 818.
-LaTeX Font Info:    No file T1FiraSansLight(1).fd. on input line 818.
+LaTeX Font Info:    Try loading font information for T1+FiraSansLight(1) on input line 822.
+LaTeX Font Info:    No file T1FiraSansLight(1).fd. on input line 822.
 
 
 LaTeX Font Warning: Font shape `T1/FiraSansLight(1)/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 818.
+(Font)              using `T1/cmr/m/n' instead on input line 822.
 
-[46
+[45
 
 ]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 875.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 879.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [47
+) [46
 
 ]
-Overfull \vbox (9.899pt too high) detected at line 875
+Overfull \vbox (9.899pt too high) detected at line 879
  []
 
-[48
+[47
 
 ] (./biondi-r1-p-vs-alpha.tex
 ===== Image 'tikz/presentation-figure1' is up-to-date. ======
-) [49
+) [48
 
 <./tikz/presentation-figure1.pdf>] (./logreg-toy-H-HN.tex
 ===== Image 'tikz/logreg-toy-H-HN' is up-to-date. ======
 )
-Overfull \vbox (29.99219pt too high) detected at line 875
+Overfull \vbox (29.99219pt too high) detected at line 879
  []
 
-[50
+[49
 
 <./tikz/logreg-toy-H-HN.pdf>]
 \tf@nav=\write6
@@ -2110,11 +2104,11 @@ Overfull \vbox (29.99219pt too high) detected at line 875
 \tf@snm=\write8
 
 \openout8 = presentation.snm
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 877.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 877.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 881.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 881.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 877.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 877.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 881.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 881.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 97B75F4661A111D7B32D4B5162B6BF0E;94.
 
@@ -2124,20 +2118,20 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 )
 
 Here is how much of LuaTeX's memory you used:
- 51389 strings out of 494480
+ 51387 strings out of 494480
  100000,7087374 words of node,token memory allocated
- 4865 words of node memory still in use:
-   129 hlist, 36 vlist, 9 rule, 7 disc, 2 local_par, 8 math, 86 glue, 77 kern, 10 penalty, 191 glyph, 120 attribute, 79 glue_spec, 120 attribute_list, 3 write, 2 pdf_action, 10 pdf_colorstack nodes
-   avail lists: 1:12,2:1273,3:520,4:116,5:619,6:5207,7:1709,8:360,9:1280,10:22,11:591
+ 4861 words of node memory still in use:
+   129 hlist, 36 vlist, 9 rule, 7 disc, 2 local_par, 8 math, 86 glue, 77 kern, 10 penalty, 191 glyph, 119 attribute, 79 glue_spec, 119 attribute_list, 3 write, 2 pdf_action, 10 pdf_colorstack nodes
+   avail lists: 1:12,2:1279,3:521,4:116,5:619,6:5235,7:1714,8:362,9:1280,10:22,11:591
  52773 multiletter control sequences out of 65536+600000
  163 fonts using 22382423 bytes
  69i,24n,101p,1857b,832s stack positions out of 5000i,500n,10000p,200000b,100000s
 <</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm8.600pk>>{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}<</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk>></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraSans-Book.otf><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk>></usr/share/texlive/texmf-dist/fonts/opentype/public/fira/FiraSans-Light.otf><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk>><</home/johannes/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk>></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb>
-Output written on presentation.pdf (50 pages, 1807644 bytes).
+Output written on presentation.pdf (49 pages, 1807653 bytes).
 
-PDF statistics: 1740 PDF objects out of 2073 (max. 8388607)
- 852 compressed objects within 9 object streams
- 125 named destinations out of 1000 (max. 131072)
+PDF statistics: 1738 PDF objects out of 2073 (max. 8388607)
+ 847 compressed objects within 9 object streams
+ 123 named destinations out of 1000 (max. 131072)
  32 words of extra memory for PDF output out of 10000 (max. 100000000)
 

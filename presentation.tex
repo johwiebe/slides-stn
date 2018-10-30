@@ -3,7 +3,9 @@
 
 \input{preamble.tex}
 %\setsansfont[BoldFont={Fira Sans}, ItalicFont={Fira Sans Light Italic}]{Fira Sans Light}
-\title[Data-driven optimization \& degradation]{Data-driven optimization of processes with degrading equipment \vspace{-10pt}}
+%\title[Data-driven optimization \& degradation]{Data-driven optimization of processes with degrading equipment \vspace{-10pt}}
+\title[Planning \& scheduling with degradation]{Robust Planning and Scheduling
+for Processes with Equipment Degradation \vspace{-10pt}}
 
 % Ines and Ruth as co-authors
 \author[J. Wiebe et al.]{Johannes Wiebe\inst{1}, In\^{e}s
@@ -29,14 +31,14 @@ London
   \end{tikzpicture}
   \begin{tikzpicture}[overlay, remember picture]
   \node[anchor=north east, %anchor is upper left corner of the graphic
-      xshift=-170pt, %shifting around
+      xshift=-210pt, %shifting around
       yshift=-4pt]
      at (current page.north east) %left upper corner of the page
      {\includegraphics[width=0.23\textwidth]{COG_logo}};
   \end{tikzpicture}
   \begin{tikzpicture}[overlay, remember picture]
   \node[anchor=north east, %anchor is upper left corner of the graphic
-      xshift=-88pt, %shifting around
+      xshift=-108pt, %shifting around
       yshift=-10pt]
      at (current page.north east) %left upper corner of the page
      {\includegraphics[width=0.23\textwidth]{logo_hipeds_v3.pdf}};
@@ -157,18 +159,18 @@ London
         &&& \\
         &
         && S_{j,t} \leq s_{j}^{max}
-        &&& \forall t, j \in J\\
+        &&& \forall t, j \in J\phantom{, \tilde{d}_{j,k} \in \mathcal{U}}\\
         &
         && S_{j,t} =
         \begin{cases}
             S_{j,t-1} +
             \makebox[0pt][l]{$D_{j}$}
             \phantom{{\color{imperialAlertText}{\sum\limits_{k \in
-            \mathcal{K}}{x_{j,k,t}\cdot}}} D_{j{\color{imperialAlertText}{,k}}}},
+            {K}}{x_{j,k,t}\cdot}}} D_{j{\color{imperialAlertText}{,k}}}},
             & \text{if } m_{j,t} = 0\\
         s_{j}^{0}, & \text{otherwise}
         \end{cases}
-        &&& \forall t, j \in J\\
+        &&& \forall t, j \in J\phantom{, \tilde{d}_{j,k} \in \mathcal{U}.}\\
         \end{aligned}
         \end{equation*}
             where $m_{j,t} = 1$ if maintenance is performed on unit $j$ at time $t$.
@@ -197,15 +199,16 @@ London
                 &&& \\
                 &
                 && S_{j,t} \leq s_{j}^{max}
-                &&& \forall t, j \in J\\
+                &&& \forall t, j \in J \phantom{, \tilde{d}_{j,k} \in \mathcal{U}}\\
                 &
                 && S_{j,t} =
                 \begin{cases}
                     S_{j,t-1} + {\color{imperialAlertText}{\sum\limits_{k \in
-                    \mathcal{K}}{x_{j,k,t}\cdot}}}
+                    {K}}{x_{j,k,t}\cdot}}}
                     D_{j{\color{imperialAlertText}{,k}}}, & \text{if } m_{j,t} = 0\\ s_{j}^{0}, & \text{otherwise}
                 \end{cases}
-            &&& \forall t, j \in J\\
+                &&& \forall t, j \in J \phantom{, \tilde{d}_{j,k} \in
+            \mathcal{U}.}\\
             \end{aligned}
         \end{equation*}
         where $x_{j,k,t} = 1$ if unit $j$ operates in mode $k$ at time $t$.
@@ -223,12 +226,12 @@ London
                 $s_{j,t}(\tilde{d}_{j,k})$.
             \end{exampleblock}
         }%
-        \only<3>{%
-            \begin{alertblock}{In special cases}
-                Solve an approximate deterministic model
-                with an order of magnitude fewer variables/constraints.
-            \end{alertblock}
-        }%
+%        \only<3>{%
+%            \begin{alertblock}{In special cases}
+%                Solve an approximate deterministic model
+%                with an order of magnitude fewer variables/constraints.
+%            \end{alertblock}
+%        }%
     \end{overlayarea}
     \begin{overlayarea}{\textwidth}{0.70\textheight}
         \vspace{-25pt}
@@ -249,7 +252,7 @@ London
                 && \makebox[0pt][l]{$\color{imperialAlertText}s_{j,t}$}\phantom{S_{j,t}} =
                 \begin{cases}
                     \makebox[0pt][l]{$\color{imperialAlertText}s_{j,t-1}$}\phantom{S_{j,t-1}} + {\sum\limits_{k \in
-                    \mathcal{K}}{x_{j,k,t}\cdot}}
+                    {K}}{x_{j,k,t}\cdot}}
                     \makebox[0pt][l]{$\color{imperialAlertText}\tilde{d}_{j,k}$}\phantom{D_{j,k}}, & \text{if } m_{j,t} = 0\\
                 s_{j}^{0}, & \text{otherwise}
                 \end{cases}
@@ -390,14 +393,15 @@ London
 \end{frame}
 
 
-\begin{frame}[t]{Conclusion}
+\begin{frame}[t]{Conclusion: preprint at
+        \href{https://arxiv.org/abs/1810.09289}{\underline{arXiv:1810.09289}}
+}
     \vspace{-10pt}
     \centering
     \tikzsetnextfilename{flowchart}
     \input{flowchart-big.tex}\\
 %        \vspace{-5pt}
-%    \small Preprint soon available: http://www.imperial.ac.uk/people/j.wiebe17
-        \visible<2>{%
+            \visible<2>{%
         {\huge Thank You!\\}
             {\tiny Funding: EP/L016796/1, EP/R511961/1 no.~17000145, and
             EP/P016871/1}
@@ -645,7 +649,7 @@ S_{j,t} = [S_{j,t}]_{0} + \sum_{k}\sum_{t'=0}^t{[S_{j,t}]_{k,t'}D_{j,k,t'}}.
     &
     && s_{j,t} =
     \begin{cases}
-    s_{j,t-1} + \sum_{k \in \mathcal{K}}{x_{j,k,t}\cdot \tilde{d}_{j,k}}, & \text{if } m_{j,t} = 0\\
+    s_{j,t-1} + \sum_{k \in {K}}{x_{j,k,t}\cdot \tilde{d}_{j,k}}, & \text{if } m_{j,t} = 0\\
     s_{j}^{0}, & \text{otherwise}
     \end{cases}
     &&& \forall \tilde{d}_{j,k} \in \mathcal{U}, t, j \in J\\
